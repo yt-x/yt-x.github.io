@@ -1,4 +1,13 @@
-# Python Selenium库
+---
+title: Selenium基础
+date: 2023/3/06 
+categories: # Python
+- Diary
+tags: # Selenium
+- PS3
+- Games
+---
+
 
 [TOC]
 
