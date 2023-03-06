@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="年年花落无人见">
+  <meta name="description" content="众里寻他千百度，慕然回首，那人却在灯火阑珊处">
 <meta property="og:type" content="website">
 <meta property="og:title" content="苏格拉底不会写诗">
 <meta property="og:url" content="http://example.com/tags/Python/index.html">
 <meta property="og:site_name" content="苏格拉底不会写诗">
-<meta property="og:description" content="年年花落无人见">
+<meta property="og:description" content="众里寻他千百度，慕然回首，那人却在灯火阑珊处">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="YT">
 <meta name="twitter:card" content="summary">
@@ -44,6 +44,7 @@
     lang   : 'zh-CN'
   };
 </script>
+<script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 
   <title>标签: Python | 苏格拉底不会写诗</title>
   
@@ -99,7 +100,6 @@
       <h1 class="site-title">苏格拉底不会写诗</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">众里寻他千百度，慕然回首，那人却在灯火阑珊处</p>
   </div>
 
   <div class="site-nav-right">
@@ -290,7 +290,7 @@
     <img class="site-author-image" itemprop="image" alt="YT"
       src="/images/head.png">
   <p class="site-author-name" itemprop="name">YT</p>
-  <div class="site-description" itemprop="description">年年花落无人见</div>
+  <div class="site-description" itemprop="description">众里寻他千百度，慕然回首，那人却在灯火阑珊处</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -317,6 +317,9 @@
   </div>
 
 
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
 
       </div>
         <div class="back-to-top motion-element">
@@ -363,7 +366,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -372,7 +375,7 @@
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
-    <script async src="/js/busuanzi.js"></script>
+    <script data-pjax async src="/js/busuanzi.js"></script>
 </div>
 
 
@@ -388,6 +391,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -400,6 +404,65 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -424,12 +487,14 @@
 
 
 
+    <div id="pjax">
   
 
   
 
   
 
+    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-<你喜欢的模型名字>"},"display":{"position":"right"},"mobile":{"show":true}});</script></body>
 </html>
 <!-- 页面点击小红心 -->
