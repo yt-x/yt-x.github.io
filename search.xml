@@ -551,15 +551,13 @@
 <h1 id="翻译工具整理（支持文档输入）"><a href="#翻译工具整理（支持文档输入）" class="headerlink" title="翻译工具整理（支持文档输入）"></a>翻译工具整理（支持文档输入）</h1><h2 id="DeePL"><a href="#DeePL" class="headerlink" title="DeePL"></a><a target="_blank" rel="noopener" href="https://www.deepl.com/translator">DeePL</a></h2><p>DeePL翻译结果的准确性还有本地化相比于其他翻译工具，毋庸置疑的更加强大，翻译TOP1的地位也得到了诸多认可。机翻很大的一个缺陷就是本地化，而DeePL在这方面做的确实十分优秀，首推的翻译工具自然是它，而且在文献一些名词方面它的翻译也比较准确。更重要的一点是，DeepL翻译应用程序是完全免费的，但是DeepL的翻译质量却远胜于竞争对手。</p>
 <p><img src="https://s2.loli.net/2023/03/09/1o2FeXQMpRkAyzi.png" alt="image-20230309105331599"></p>
 <p>单说我自己的体验，有图有真相，如下所示，图一是DeePL的翻译，图二是谷歌的，高下立判。<br>都是基于沉浸式翻译插件的，谷歌在这英译英呢，这里展示的DeePL需要使用API，DeePL的api下文会提到；单纯从结果来说就算是谷歌自带的全网页翻译，文献翻译方面也和粑粑一样。</p>
+<p>DeePL的</p>
 <img src="https://s2.loli.net/2023/03/09/N9j3krXEuFwBQCb.png" alt="image-20230309104412970"  />
 
-
-
-
-
-
-
+<p>谷歌的</p>
 <img src="https://s2.loli.net/2023/03/09/6zCBRepvnMKdLiU.png" alt="image-20230309104449254"  />
+
+
 
 <h2 id="谷歌翻译"><a href="#谷歌翻译" class="headerlink" title="谷歌翻译"></a><a target="_blank" rel="noopener" href="https://translate.google.com/?hl=zh-CN">谷歌翻译</a></h2><p>Google 翻译支持对PDF文件进行翻译，您只需要上传PDF文件即可。但是，Google 翻译并不完美，可能会出现一些翻译错误。此外，如果PDF文件中有很多图片或格式，Google 翻译可能无法处理。虽然说谷歌翻译和DeePL存在差距，但是说句第二不过分吧，不过目前好像，emmm，用不了。</p>
 <p><img src="https://s2.loli.net/2023/03/09/o7QUzJGBH9w5plv.png" alt="image-20230309105256673"></p>
