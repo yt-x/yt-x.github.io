@@ -1356,4 +1356,74 @@
         <tag>Python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>翻译工具整理以及沉浸式翻译</title>
+    <url>/2023/03/09/%E7%BF%BB%E8%AF%91%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86%E4%BB%A5%E5%8F%8A%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/</url>
+    <content><![CDATA[<p>最近毕业设计，在弄文献翻译嘛，所以找了下合适的翻译工具，大学四年自己用过的翻译工具挺多的，整理一下吧，顺便强推下这个插件—沉浸式翻译，我只能说，无敌！</p>
+<h1 id="沉浸式翻译"><a href="#沉浸式翻译" class="headerlink" title="沉浸式翻译"></a>沉浸式翻译</h1><p>本来是先介绍翻译工具再介绍这个的，但是翻译工具没啥好推的，能用DeePL就用，所以先介绍下这个。</p>
+<ol>
+<li>安装的话，油猴搜沉浸式翻译就行，当然Github也有项目，地址在这：<br>  <a target="_blank" rel="noopener" href="https://github.com/immersive-translate/immersive-translate/">https://github.com/immersive-translate/immersive-translate/</a></li>
+<li>也可以直接安装拓展，目前主流浏览器都上架了。<a target="_blank" rel="noopener" href="https://immersive-translate.owenyoung.com/installation">官方推荐安装文档</a></li>
+</ol>
+<span id="more"></span>
+
+<p><img src="https://s2.loli.net/2023/03/09/1h9ZDFqnQdEtejM.png" alt="image-20230309111252328"></p>
+<p>主要特性官方说的比较清楚了，这介绍下我认为它的主要优点吧，首先是翻译区域，以往类似的网页翻译都是整个界面全部翻译，而这个有双语对照，等于在不破化原文布局的情况下，给你加一篇区域，嵌入翻译结果，直接上效果图。页面中蓝色虚线下划线就是翻译结果，这个显示样式是可以设定的。</p>
+<p><img src="https://s2.loli.net/2023/03/09/yjzaV695ZOcivRI.png" alt="image-20230309111725492"></p>
+<p>还有一个巨大优点就是对于PDF，Epub电子书的双语翻译；两者的使用官方都给出了具体教程</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://immersive-translate.owenyoung.com/usage">PDF文件翻译</a>  PDF翻译效果很一般，至于准确性，纯看你用的是谁的翻译了，我用的DeePL.</p>
+<p><img src="https://s2.loli.net/2023/03/09/F931RxenUyqrVp8.png" alt="image-20230309113852360"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://immersive-translate.owenyoung.com/usage">Epub文件翻译</a>：这里Epub网页工具我推荐这个<a target="_blank" rel="noopener" href="https://epub-reader.online/">Epub-reader</a> 如下图所示，Epub格式文档用Epub-reader打开然后加上沉浸式翻译，这不是无敌？</p>
+<p><img src="https://s2.loli.net/2023/03/09/g6GOVPe8wRTa4NA.png" alt="image-20230309114042796"></p>
+</li>
+</ol>
+<h2 id="关于拓展选用的翻译工具"><a href="#关于拓展选用的翻译工具" class="headerlink" title="关于拓展选用的翻译工具"></a>关于拓展选用的翻译工具</h2><p>目前官方提供如下这些，能直接用的有腾讯交互翻译、必应翻译还有谷歌翻译，但是正常情况下谷歌翻译是用不了的。</p>
+<p><img src="https://s2.loli.net/2023/03/09/fYR7oaUpndMxmuy.png" alt="image-20230309114213971"></p>
+<p>这里简单介绍下如何使用DeePL，其他的直接进官方提供文档，按照教程去弄就行。</p>
+<p>选择DeePL以后，他会让你填DeePL的API然后填进去，测试以下，能用就行了。问题来了，API怎么弄呢？ 有一个东西，叫淘宝、还有一个东西，叫闲鱼；不愿花小钱就用其他的也行，都还可以，百度翻译也不差。</p>
+<p><img src="https://s2.loli.net/2023/03/09/RZX26sYIdUj4w5p.png" alt="image-20230309114432026"><br><img src="https://s2.loli.net/2023/03/09/ziO7DRroI1Q2dTK.png" alt="image-20230309114516467"></p>
+<h1 id="翻译工具整理（支持文档输入）"><a href="#翻译工具整理（支持文档输入）" class="headerlink" title="翻译工具整理（支持文档输入）"></a>翻译工具整理（支持文档输入）</h1><h2 id="DeePL"><a href="#DeePL" class="headerlink" title="DeePL"></a><a target="_blank" rel="noopener" href="https://www.deepl.com/translator">DeePL</a></h2><p>DeePL翻译结果的准确性还有本地化相比于其他翻译工具，毋庸置疑的更加强大，翻译TOP1的地位也得到了诸多认可。机翻很大的一个缺陷就是本地化，而DeePL在这方面做的确实十分优秀，首推的翻译工具自然是它，而且在文献一些名词方面它的翻译也比较准确。更重要的一点是，DeepL翻译应用程序是完全免费的，但是DeepL的翻译质量却远胜于竞争对手。</p>
+<p><img src="https://s2.loli.net/2023/03/09/1o2FeXQMpRkAyzi.png" alt="image-20230309105331599"></p>
+<p>单说我自己的体验，有图有真相，如下所示，图一是DeePL的翻译，图二是谷歌的，高下立判。<br>都是基于沉浸式翻译插件的，谷歌在这英译英呢，这里展示的DeePL需要使用API，DeePL的api下文会提到；单纯从结果来说就算是谷歌自带的全网页翻译，文献翻译方面也和粑粑一样。</p>
+<img src="https://s2.loli.net/2023/03/09/N9j3krXEuFwBQCb.png" alt="image-20230309104412970"  />
+
+
+
+
+
+
+
+<img src="C:\knowledge\blog\BLOG\source\_posts\assets\image-20230309104449254.png" alt="image-20230309104449254"  />
+
+<h2 id="谷歌翻译"><a href="#谷歌翻译" class="headerlink" title="谷歌翻译"></a><a target="_blank" rel="noopener" href="https://translate.google.com/?hl=zh-CN">谷歌翻译</a></h2><p>Google 翻译支持对PDF文件进行翻译，您只需要上传PDF文件即可。但是，Google 翻译并不完美，可能会出现一些翻译错误。此外，如果PDF文件中有很多图片或格式，Google 翻译可能无法处理。虽然说谷歌翻译和DeePL存在差距，但是说句第二不过分吧，不过目前好像，emmm，用不了。</p>
+<p><img src="https://s2.loli.net/2023/03/09/o7QUzJGBH9w5plv.png" alt="image-20230309105256673"></p>
+<h2 id="百度翻译"><a href="#百度翻译" class="headerlink" title="百度翻译"></a><a target="_blank" rel="noopener" href="https://fanyi.baidu.com/">百度翻译</a></h2><p>这应该是平时用的最多的，质量中规中矩。</p>
+<p><img src="https://s2.loli.net/2023/03/09/TmspgXPxCYyuQ6W.png" alt="image-20230309114839033"></p>
+<h2 id="有道翻译"><a href="#有道翻译" class="headerlink" title="有道翻译"></a><a target="_blank" rel="noopener" href="https://fanyi.youdao.com/index.html">有道翻译</a></h2><p>一款在线翻译软件，同样支持多种格式文档输入，但是在翻译准确度上与前两者存在一定差距。</p>
+<p><img src="https://s2.loli.net/2023/03/09/SlZ1ofLnD5FEKBJ.png" alt="image-20230309105700758"></p>
+<h2 id="Doctranslate"><a href="#Doctranslate" class="headerlink" title="Doctranslate"></a><a target="_blank" rel="noopener" href="https://www.onlinedoctranslator.com/zh-CN/">Doctranslate</a></h2><p>Doctranslate支持在线整篇文档直接翻译，并且能够<strong>完整保留文档中的公式、排版和布局</strong>，对于论文中需要保留大量公式的同学来说十分不错。同时，整个翻译都是免费的，但是翻译质量相对于谷歌和DeePL当然存在差距。</p>
+<p><img src="https://s2.loli.net/2023/03/09/ijh2vs3gXocQDOH.png" alt="image-20230309110133647"></p>
+<h2 id="CNKI翻译助手"><a href="#CNKI翻译助手" class="headerlink" title="CNKI翻译助手"></a><a target="_blank" rel="noopener" href="https://dict.cnki.net/index">CNKI翻译助手</a></h2><p>这不能用来作为主流翻译软件，只能用来作为辅助工具，主要翻译文献里面的名词啥的，网页主页如下，可以自己看看</p>
+<p><img src="https://s2.loli.net/2023/03/09/OJbAQxMHv7WgwF6.png" alt="image-20230309111003378"></p>
+<h2 id="其他翻译工具"><a href="#其他翻译工具" class="headerlink" title="其他翻译工具"></a>其他翻译工具</h2><p>其实推荐用的只有DeePL还有谷歌，然后谷歌用不了，等于只推荐DeePL，其他的都放这了，仁者见仁，智者见智。</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="http://www.iciba.com/">金山词霸</a>：同样支持文档翻译，但是他自己说文档翻译结果只做参考。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://fanyi.caiyunapp.com/#/">彩云小译</a>：也是在线翻译，同样支持文档翻译<br><img src="https://s2.loli.net/2023/03/09/eX7kjgvQ16zhDKC.png" alt="image-20230309110537954"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://jianwai.youdao.com/">网易见外工作台</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>翻译</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>浏览器插件</tag>
+      </tags>
+  </entry>
 </search>
