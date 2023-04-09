@@ -22,29 +22,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="图床搭建与PicGO—typora图床选择与注册图床选择很多，但是建议选择比较长期还有稳定的图床，当然如果可以免费自然是更好。 我这次选择的是ImgURL 之前用过SM.MS 两者都好用，后者注册和使用更加方便，初始上传的最大图片限制是5G，但是个人用肯定够了">
+  <meta name="description" content="学408当时听课时，这里讲的基本就是说BIOS引导什么的，属实不是很清楚，索性找了几个详解的文章学习了下，梳理了大体流程，这里简单概括下。 首先简要过一遍流程：按下开机按钮上电—主板上写死的固件(硬件电路)运行—CPU将所有寄存器的值都设为默认值—CPU指向BIOS(在主板ROM中的固定位置)–BIOS程序进行硬件检测和初始化操作—搜索启动盘—（读取 MBR）将启动盘中的 0 盘 0 道 1 扇区">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图床搭建与PicGO---typora">
-<meta property="og:url" content="http://example.com/2023/03/07/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E4%B8%8EPicGO-typora/index.html">
+<meta property="og:title" content="计算机的启动---操作系统的引导">
+<meta property="og:url" content="http://example.com/2023/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%90%AF%E5%8A%A8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%95%E5%AF%BC/index.html">
 <meta property="og:site_name" content="苏格拉底不会写诗">
-<meta property="og:description" content="图床搭建与PicGO—typora图床选择与注册图床选择很多，但是建议选择比较长期还有稳定的图床，当然如果可以免费自然是更好。 我这次选择的是ImgURL 之前用过SM.MS 两者都好用，后者注册和使用更加方便，初始上传的最大图片限制是5G，但是个人用肯定够了">
+<meta property="og:description" content="学408当时听课时，这里讲的基本就是说BIOS引导什么的，属实不是很清楚，索性找了几个详解的文章学习了下，梳理了大体流程，这里简单概括下。 首先简要过一遍流程：按下开机按钮上电—主板上写死的固件(硬件电路)运行—CPU将所有寄存器的值都设为默认值—CPU指向BIOS(在主板ROM中的固定位置)–BIOS程序进行硬件检测和初始化操作—搜索启动盘—（读取 MBR）将启动盘中的 0 盘 0 道 1 扇区">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/6nQAoprPjKdBWYX.png">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/wVguaZMkWo6RH5N.png">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/58tXJrFHjnseAC4.png">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/EMTDwm1gcGUZ3ed.png">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/EagXR9tlN8FnD3M.png">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/4BEJKOvm7IiWPaS.png">
-<meta property="og:image" content="https://s2.loli.net/2023/03/07/iTlbnIsyOCN9qmS.png">
-<meta property="article:published_time" content="2023-03-07T10:57:59.000Z">
-<meta property="article:modified_time" content="2023-03-18T01:45:02.527Z">
+<meta property="og:image" content="https://s2.loli.net/2023/04/09/OHZa8d5YL4SPR32.png">
+<meta property="article:published_time" content="2023-04-09T09:22:59.000Z">
+<meta property="article:modified_time" content="2023-04-09T09:32:37.062Z">
 <meta property="article:author" content="YT">
-<meta property="article:tag" content="图床">
-<meta property="article:tag" content="typora">
+<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2023/03/07/6nQAoprPjKdBWYX.png">
+<meta name="twitter:image" content="https://s2.loli.net/2023/04/09/OHZa8d5YL4SPR32.png">
 
-<link rel="canonical" href="http://example.com/2023/03/07/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E4%B8%8EPicGO-typora/">
+<link rel="canonical" href="http://example.com/2023/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%90%AF%E5%8A%A8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%95%E5%AF%BC/">
 
 
 <script id="page-configurations">
@@ -58,7 +51,7 @@
 </script>
 <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 
-  <title>图床搭建与PicGO---typora | 苏格拉底不会写诗</title>
+  <title>计算机的启动---操作系统的引导 | 苏格拉底不会写诗</title>
   
 
 
@@ -203,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E4%B8%8EPicGO-typora/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%90%AF%E5%8A%A8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%95%E5%AF%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -216,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          图床搭建与PicGO---typora
+          计算机的启动---操作系统的引导
         </h1>
 
         <div class="post-meta">
@@ -225,27 +218,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-03-07 18:57:59" itemprop="dateCreated datePublished" datetime="2023-03-07T18:57:59+08:00">2023-03-07</time>
+              <time title="创建时间：2023-04-09 17:22:59 / 修改时间：17:32:37" itemprop="dateCreated datePublished" datetime="2023-04-09T17:22:59+08:00">2023-04-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-18 09:45:02" itemprop="dateModified" datetime="2023-03-18T09:45:02+08:00">2023-03-18</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
                 </span>
             </span>
 
@@ -262,14 +245,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>726</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -281,30 +264,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="图床搭建与PicGO—typora"><a href="#图床搭建与PicGO—typora" class="headerlink" title="图床搭建与PicGO—typora"></a>图床搭建与PicGO—typora</h1><h2 id="图床选择与注册"><a href="#图床选择与注册" class="headerlink" title="图床选择与注册"></a>图床选择与注册</h2><p>图床选择很多，但是建议选择比较长期还有稳定的图床，当然如果可以免费自然是更好。</p>
-<p>我这次选择的是<a target="_blank" rel="noopener" href="https://www.imgurl.org/vip/manage/upload">ImgURL</a></p>
-<p>之前用过<a target="_blank" rel="noopener" href="https://sm.ms/">SM.MS</a></p>
-<p>两者都好用，后者注册和使用更加方便，初始上传的最大图片限制是5G，但是个人用肯定够了</p>
+        <p>学408当时听课时，这里讲的基本就是说BIOS引导什么的，属实不是很清楚，索性找了几个详解的文章学习了下，梳理了大体流程，这里简单概括下。</p>
+<p>首先简要过一遍流程：按下开机按钮上电—主板上写死的固件(硬件电路)运行—CPU将所有寄存器的值都设为默认值—CPU指向BIOS(在主板ROM中的固定位置)–BIOS程序进行硬件检测和初始化操作—搜索启动盘—（读取 MBR）将启动盘中的 0 盘 0 道 1 扇区的 512 个字节原封不动的写入(拷贝)内存中<code>0x7c00</code>开始的位置—确定活动分区—确定引导扇区，将其加载到内存中—操作系统加载。</p>
 <span id="more"></span>
 
-
-<h2 id="PicGO"><a href="#PicGO" class="headerlink" title="PicGO"></a>PicGO</h2><h3 id="ImgURL"><a href="#ImgURL" class="headerlink" title="ImgURL"></a>ImgURL</h3><p>在GitHub的<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1">下载界面</a>选择一个比较稳定的版本进行安装，别安装尝鲜版。安装速度可能有点慢，因为是GitHub。自己想办法&#x3D;.&#x3D;</p>
-<p>下好以后就绑到你所使用的图床就行，当然前提是你的图床支持PicGO。我使用的ImgURL有很详细的<a target="_blank" rel="noopener" href="https://doc.xiaoz.org/books/imgurl-pro/page/picgo">教程</a>。当然使用可以直接绑定的图床肯定更方便，比如阿里云、腾讯云、SM.MS等</p>
-<p>关于插件的下载和SM.MS一样就行，然后根据官方教程绑定PicGO和ImgURL；这里直接看教程就行，很详细了。</p>
-<h3 id="SM-MS"><a href="#SM-MS" class="headerlink" title="SM.MS"></a>SM.MS</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133270020">参考文档</a></p>
-<p>在安装好PicGO和注册好SM.MS后，使用typora测试了下图片上传，毫无疑问上传失败。因为没有对PicGO进行配置。于是只好去网上找教程。   </p>
-<p>首先是PicGO提供的SM.MS有问题，需要下一个插件，叫做<a target="_blank" rel="noopener" href="https://github.com/xlzy520/picgo-plugin-smms-user">smms-user</a>；当然最好是在PicGo.app自己软件里面的插件设置去下载最好—搜索smms-user然后点击安装就行，等待安装完成。<br><img src="https://s2.loli.net/2023/03/07/6nQAoprPjKdBWYX.png" alt="image-20230307142211939"></p>
-<p>这里我遇到了第一个坑，就是一直安装不上，然后网上搜索了，关于picgo.app的解决方案真不多，然后我把日志里面的几个报错全去ChatGPT问了下，如下：然后我选择了最粗暴的，重装。遗憾的是，我重装了两次还是有问题，于是便选择使用npm，结果在管理员权限出现了问题，qwq。<br><strong>直接说最后解决方案：重装，然后以管理员权限启动</strong> </p>
-<p><img src="https://s2.loli.net/2023/03/07/wVguaZMkWo6RH5N.png" alt="image-20230307163057301"></p>
-<p>这次插件成功安装了，接下来要做的就是配置一下插件，在左侧图床设置里面会如下图所示，左键插件右下角设置按钮，然后把从SM.MS获取到的token填进插件的plugin以及uploader中。再把默认图片上传改为SM.MS-登录用户</p>
-<p><img src="https://s2.loli.net/2023/03/07/58tXJrFHjnseAC4.png" alt="image-20230307163751194"></p>
-<p><img src="https://s2.loli.net/2023/03/07/EMTDwm1gcGUZ3ed.png" alt="image-20230307181803403"></p>
-<p>然后再用图片进行测试，发现上传成功，解下来再把typora里的图片上传方式改下。</p>
-<h2 id="typora设置"><a href="#typora设置" class="headerlink" title="typora设置"></a>typora设置</h2><p>上传服务设定改一下，路径选择你PicGO的位置。然后点击<strong>验证图片上传选项</strong></p>
-<p><img src="https://s2.loli.net/2023/03/07/EagXR9tlN8FnD3M.png" alt="image-20230307182146879"></p>
-<p>第二个问题出现了，上传图片失败，我直接进PICGO的日志中把这次上传去找了下问题，结果是typora的图片传不上去了。直接用就行，文档里面图片不受影响。</p>
-<p><img src="https://s2.loli.net/2023/03/07/4BEJKOvm7IiWPaS.png" alt="image-20230307182427400"></p>
-<p><img src="https://s2.loli.net/2023/03/07/iTlbnIsyOCN9qmS.png" alt="image-20230307182550000"></p>
+<h1 id="按下开关-不重要"><a href="#按下开关-不重要" class="headerlink" title="按下开关(不重要)"></a>按下开关(不重要)</h1><ol>
+<li><p>CPU会执行一个复位（Reset）过程：CPU内置有一个复位电路，该电路会向CPU的所有寄存器发送一个特殊的复位信号，以重置所有寄存器。</p>
+</li>
+<li><p>CPU将所有寄存器的值都设为默认值</p>
+<ul>
+<li><p>PC 寄存器被强制初始化为 0xFFFF0 ，这也是BIOS程序的入口地址。</p>
+<ul>
+<li>段基址寄存器 cs 初始化为 0xF000</li>
+<li>偏移地址寄存器 IP 初始化为 0xFFF0</li>
+<li>根据实模式下的最终地址计算规则，将段基址左移 4 位，加上偏移地址，得到最终的物理地址也就是抽象出来的 PC 寄存器地址为 0xFFFF0。</li>
+</ul>
+</li>
+<li><p>复位信号会将通用寄存器AX、BX、CX、DX等以及其他寄存器如标志寄存器FLAGS、指令指针寄存器IP等重置为默认值。默认值通常是0或者一些固定的值，具体取决于CPU架构和制造商。</p>
+</li>
+</ul>
+</li>
+<li><p>其他…</p>
+</li>
+</ol>
+<h1 id="启动BIOS"><a href="#启动BIOS" class="headerlink" title="启动BIOS"></a>启动BIOS</h1><ol>
+<li>BIOS上电自检POST（Power-On Self Test）</li>
+<li>初始化硬件设备</li>
+<li>按照顺序搜索启动设备</li>
+<li>BIOS在启动时会按照一定的顺序搜索可用的启动设备，通常包括硬盘、CD&#x2F;DVD光驱、USB闪存驱动器等。这个顺序可以通过BIOS设置进行配置，并被称为“启动顺序”或“启动顺序”。</li>
+</ol>
+<h1 id="BIOS加载启动区"><a href="#BIOS加载启动区" class="headerlink" title="BIOS加载启动区"></a>BIOS加载启动区</h1><ol>
+<li>BIOS 会按照设备顺序，读取主引导记录MBR，即读取0 盘 0 道 1 扇区的内容，如果末尾的两个字节分别是 0x55 和 0xaa，那么 BIOS 就会认为它是个启动区。<ul>
+<li>MBR（Master Boot Record，主引导记录，大小为 512 字节）<ul>
+<li>第1-446 字节：包含了引导程序的代码，即调用操作系统的机器码，可以被 CPU 直接执行。</li>
+<li>第 447-510 字节：分区表（Partition Table）信息，将硬盘分为了若干个分区。<ul>
+<li>分区表（Partition Table）记录了硬盘上的所有分区信息，包括每个分区的起始位置、大小和分区类型等。</li>
+</ul>
+</li>
+<li>第 511-512 字节：“MBR结束标志”（MBR End of Sector Marker），记录签名（0x55 和 0xAA），若记录签名正确，表示设备可以用于启动—也就是说这个区是启动区。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果计算机确定了当前盘的MBR是启动区，那么BIOS会将硬盘中启动区的 512 字节的数据，原封不动复制到内存中的 0x7c00处<ul>
+<li><img src="https://s2.loli.net/2023/04/09/OHZa8d5YL4SPR32.png" alt="BIOS将启动区复制进内存中">{:height 717, :width 663}</li>
+</ul>
+</li>
+</ol>
+<h1 id="查找活动分区（引导分区）"><a href="#查找活动分区（引导分区）" class="headerlink" title="查找活动分区（引导分区）"></a>查找活动分区（引导分区）</h1><ol>
+<li>PC寄存器的值变为0x7c00，从这里开始运行—启动区开始跑起来！</li>
+<li>当BIOS将MBR加载到内存中后，它会读取分区表中的<strong>活动分区</strong>标识位。若分区表中的活动分区标识位被设置为1，则表示该分区是可引导的。<ul>
+<li>分区表记录了磁盘上所有分区的位置、类型和大小等信息，在分区表中，有一个标识位被称为<strong>“活动分区”（Active Partition）</strong>，一般为某个主分区，也就是至多四个主分区之一。此标识位指示了系统应该从哪个分区引导操作系统</li>
+<li><strong>每个硬盘最多只能有一个活动分区。</strong>如果硬盘上存在多个操作系统，那么每个操作系统都需要独立的活动分区来引导启动。</li>
+</ul>
+</li>
+<li>BIOS会跳转到该分区上的的<strong>引导扇区（Boot Sector）</strong>上，并将其加载到内存中执行。<ul>
+<li>引导扇区是一个特定的扇区，通常包含了操作系统引导程序的代码和数据，例如Windows操作系统的<code>bootmgr</code>或<code>grub</code>引导程序。</li>
+</ul>
+</li>
+</ol>
+<h1 id="操作系统加载（不重要）"><a href="#操作系统加载（不重要）" class="headerlink" title="操作系统加载（不重要）"></a>操作系统加载（不重要）</h1><ol>
+<li>一旦引导扇区（Boot Sector）被加载到内存中执行，它会继续加载操作系统的其他部分。通常，这涉及到在文件系统中查找操作系统的核心文件，并将其加载到内存中。在 Windows 操作系统中，这个核心文件可能是 ntoskrnl.exe，而在 Linux 操作系统中，它可能是 vmlinuz。</li>
+<li>操作系统的核心文件被加载到内存后，它就开始初始化操作系统，包括创建进程、分配内存等。</li>
+<li>接下来，操作系统会开始运行第一个进程，这通常是 init 进程或 systemd 进程，它负责启动其他进程和服务。最终，操作系统完成了启动过程，并准备好接受用户的交互请求。</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>ChatCPT回答</li>
+<li>九曲阑干计算机操作系统课程</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzk0MjE3NDE0Ng==&mid=2247499226&idx=1&sn=1ff3d54a3608423b7781142ae3ac62ca&chksm=c2c58777f5b20e61664a51d31ab779bbe68c317c3459218c7cd4b9530887dbb33470628c3248&cur_album_id=2123743679373688834&scene=178&subscene=10000&sessionid=0&clicktime=1680866166&enterid=1680866166&ascene=3&fasttmpl_type=0&fasttmpl_fullversion=6624157-zh_CN-zip&fasttmpl_flag=0&realreporttime=1680866396392&devicetype=android-31&version=280021bd&nettype=ctnet&abtest_cookie=AAACAA==&lang=zh_CN&countrycode=CN&exportkey=n_ChQIAhIQCyZc6Yv5z6dy2QVteNwcHxLcAQIE97dBBAEAAAAAAPtNGgF0q1cAAAAOpnltbLcz9gKNyK89dVj0Du2uiGcJqb8sHF7c2U2ij/b1CFiEhbUp8mVvdOz/xIs2zDIQ3brTKgtycIfKAkKlayYbYQMBIm6WXwMsU2L7z+gh0Kfqyfyf+rEaNY9K/7gtjEP5eq5M93ABeVZJmYqG08bUj9g+0287IQOcBKnZnzQ4iUP1RaJZXZheVCyPIqgmZeigDneK3E5XhMUWbZbA/5Zc4KLf0VInmzJH9Lda0S7JqVbaIqnK3m9EjszFaU6l04m3u1Y=&pass_ticket=XcWSJctQOhG8pwa0eQOrUbdf8Ys1LQVUfhi198uiWp2rQ4FPIsYikPGtEdpQog1oXhFbKZFsjygJG7S+63Fzxw==&wx_header=3">你管这破玩意叫操作系统源码 | 第一回 最开始的两行代码</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzk0MjE3NDE0Ng==&mid=2247483867&idx=1&sn=76ece31324d32922a7cb9db129decd3f&chksm=c2c67b76f5b1f260bb459e12c029f8e6a7a813055811ab8ed794a3f36d0d7d50e66df27f4f0a&scene=21#wechat_redirect">全网最硬核讲解计算机的启动过程</a></li>
+</ul>
 
     </div>
 
@@ -330,7 +359,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/03/07/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E4%B8%8EPicGO-typora/" title="图床搭建与PicGO---typora">http://example.com/2023/03/07/图床搭建与PicGO-typora/</a>
+    <a href="http://example.com/2023/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%90%AF%E5%8A%A8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%95%E5%AF%BC/" title="计算机的启动---操作系统的引导">http://example.com/2023/04/09/计算机的启动-操作系统的引导/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -360,8 +389,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"># 图床</a>
-              <a href="/tags/typora/" rel="tag"># typora</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
           </div>
 
         
@@ -370,13 +398,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/07/Python-OpenCV%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" rel="prev" title="Python-OpenCV基础教程">
-      <i class="fa fa-chevron-left"></i> Python-OpenCV基础教程
+    <a href="/2023/03/09/%E7%BF%BB%E8%AF%91%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86%E4%BB%A5%E5%8F%8A%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/" rel="prev" title="翻译工具整理以及沉浸式翻译">
+      <i class="fa fa-chevron-left"></i> 翻译工具整理以及沉浸式翻译
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/09/%E7%BF%BB%E8%AF%91%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86%E4%BB%A5%E5%8F%8A%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/" rel="next" title="翻译工具整理以及沉浸式翻译">
-      翻译工具整理以及沉浸式翻译 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -436,7 +461,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E4%B8%8EPicGO%E2%80%94typora"><span class="nav-text">图床搭建与PicGO—typora</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BA%8A%E9%80%89%E6%8B%A9%E4%B8%8E%E6%B3%A8%E5%86%8C"><span class="nav-text">图床选择与注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PicGO"><span class="nav-text">PicGO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ImgURL"><span class="nav-text">ImgURL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SM-MS"><span class="nav-text">SM.MS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typora%E8%AE%BE%E7%BD%AE"><span class="nav-text">typora设置</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%89%E4%B8%8B%E5%BC%80%E5%85%B3-%E4%B8%8D%E9%87%8D%E8%A6%81"><span class="nav-text">按下开关(不重要)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8BIOS"><span class="nav-text">启动BIOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BIOS%E5%8A%A0%E8%BD%BD%E5%90%AF%E5%8A%A8%E5%8C%BA"><span class="nav-text">BIOS加载启动区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%B4%BB%E5%8A%A8%E5%88%86%E5%8C%BA%EF%BC%88%E5%BC%95%E5%AF%BC%E5%88%86%E5%8C%BA%EF%BC%89"><span class="nav-text">查找活动分区（引导分区）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8A%A0%E8%BD%BD%EF%BC%88%E4%B8%8D%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-text">操作系统加载（不重要）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=167691&auto=1&height=66"></iframe>
       <!--/noindex-->
