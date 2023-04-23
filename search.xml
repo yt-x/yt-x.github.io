@@ -1542,4 +1542,80 @@
         <tag>开源软件</tag>
       </tags>
   </entry>
+  <entry>
+    <title>关于书签与书签同步工具的分享</title>
+    <url>/2023/04/23/%E5%85%B3%E4%BA%8E%E4%B9%A6%E7%AD%BE%E4%B8%8E%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7%E7%9A%84%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[<p>Bookmark and sync</p>
+<p>纯share blog</p>
+<h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><h2 id="为什么需要书签"><a href="#为什么需要书签" class="headerlink" title="为什么需要书签"></a>为什么需要书签</h2><p>书签相信大家都不陌生，尤其是对于像我这样高强度冲浪的人来说，书签绝对是必不可少的，互联网花花世界这么大，碰到感兴趣的要是不收藏起来，之后想找无异于大海捞针。</p>
+<h2 id="为什么需要BookmarkHub"><a href="#为什么需要BookmarkHub" class="headerlink" title="为什么需要BookmarkHub"></a>为什么需要BookmarkHub</h2><p>Hub在计算机里是集线器的意思，这里BookmarkHub可理解为书签库，这也是接下来我介绍的插件名。</p>
+<p>我起初在网络上闲逛时经常用书签把自己感兴趣的东西加入书签栏，久而久之，书签的数量也就与日俱增，各种各样的书签迷人眼。有意思的视频网站、强大的工具网站、感兴趣的文章、常用的学校官网等等等。数量不断增加，种类也是，这时在书签中找记忆中似是而非的网站本身就成为了一个问题。</p>
+<span id="more"></span>
+
+<p>当然大多数浏览器或者软件都提供了在书签栏&#x2F;收藏夹中创建文件夹的功能。我们可以网页或者工具的作用或者内容给他分类。但是！这里有俩个情况：</p>
+<ul>
+<li>我浏览器不止一个Chrome常用于学习或者看CS相关的内容，Firefox则覆盖我生活中方法面面使用浏览器的情况，于此同时我手机用的浏览器也不止一个，夸克、Chrome。至于为什么不能<code>all in one</code>，我的回答是有时候单一的浏览器不能解决所有问题，不得不<code>all in all</code>。那么不同设备&#x2F;浏览器之间的书签便时不一致的，找东西的时候难不成还把所有设备过一遍？太low啦！！</li>
+<li>书签栏分类等同于给书签打上了标签，以后找相关的就在这里面找，但是问题来了，并不是所有网站都是单一的，他可能与图片相关因此我将它放在了Photo文件夹，但其实际是一个处理图片的工具。那么我也可以将其放在工具集文件夹中…，怎么办呢？不好找啊。<br><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423123944435.png" alt="image-20230423123944435"></li>
+</ul>
+<h1 id="怎么办—介绍几个正在用或者用过的工具"><a href="#怎么办—介绍几个正在用或者用过的工具" class="headerlink" title="怎么办—介绍几个正在用或者用过的工具"></a>怎么办—介绍几个正在用或者用过的工具</h1><p>为了解决上述问题，我也找了挺多软件和插件。找到两个非常优秀的开源项目，真的非常nice！！！</p>
+<h2 id="BookmarkHub"><a href="#BookmarkHub" class="headerlink" title="BookmarkHub"></a>BookmarkHub</h2><p><a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub">项目地址</a></p>
+<p>项目有中文介绍教程，<a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub/blob/main/README_cn.md">教程网址</a></p>
+<p>这是一个浏览器插件，目前支持Chrome、Firefox、edge等浏览器<img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125026448.png" alt="image-20230423125026448"></p>
+<ul>
+<li>简洁，操作及其方便</li>
+<li>主打一个各浏览器书签同步其他么得，功能单一但有效</li>
+<li>使用 GitHub 的 Gist 记录来存储浏览器的书签—有GitHub账户就行，教程会教你弄，保密性挺好很安全。</li>
+</ul>
+<p>使用方法（我直接照抄官方文档的，就加了点图）</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/login">登陆</a> GitHub，如果没有账号请点此<a target="_blank" rel="noopener" href="https://github.com/join">注册</a>。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">创建一个可以管理 gist 的 token</a>。</p>
+<p>这里Note填BookmarkHub就行，下面token重置时间看你自己了，然后去最下面点创建</p>
+<p><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125247278.png" alt="image-20230423125247278"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://gist.github.com/">创建一个私有的 gist</a>。<strong>注意：如果是公开的 gist，你的书签是可以被他人搜索到的。</strong></p>
+<p><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125444413.png" alt="image-20230423125444413"></p>
+</li>
+<li><p>在你用的浏览器的应用商店下载 BookmarkHub，点击插件的设置按钮，在弹出的设置窗口填入 token 和 gist ID，然后你就可以上传下载书签了。</p>
+<ul>
+<li><p>这个token点设置里面的get token去弄就行。</p>
+</li>
+<li><p>gist ID 就是你在上一步创建的时候，网址框最后那一串<img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125925463.png" alt="image-20230423125925463"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="BookmarkHub如何解决第二个问题"><a href="#BookmarkHub如何解决第二个问题" class="headerlink" title="BookmarkHub如何解决第二个问题"></a>BookmarkHub如何解决第二个问题</h3><p>从上面功能描述来看，只可以解决第一个问题，第二个怎么办呢？</p>
+<p>hhhh，软件没办法，但是可以从书签入手。火狐提供了书签描述、Chrome的话就只可以在书签名字做手脚，在名字后面加功能描述或者书签就行。在搜索框搜索就可以检索出来。</p>
+<h2 id="xBrowserSync—同时解决两个问题"><a href="#xBrowserSync—同时解决两个问题" class="headerlink" title="xBrowserSync—同时解决两个问题"></a>xBrowserSync—同时解决两个问题</h2><p><a target="_blank" rel="noopener" href="https://www.xbrowsersync.org/">官方网站</a></p>
+<p>emmm，说在前面，使用和介绍全是纯英文的。</p>
+<ul>
+<li><p>支持浏览器书签同步(插件)、手机同样可以通过app进行同步</p>
+<img src="C:\knowledge\blog\BLOG\source\_posts\assets\image-20230423130406192.png" alt="image-20230423130406192" style="zoom:50%;" />
+</li>
+<li><p>保护隐私安全—完全匿名、不用注册</p>
+</li>
+<li><p>不仅可以同步，还可以<strong>添加描述和标签来丰富你的本地浏览器书签</strong>，所有可以直接解决第二个问题</p>
+</li>
+</ul>
+<p>相比于上一个，功能更强大了，但是安装和使用可能没那么简单，具体的装上用就是，上手即用。具体看其提供的Guide</p>
+<ol>
+<li><p>浏览器安装，然后设置密码</p>
+<p><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423132118064.png" alt="image-20230423132118064"></p>
+</li>
+<li><p>然后点sync，就ok啦，后面的就是日常使用了</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>开源软件</category>
+      </categories>
+      <tags>
+        <tag>开源软件</tag>
+        <tag>工具</tag>
+        <tag>书签</tag>
+      </tags>
+  </entry>
 </search>
