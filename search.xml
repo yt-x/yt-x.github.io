@@ -1555,7 +1555,7 @@
 <p>当然大多数浏览器或者软件都提供了在书签栏&#x2F;收藏夹中创建文件夹的功能。我们可以网页或者工具的作用或者内容给他分类。但是！这里有俩个情况：</p>
 <ul>
 <li>我浏览器不止一个Chrome常用于学习或者看CS相关的内容，Firefox则覆盖我生活中方法面面使用浏览器的情况，于此同时我手机用的浏览器也不止一个，夸克、Chrome。至于为什么不能<code>all in one</code>，我的回答是有时候单一的浏览器不能解决所有问题，不得不<code>all in all</code>。那么不同设备&#x2F;浏览器之间的书签便时不一致的，找东西的时候难不成还把所有设备过一遍？太low啦！！</li>
-<li>书签栏分类等同于给书签打上了标签，以后找相关的就在这里面找，但是问题来了，并不是所有网站都是单一的，他可能与图片相关因此我将它放在了Photo文件夹，但其实际是一个处理图片的工具。那么我也可以将其放在工具集文件夹中…，怎么办呢？不好找啊。<br><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423123944435.png" alt="image-20230423123944435"></li>
+<li>书签栏分类等同于给书签打上了标签，以后找相关的就在这里面找，但是问题来了，并不是所有网站都是单一的，他可能与图片相关因此我将它放在了Photo文件夹，但其实际是一个处理图片的工具。那么我也可以将其放在工具集文件夹中…，怎么办呢？不好找啊。<br><img src="https://s2.loli.net/2023/04/23/OgUR1VsxPYhIQeq.png" alt="image-20230423123944435"></li>
 </ul>
 <h1 id="怎么办—介绍几个正在用或者用过的工具"><a href="#怎么办—介绍几个正在用或者用过的工具" class="headerlink" title="怎么办—介绍几个正在用或者用过的工具"></a>怎么办—介绍几个正在用或者用过的工具</h1><p>为了解决上述问题，我也找了挺多软件和插件。找到两个非常优秀的开源项目，真的非常nice！！！</p>
 <h2 id="BookmarkHub"><a href="#BookmarkHub" class="headerlink" title="BookmarkHub"></a>BookmarkHub</h2><p><a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub">项目地址</a></p>
@@ -1572,10 +1572,10 @@
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">创建一个可以管理 gist 的 token</a>。</p>
 <p>这里Note填BookmarkHub就行，下面token重置时间看你自己了，然后去最下面点创建</p>
-<p><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125247278.png" alt="image-20230423125247278"></p>
+<p><img src="https://s2.loli.net/2023/04/23/olWB8m1kUqhsMrZ.png" alt="image-20230423125247278"></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://gist.github.com/">创建一个私有的 gist</a>。<strong>注意：如果是公开的 gist，你的书签是可以被他人搜索到的。</strong></p>
-<p><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125444413.png" alt="image-20230423125444413"></p>
+<p><img src="https://s2.loli.net/2023/04/23/i8hNzVIGlRCZnr6.png" alt="image-20230423125444413"></p>
 </li>
 <li><p>在你用的浏览器的应用商店下载 BookmarkHub，点击插件的设置按钮，在弹出的设置窗口填入 token 和 gist ID，然后你就可以上传下载书签了。</p>
 <ul>
@@ -1592,7 +1592,7 @@
 <p>emmm，说在前面，使用和介绍全是纯英文的。</p>
 <ul>
 <li><p>支持浏览器书签同步(插件)、手机同样可以通过app进行同步</p>
-<img src="C:\knowledge\blog\BLOG\source\_posts\assets\image-20230423130406192.png" alt="image-20230423130406192" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/04/23/N1me7OTgfBiYZ3d.png" alt="image-20230423130406192" style="zoom:50%;" />
 </li>
 <li><p>保护隐私安全—完全匿名、不用注册</p>
 </li>
@@ -1602,7 +1602,7 @@
 <p>相比于上一个，功能更强大了，但是安装和使用可能没那么简单，具体的装上用就是，上手即用。具体看其提供的Guide</p>
 <ol>
 <li><p>浏览器安装，然后设置密码</p>
-<p><img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423132118064.png" alt="image-20230423132118064"></p>
+<p><img src="https://s2.loli.net/2023/04/23/JNu5C3sTmL6njIS.png" alt="image-20230423132118064"></p>
 </li>
 <li><p>然后点sync，就ok啦，后面的就是日常使用了</p>
 </li>
