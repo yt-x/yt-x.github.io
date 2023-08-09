@@ -1641,7 +1641,7 @@
       </tags>
   </entry>
   <entry>
-    <title>python使用Socket获取IP地址---顺便初学Socket.md</title>
+    <title>python使用Socket获取IP地址---顺便初学Socket</title>
     <url>/2023/07/26/python%E4%BD%BF%E7%94%A8Socket%E8%8E%B7%E5%8F%96IP%E5%9C%B0%E5%9D%80-%E9%A1%BA%E4%BE%BF%E5%88%9D%E5%AD%A6Socket-md/</url>
     <content><![CDATA[<p>偶然看的一个使用Socket获取本机IP的方式，感觉还挺有意思的，于是便有了这篇Blog，同时通过这个简单的项目，初步了解下在网络通信里面经常看的的Socket。</p>
 <h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> closing</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_host_ip</span>():</span><br><span class="line">    ip = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">with</span> closing(socket.socket(socket.AF_INET,socket.SOCK_STREAM)) <span class="keyword">as</span> _socket:</span><br><span class="line">        _socket.connect((<span class="string">&#x27;1.1.1.1&#x27;</span>, <span class="number">80</span>))</span><br><span class="line">        ip = _socket.getsockname()[<span class="number">0</span>]</span><br><span class="line">    <span class="built_in">print</span>(ip) <span class="comment"># 192.168.1.5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    get_host_ip()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -1844,7 +1844,7 @@
       </tags>
   </entry>
   <entry>
-    <title>苏格拉底不会写诗---周记02.md</title>
+    <title>苏格拉底不会写诗---周记02</title>
     <url>/2023/07/27/%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%BA%95%E4%B8%8D%E4%BC%9A%E5%86%99%E8%AF%97-%E5%91%A8%E8%AE%B002-md/</url>
     <content><![CDATA[<p>只能说，标题没问题，确实是周记02，因为周记01里说了好些胡话，不想发，但肯定是不愿删的，所幸就直接从周记02开始了。</p>
 <p>又是躺着拿工资的一周，爽！</p>
@@ -1869,7 +1869,7 @@
       </tags>
   </entry>
   <entry>
-    <title>苏格拉底不会写诗-周记03.md</title>
+    <title>苏格拉底不会写诗-周记03</title>
     <url>/2023/07/31/%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%BA%95%E4%B8%8D%E4%BC%9A%E5%86%99%E8%AF%97-%E5%91%A8%E8%AE%B003-md/</url>
     <content><![CDATA[<p>这周开始正经上课了，两个手机都得交，逮到直接重学qwq。这周过的比较充实，浅浅的记录一下。</p>
 <span id="more"></span>
@@ -1905,7 +1905,7 @@
       </tags>
   </entry>
   <entry>
-    <title>苏格拉底不会写诗---周记04.md</title>
+    <title>苏格拉底不会写诗---周记04</title>
     <url>/2023/08/07/%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%BA%95%E4%B8%8D%E4%BC%9A%E5%86%99%E8%AF%97-%E5%91%A8%E8%AE%B004-md/</url>
     <content><![CDATA[<h1 id="怀念"><a href="#怀念" class="headerlink" title="怀念"></a>怀念</h1><p>最近总是想学校、想长沙、想家。突如其来，也许走着走着，刷着手机，吃着饭，突如其来涌上心头。有点想吃校门口的烤面筋、烧烤、鸡公煲，哪怕是吃到腻歪的黄焖茄子，都很怀念。那种张着嘴巴，呼哈呼哈，拍着小肚子散着步回宿舍，漫谈着天南地北，憧憬着那个叫做以后的东西。时不时叫上人，去大碗先生爽吃干锅鱿鱼，或是出个小远门体验下五一各种小吃，也很怀念湖南的蛙来哒。正在写这段话的我刚淋完雨还饿着肚皮，不由吞咽了一口口水。想吃吴酥生的绿豆糕了捏。</p>
 <p>从未距离故乡如此之远，生活方式的不同，让我有时在餐桌上看着一桌的菜却无从下手，在小吃街逛了一圈却空手而归。同时，也确实想家了，也不知老人家在家身体怎么样了，写完这里打个电话慰问下。</p>
@@ -1942,7 +1942,7 @@
       </tags>
   </entry>
   <entry>
-    <title>python程序中经常出现的是干嘛的?.md</title>
+    <title>python程序中经常出现的是干嘛的?</title>
     <url>/2023/08/09/python%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%BB%8F%E5%B8%B8%E5%87%BA%E7%8E%B0%E7%9A%84%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84-md/</url>
     <content><![CDATA[<p>简单来说，这句话的作用就是判断你执行的是不是当前文件？如果是，则执行if块里面的，如果不是就不会执行。</p>
 <p>是不是有些拗口，什么叫我执行的是不是当前文件？这就得从python的模块概念说起。</p>
