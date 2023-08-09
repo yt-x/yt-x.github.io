@@ -1951,4 +1951,46 @@
         <tag>Python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>windows下给命令起个别名</title>
+    <url>/2023/08/09/windows%E4%B8%8B%E7%BB%99%E5%91%BD%E4%BB%A4%E8%B5%B7%E4%B8%AA%E5%88%AB%E5%90%8D/</url>
+    <content><![CDATA[<p>最近用bilix下载b站视频，如果想要登录我每次都得带上一个cookie，不然下载的画质最高是780P的，不够清晰。但每次带cookie又太麻烦了，所以就搜索了下有没有可以保持登陆的。<br><img src="https://s2.loli.net/2023/08/09/uYWUqtEak6CHriD.png" alt="image-20230809192453706"><br>作者在GitHub中只给出了MAC与Linux的解决方法，并没有Windows的，所以我就搜索了下有没有类似的解决方法，还真找到了。</p>
+<span id="more"></span>
+
+<h1 id="新建bat文件"><a href="#新建bat文件" class="headerlink" title="新建bat文件"></a>新建bat文件</h1><p>先建立个txt文件，在里面写好你要起别名的内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">doskey ls=dir /b $*  </span><br><span class="line">doskey bilixc=bilix --cookie &quot;your cookie&quot; $*</span><br></pre></td></tr></table></figure>
+
+<p><code>这里ls是用来做测试的</code></p>
+<ul>
+<li><p>等于号左边是其右边的别名</p>
+</li>
+<li><p><code>doskey</code>就相当于Linux中的<code>alias</code></p>
+</li>
+<li><p><code>$*</code>表示这个命令还可能有其他参数</p>
+</li>
+<li><p>把文件存到C盘里</p>
+</li>
+</ul>
+<h1 id="修改注册表"><a href="#修改注册表" class="headerlink" title="修改注册表"></a>修改注册表</h1><h2 id="找到cmd注册表项的位置"><a href="#找到cmd注册表项的位置" class="headerlink" title="找到cmd注册表项的位置"></a>找到cmd注册表项的位置</h2><p>打开cmd，运行<code>cmd /?</code>命令，然后找到这一项，或许你的有所不同，但肯定是大同小异。</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions</span><br><span class="line"></span><br><span class="line">    和/或</span><br><span class="line"></span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions</span><br></pre></td></tr></table></figure>
+
+<p>随后win+r，调出运行，输入<code>regedit</code>，然后根据上面路径找到对应目录<br><img src="https://s2.loli.net/2023/08/09/nUvJ35EoudbqpeS.png" alt="image-20230809192630207"></p>
+<h2 id="修改注册表-1"><a href="#修改注册表-1" class="headerlink" title="修改注册表"></a>修改注册表</h2><p>我这里是没有AutoRun这一项的，因此右键——新建——字符串值，输入“AutoRun”，然后选中——右键——修改，把路径输入进去</p>
+<p><img src="https://s2.loli.net/2023/08/09/dsobgRmverqu1kA.png" alt="image-20230809192640324"></p>
+<p>然后确认，退出就行</p>
+<h1 id="检测测试是否成功"><a href="#检测测试是否成功" class="headerlink" title="检测测试是否成功"></a>检测测试是否成功</h1><p>打开cmd，输入ls看看，ok成功了</p>
+<p><img src="https://s2.loli.net/2023/08/09/F6ROBDce92w3JW5.png" alt="image-20230809192715839"></p>
+<p>再看看bilix下载情况</p>
+<p><img src="https://s2.loli.net/2023/08/09/g3mt7aeSuzcNBYf.png" alt="image-20230809192731178"></p>
+<p>ok没问题，画质是登录以后的，nice try！</p>
+<p><img src="https://s2.loli.net/2023/08/09/c17eKFGRnPrU8sW.png" alt="image-20230809192741226"></p>
+<p>reference</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html">在cmd中为命令设置别名以及启动cmd时自动执行bat</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>-工具</tag>
+      </tags>
+  </entry>
 </search>
