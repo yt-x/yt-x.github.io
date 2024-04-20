@@ -2305,8 +2305,8 @@
 <h2 id="选择同步文件夹"><a href="#选择同步文件夹" class="headerlink" title="选择同步文件夹"></a>选择同步文件夹</h2><p>在下载并安装完成以后，就可以根据自己的需求进行设置了</p>
 <p>左边是你想要同步的源文件夹，右边是其对应的目标文件夹，每行的两队是彼此匹配的。</p>
 <p>点击「添加文件夹对」(绿色➕)，增加你想要</p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417150810734.png" alt="软件主页"></p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417151506483.png" alt="image-20240417151506483"></p>
+<p><img src="https://s2.loli.net/2024/04/20/SRcMCiQFeKkgxW6.png" alt="软件主页"></p>
+<p><img src="https://s2.loli.net/2024/04/20/EjlhS6xUaR7OM5W.png" alt="image-20240417151506483"></p>
 <p>然后在两侧分别添加对应文件夹即可，支持多种方式</p>
 <ul>
 <li>文件路径</li>
@@ -2321,22 +2321,36 @@
 <li>更新</li>
 </ul>
 <p>简单说一下三种概念，第一种就是说你的数据在两侧都可能会变化，而他同步的时候会对两侧文件的变化时间以及文件变化，决定同步是由哪侧对另外一侧进行更新，这种使用的场景就是针对你对在两个存储路径上的文件都可能有读写操作的情况。</p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417152303602.png" alt="image-20240417152303602"></p>
+<p><img src="https://s2.loli.net/2024/04/20/6sDQFH7cxz3BOtf.png" alt="image-20240417152303602"></p>
 <p>但是这种使用场景会产生冲突 — 比如说对于同一个文件，两侧的文件都改变了。当然，对于冲突会根据算法有处理策略，但是至于要不要使用还是看自己。</p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417152355790.png" alt="image-20240417152355790"></p>
+<p><img src="https://s2.loli.net/2024/04/20/6lrzSU8PfpmtMZs.png" alt="image-20240417152355790"></p>
 <p>第二种的话简单理解就是复制粘贴，就是把左边的文件夹覆写到右边文件，注意注意注意⚠️，这里的覆写包括删除，也就是说如果你对源文件夹中的某些文件进行了删除，那么同步完以后，右边的文件夹中原有文件也会被对应的改变。</p>
 <p>从下图可以看到，右边有一项需要删除，其他的都是增加&#x2F;修改</p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417152526016.png" alt="image-20240417152526016"></p>
+<p><img src="https://s2.loli.net/2024/04/20/IlSNP2xyhstRAV6.png" alt="image-20240417152526016"></p>
 <p>第三种情况，顾名思义就是更新，他以左边的文件为标准，像右边进行更新 — 也就是增加&#x2F;修改，对于某些已经删除的文件，并不会同步删除，<strong>仅有增加操作</strong></p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417152633011.png" alt="image-20240417152633011"></p>
+<p><img src="https://s2.loli.net/2024/04/20/CU1wTphvbxAdX2L.png" alt="image-20240417152633011"></p>
 <h2 id="云存储"><a href="#云存储" class="headerlink" title="云存储"></a>云存储</h2><p>Freefilesync 也提供在线存储的功能，但是目前只有Google Drive 如果使用其他的应该需要通过SFTP协议与FTP协议。</p>
 <p>由于个人对于这方面没有需求，因此就没有研究了，云存储方面直接使用的国内阿里云提供的存储了。</p>
-<p><img src="C:\Users\XYT\AppData\Roaming\Typora\typora-user-images\image-20240417152806892.png" alt="image-20240417152806892"></p>
+<p><img src="https://s2.loli.net/2024/04/20/izPUd2fJmKc6etT.png" alt="image-20240417152806892"></p>
 <p>大概就这样，非常优秀的一款软件，狠狠的点赞</p>
 ]]></content>
       <categories>
         <category>工具</category>
         <category>资源</category>
       </categories>
+  </entry>
+  <entry>
+    <title>后备隐藏能源！！启动！！！！</title>
+    <url>/2024/04/20/%E5%90%8E%E5%A4%87%E9%9A%90%E8%97%8F%E8%83%BD%E6%BA%90%EF%BC%81%EF%BC%81%E5%90%AF%E5%8A%A8%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81/</url>
+    <content><![CDATA[<h2 id="正常作息了"><a href="#正常作息了" class="headerlink" title="正常作息了"></a>正常作息了</h2><p>经过半年的沟通，终于磨动了，目前放到白班去了，不需要倒班了，emmm，精神状态好，空余时间够的话，我应该可以狠狠的coding和记录阅读了</p>
+<p>浅浅的舒服一下，后续记录应该周更？</p>
+<p>尽力尽力！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
 </search>
