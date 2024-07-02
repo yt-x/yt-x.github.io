@@ -126,17 +126,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -186,6 +186,114 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/29/%E3%80%8C%E9%97%AE%E9%A2%98%E3%80%8D%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%AD%E5%85%B3%E4%BA%8Emerge%E5%92%8Cjoin%20%E4%B8%80%E4%B8%AAnote%E5%BC%95%E8%B5%B7%E7%9A%84%E7%96%91%E9%97%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="YT">
+      <meta itemprop="description" content="众里寻他千百度，慕然回首，那人却在灯火阑珊处">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏格拉底不会写诗">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/29/%E3%80%8C%E9%97%AE%E9%A2%98%E3%80%8D%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%AD%E5%85%B3%E4%BA%8Emerge%E5%92%8Cjoin%20%E4%B8%80%E4%B8%AAnote%E5%BC%95%E8%B5%B7%E7%9A%84%E7%96%91%E9%97%AE/" class="post-title-link" itemprop="url">「问题」官方文档中关于merge和join 一个note引起的疑问</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-06-29 11:02:37" itemprop="dateCreated datePublished" datetime="2024-06-29T11:02:37+08:00">2024-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-07-02 20:29:14" itemprop="dateModified" datetime="2024-07-02T20:29:14+08:00">2024-07-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>870</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在官方文档 — <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/user_guide/merging.html">Merge, join, concatenate and compare</a>中，在介绍完join的常用方法后，在后续的note中有这样一段话。</p>
+<blockquote>
+<p>When <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code>DataFrame</code></a> are joined using only some of the levels of a <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.MultiIndex.html#pandas.MultiIndex" title="pandas.MultiIndex"><code>MultiIndex</code></a>, the extra levels will be dropped from the resulting join. To preserve those levels, use <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="pandas.DataFrame.reset_index"><code>DataFrame.reset_index()</code></a> on those level names to move those levels to columns prior to the join.</p>
+<p>当 <code>DataFrame</code> 仅使用 <code>MultiIndex</code> 中的部分级别进行连接时，额外的级别将从连接结果中删除。要保留这些层级，请在这些层级名称上使用 <code>DataFrame.reset_index()</code> 将这些层级移动到连接前的列中。</p>
+</blockquote>
+<p>也是我阅读的问题，没有注意到它的位置。现在再回头去看，这一节是在 「Merging on a combination of columns and index levels」这一栏下面的，因此其实这个注释是给merge的，但当时大标题是join因此我以为是针对join的。</p>
+<p>因此产生了一个疑问，join并不会抛弃 「extra level」 啊，在官方文档的上面还有一个例子，就是关于join处理 MultiIndex 时，右侧的表的index必须是左侧表index的子集。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/06/29/%E3%80%8C%E9%97%AE%E9%A2%98%E3%80%8D%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%AD%E5%85%B3%E4%BA%8Emerge%E5%92%8Cjoin%20%E4%B8%80%E4%B8%AAnote%E5%BC%95%E8%B5%B7%E7%9A%84%E7%96%91%E9%97%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1075,89 +1183,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/09/windows%E4%B8%8B%E7%BB%99%E5%91%BD%E4%BB%A4%E8%B5%B7%E4%B8%AA%E5%88%AB%E5%90%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="YT">
-      <meta itemprop="description" content="众里寻他千百度，慕然回首，那人却在灯火阑珊处">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏格拉底不会写诗">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/09/windows%E4%B8%8B%E7%BB%99%E5%91%BD%E4%BB%A4%E8%B5%B7%E4%B8%AA%E5%88%AB%E5%90%8D/" class="post-title-link" itemprop="url">windows下给命令起个别名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-08-09 19:23:38 / 修改时间：19:28:46" itemprop="dateCreated datePublished" datetime="2023-08-09T19:23:38+08:00">2023-08-09</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>418</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近用bilix下载b站视频，如果想要登录我每次都得带上一个cookie，不然下载的画质最高是780P的，不够清晰。但每次带cookie又太麻烦了，所以就搜索了下有没有可以保持登陆的。<br><img src="https://s2.loli.net/2023/08/09/uYWUqtEak6CHriD.png" alt="image-20230809192453706"><br>作者在GitHub中只给出了MAC与Linux的解决方法，并没有Windows的，所以我就搜索了下有没有类似的解决方法，还真找到了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/09/windows%E4%B8%8B%E7%BB%99%E5%91%BD%E4%BB%A4%E8%B5%B7%E4%B8%AA%E5%88%AB%E5%90%8D/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1231,20 +1256,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1336,12 +1361,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">47k</span>
+    <span title="站点总字数">48k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:53</span>
+    <span title="站点阅读时长">2:56</span>
 </div>
 
 <!--
