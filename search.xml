@@ -37,6 +37,25 @@
       </tags>
   </entry>
   <entry>
+    <title>2024周记-01.md</title>
+    <url>/2024/10/26/2024%E5%91%A8%E8%AE%B0-01-md/</url>
+    <content><![CDATA[<h2 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h2><h3 id="1、五分钟读懂UML类图"><a href="#1、五分钟读懂UML类图" class="headerlink" title="1、五分钟读懂UML类图"></a>1、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shindo/p/5579191.html">五分钟读懂UML类图</a></h3><p>介绍UML类图如何阅读的博客，来自博客园。UML类图经常在书籍和程序说明种看到，其可以很清楚的表达不同类型直接的关系于构成，了解其元素是什么是非常有必要的。</p>
+<ul>
+<li>对象的属性</li>
+<li>对象的方法</li>
+<li>类型直接的关联关系</li>
+<li>类型之间的聚合关系</li>
+<li>类型之间的组合关系</li>
+<li>类型之间的依赖关系</li>
+<li>类型之间的继承关系</li>
+<li>类型之间的接口实现关系</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>生活杂技yu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python Selenium库</title>
     <url>/2023/03/06/Python-Selenium%E5%BA%93/</url>
     <content><![CDATA[<h1 id="Python-Selenium库"><a href="#Python-Selenium库" class="headerlink" title="Python Selenium库"></a>Python Selenium库</h1><h2 id="Selenium基础"><a href="#Selenium基础" class="headerlink" title="Selenium基础"></a>Selenium基础</h2><p>​	Selenium是一个用于测试网站的自动化测试工具，支持各种浏览器包括Chrome、Firefox、Safari等主流界面浏览器，同时也支持phantomJS无界面浏览器。</p>
@@ -508,94 +527,6 @@
         <category>Python-learn</category>
         <category>Python 库</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/03/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>python程序中经常出现是干嘛的?</title>
-    <url>/2023/08/09/python%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%BB%8F%E5%B8%B8%E5%87%BA%E7%8E%B0%E7%9A%84%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84-md/</url>
-    <content><![CDATA[<p>简单来说，这句话的作用就是判断你执行的是不是当前文件？如果是，则执行if块里面的，如果不是就不会执行。</p>
-<p>是不是有些拗口，什么叫我执行的是不是当前文件？这就得从python的模块概念说起。</p>
-<span id="more"></span>
-
-<p>首先得先明白python是一个解释型语言，它与C不一样并不是先全部编译并链接好再进行执行的，而是从你运行的那个模块的最顶行开始，逐行解释执行。所以，最顶层（没有被缩进）的代码都会被执行，而<strong>我们<code>import module</code>的操作就是把<code>module</code>这个模块导入到当前模块里面，并且把它执行一遍。</strong>可以通过例子理解下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test1.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>)</span><br><span class="line"></span><br><span class="line">message = <span class="string">&quot;Welcome to my module&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># main_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test1</span><br><span class="line"></span><br><span class="line">test1.greet(<span class="string">&quot;Alice&quot;</span>)  <span class="comment"># 调用模块中的函数</span></span><br><span class="line"><span class="built_in">print</span>(test1.message)  <span class="comment"># 访问模块中的变量</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Welcome to my module</span></span><br><span class="line"><span class="string">Hello, Alice!</span></span><br><span class="line"><span class="string">Welcome to my module</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>从输出结果判断我们可以看出，确实是导入module再执行module，然后继续往下执行。</p>
-<p>[^tips]: 如此一来，我们也能理解在很多python项目中使用方法为什么一般都是from XXX import XXX，如果直接import，开销也就太大了。</p>
-<p>每次import都会把导入的模块执行一遍，但又不是所有的模块都只有函数，如果里面有输出或者其他操作，这些又不是我需要的，怎么处理呢。<strong>简而言之，如何避免某些代码在模块被导入后被执行？</strong> — 这恰恰是<code> if __name__ == &#39;__main__&#39;</code>的作用。</p>
-<p><code>__name__ </code>是python的一个内置属性，其用于标识当前模块的名称。当一个模块被直接执行时，其名称被设置为 <code>&quot;__main__&quot;</code>。而当一个模块被导入到其他模块中时，其名称则被设置为模块的实际名称。这里可以举例理解</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># main_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;这里是模块：&#x27;</span>, __name__)</span><br><span class="line"><span class="comment"># 这里是模块： __main__</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test1.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;这里是模块：&#x27;</span>, __name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># main_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test1</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;这里是模块：&#x27;</span>, __name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">这里是模块： test1</span></span><br><span class="line"><span class="string">这里是模块： __main__</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>了解了<code>__name__</code>是什么，那么<code>if __name__ == &#39;__main__&#39;</code>的作用就显而易见了。就是判断当前执行的模块是不是我，如果不是，我后面的程序就不执行，如果是就执行。</p>
-]]></content>
-      <categories>
-        <category>Python-learn</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows下给命令起个别名</title>
-    <url>/2023/08/09/windows%E4%B8%8B%E7%BB%99%E5%91%BD%E4%BB%A4%E8%B5%B7%E4%B8%AA%E5%88%AB%E5%90%8D/</url>
-    <content><![CDATA[<p>最近用bilix下载b站视频，如果想要登录我每次都得带上一个cookie，不然下载的画质最高是780P的，不够清晰。但每次带cookie又太麻烦了，所以就搜索了下有没有可以保持登陆的。<br><img src="https://s2.loli.net/2023/08/09/uYWUqtEak6CHriD.png" alt="image-20230809192453706"><br>作者在GitHub中只给出了MAC与Linux的解决方法，并没有Windows的，所以我就搜索了下有没有类似的解决方法，还真找到了。</p>
-<span id="more"></span>
-
-<h1 id="新建bat文件"><a href="#新建bat文件" class="headerlink" title="新建bat文件"></a>新建bat文件</h1><p>先建立个txt文件，在里面写好你要起别名的内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">doskey ls=dir /b $*  </span><br><span class="line">doskey bilixc=bilix --cookie &quot;your cookie&quot; $*</span><br></pre></td></tr></table></figure>
-
-<p><code>这里ls是用来做测试的</code></p>
-<ul>
-<li><p>等于号左边是其右边的别名</p>
-</li>
-<li><p><code>doskey</code>就相当于Linux中的<code>alias</code></p>
-</li>
-<li><p><code>$*</code>表示这个命令还可能有其他参数</p>
-</li>
-<li><p>把文件存到C盘里</p>
-</li>
-</ul>
-<h1 id="修改注册表"><a href="#修改注册表" class="headerlink" title="修改注册表"></a>修改注册表</h1><h2 id="找到cmd注册表项的位置"><a href="#找到cmd注册表项的位置" class="headerlink" title="找到cmd注册表项的位置"></a>找到cmd注册表项的位置</h2><p>打开cmd，运行<code>cmd /?</code>命令，然后找到这一项，或许你的有所不同，但肯定是大同小异。</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions</span><br><span class="line"></span><br><span class="line">    和/或</span><br><span class="line"></span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions</span><br></pre></td></tr></table></figure>
-
-<p>随后win+r，调出运行，输入<code>regedit</code>，然后根据上面路径找到对应目录<br><img src="https://s2.loli.net/2023/08/09/nUvJ35EoudbqpeS.png" alt="image-20230809192630207"></p>
-<h2 id="修改注册表-1"><a href="#修改注册表-1" class="headerlink" title="修改注册表"></a>修改注册表</h2><p>我这里是没有AutoRun这一项的，因此右键——新建——字符串值，输入“AutoRun”，然后选中——右键——修改，把路径输入进去</p>
-<p><img src="https://s2.loli.net/2023/08/09/dsobgRmverqu1kA.png" alt="image-20230809192640324"></p>
-<p>然后确认，退出就行</p>
-<h1 id="检测测试是否成功"><a href="#检测测试是否成功" class="headerlink" title="检测测试是否成功"></a>检测测试是否成功</h1><p>打开cmd，输入ls看看，ok成功了</p>
-<p><img src="https://s2.loli.net/2023/08/09/F6ROBDce92w3JW5.png" alt="image-20230809192715839"></p>
-<p>再看看bilix下载情况</p>
-<p><img src="https://s2.loli.net/2023/08/09/g3mt7aeSuzcNBYf.png" alt="image-20230809192731178"></p>
-<p>ok没问题，画质是登录以后的，nice try！</p>
-<p><img src="https://s2.loli.net/2023/08/09/c17eKFGRnPrU8sW.png" alt="image-20230809192741226"></p>
-<p>reference</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html">在cmd中为命令设置别名以及启动cmd时自动执行bat</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>-工具</tag>
-      </tags>
   </entry>
   <entry>
     <title>Python-OpenCV基础教程</title>
@@ -1429,86 +1360,230 @@
         <category>Python 库</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>OpenCV</tag>
         <tag>视觉识别</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>关于书签与书签同步工具的分享</title>
-    <url>/2023/04/23/%E5%85%B3%E4%BA%8E%E4%B9%A6%E7%AD%BE%E4%B8%8E%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7%E7%9A%84%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[<p>Bookmark and sync</p>
-<p>纯share blog</p>
-<h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><h2 id="为什么需要书签"><a href="#为什么需要书签" class="headerlink" title="为什么需要书签"></a>为什么需要书签</h2><p>书签相信大家都不陌生，尤其是对于像我这样高强度冲浪的人来说，书签绝对是必不可少的，互联网花花世界这么大，碰到感兴趣的要是不收藏起来，之后想找无异于大海捞针。</p>
-<h2 id="为什么需要BookmarkHub"><a href="#为什么需要BookmarkHub" class="headerlink" title="为什么需要BookmarkHub"></a>为什么需要BookmarkHub</h2><p>Hub在计算机里是集线器的意思，这里BookmarkHub可理解为书签库，这也是接下来我介绍的插件名。</p>
-<p>我起初在网络上闲逛时经常用书签把自己感兴趣的东西加入书签栏，久而久之，书签的数量也就与日俱增，各种各样的书签迷人眼。有意思的视频网站、强大的工具网站、感兴趣的文章、常用的学校官网等等等。数量不断增加，种类也是，这时在书签中找记忆中似是而非的网站本身就成为了一个问题。</p>
+    <title>Python处理word中的visio图像</title>
+    <url>/2024/12/04/Python%E5%A4%84%E7%90%86word%E4%B8%AD%E7%9A%84visio%E5%9B%BE%E5%83%8F/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>来自于工作中一个任务，有一批Word，里面记录了一些卡片式的文件，卡片里面有一些流程图 — 用Visio画的。</p>
+<p>需求是需要将所有的Visio提取出来，然后重命名为卡片里面两个位置标识组成的新名字。</p>
+<h2 id="冻手冻手"><a href="#冻手冻手" class="headerlink" title="冻手冻手"></a>冻手冻手</h2><p>这种重复性的活，手动做，真的很恶心，而且浪费时间，做的过程中心里全是怨念hhh。我学Python为的不就是不干这种活？</p>
+<p>所以最开始就没想过自己动手，Word罢了，解析解析看看。</p>
+<p>首先介绍下文件的情况</p>
+<ul>
+<li><p>需要处理的文件格式是<code>docx</code>，这肯定是一个好消息，因为<code>docx</code>中的资源肯定是有办法可以搞到的。</p>
+<p><code>docx </code>文件是一个基于 Office Open XML (OOXML) 标准的文件格式，它由多个 XML 文件和其他资源（如图像、嵌入对象等）组成，这些都打包在一个 ZIP 容器中。</p>
+</li>
+<li><p>手动操作的话是双击<code>visio</code>图像，然后会自动调用电脑上的<code>visio</code>，此时再去做另存和重命名</p>
+</li>
+</ul>
 <span id="more"></span>
 
-<p>当然大多数浏览器或者软件都提供了在书签栏&#x2F;收藏夹中创建文件夹的功能。我们可以网页或者工具的作用或者内容给他分类。但是！这里有俩个情况：</p>
+<p>需求向通义提了以后，给出的方式有VBA也有Python，起初是建议使用win32com和python-docx去对docx文件进行处理，然后找到visio图像对象，另存为本地文件，大概思路是这样。</p>
+<p>实际上呢，python-docx这个库很不巧，在这里是不可行的，并不支持对word中内联的visio图像进行一个读取。</p>
+<h3 id="win32com模拟操作-—-仅介绍思路与给出代码"><a href="#win32com模拟操作-—-仅介绍思路与给出代码" class="headerlink" title="win32com模拟操作 — 仅介绍思路与给出代码"></a>win32com模拟操作 — 仅介绍思路与给出代码</h3><p>给出的示例代码基本都是使用<code>win32com</code>去调用<code>word</code>，然后捕获到<code>visio drawing</code>对象 — <code>visio drawing</code>是<code>visio</code>图像在<code>Word</code>中的对象名</p>
+<p><code>visio drawing</code>对象的存在位置主要有两种：</p>
 <ul>
-<li>我浏览器不止一个Chrome常用于学习或者看CS相关的内容，Firefox则覆盖我生活中方法面面使用浏览器的情况，于此同时我手机用的浏览器也不止一个，夸克、Chrome。至于为什么不能<code>all in one</code>，我的回答是有时候单一的浏览器不能解决所有问题，不得不<code>all in all</code>。那么不同设备&#x2F;浏览器之间的书签便时不一致的，找东西的时候难不成还把所有设备过一遍？太low啦！！</li>
-<li>书签栏分类等同于给书签打上了标签，以后找相关的就在这里面找，但是问题来了，并不是所有网站都是单一的，他可能与图片相关因此我将它放在了Photo文件夹，但其实际是一个处理图片的工具。那么我也可以将其放在工具集文件夹中…，怎么办呢？不好找啊。<br><img src="https://s2.loli.net/2023/04/23/OgUR1VsxPYhIQeq.png" alt="image-20230423123944435"></li>
+<li><code>inline_shapes</code></li>
+<li><code>shapes</code></li>
 </ul>
-<h1 id="怎么办—介绍几个正在用或者用过的工具"><a href="#怎么办—介绍几个正在用或者用过的工具" class="headerlink" title="怎么办—介绍几个正在用或者用过的工具"></a>怎么办—介绍几个正在用或者用过的工具</h1><p>为了解决上述问题，我也找了挺多软件和插件。找到两个非常优秀的开源项目，真的非常nice！！！</p>
-<h2 id="BookmarkHub"><a href="#BookmarkHub" class="headerlink" title="BookmarkHub"></a>BookmarkHub</h2><p><a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub">项目地址</a></p>
-<p>项目有中文介绍教程，<a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub/blob/main/README_cn.md">教程网址</a></p>
-<p>这是一个浏览器插件，目前支持Chrome、Firefox、edge等浏览器<img src="https://s2.loli.net/2023/04/23/GSIfvU8TtqxbWyw.png" alt="image-20230423125026448"></p>
-<ul>
-<li>简洁，操作及其方便</li>
-<li>主打一个各浏览器书签同步其他么得，功能单一但有效</li>
-<li>使用 GitHub 的 Gist 记录来存储浏览器的书签—有GitHub账户就行，教程会教你弄，保密性挺好很安全。</li>
-</ul>
-<p>使用方法（我直接照抄官方文档的，就加了点图）</p>
+<p>前者是内联形状，后者是普通形状。</p>
+<p><code>visio drawing</code>对象在Word中的存在形式是<code>OLEObject</code>（对象链接和嵌入对象），<code>visio</code>在其中存在时，不仅仅是一个图片，其中包含了<code>visio drawing</code>的一些特征，因此双击以后，其实就可以对流程&#x2F;逻辑图进行绘制。</p>
+<p>模拟操作的大致思路是这样的</p>
 <ol>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/login">登陆</a> GitHub，如果没有账号请点此<a target="_blank" rel="noopener" href="https://github.com/join">注册</a>。</p>
+<li><p><code>win32com</code>调用word打开docx文档(用WindoCOM接口来控制Word)，获取doc对象</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">创建一个可以管理 gist 的 token</a>。</p>
-<p>这里Note填BookmarkHub就行，下面token重置时间看你自己了，然后去最下面点创建</p>
-<p><img src="https://s2.loli.net/2023/04/23/olWB8m1kUqhsMrZ.png" alt="image-20230423125247278"></p>
+<li><p>遍历doc对象中的<code>shapes</code>与<code>inline_shapes</code>对象</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://gist.github.com/">创建一个私有的 gist</a>。<strong>注意：如果是公开的 gist，你的书签是可以被他人搜索到的。</strong></p>
-<p><img src="https://s2.loli.net/2023/04/23/i8hNzVIGlRCZnr6.png" alt="image-20230423125444413"></p>
+<li><p>判断<code>shape</code>是否是<code>Visio Drawing</code>对象</p>
+<ol>
+<li><p>如果<code>shape</code>有<code>OLEFormat</code>属性，那么可以初步判断它是一个<code>OLEObject</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">hasattr</span>(shape, <span class="string">&#x27;OLEFormat&#x27;</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
-<li><p>在你用的浏览器的应用商店下载 BookmarkHub，点击插件的设置按钮，在弹出的设置窗口填入 token 和 gist ID，然后你就可以上传下载书签了。</p>
-<ul>
-<li><p>这个token点设置里面的get token去弄就行。</p>
+<li><p>判断<code>shape.OLEFormat</code>的<code>ProgID</code>属性 — 这个不同版本的<code>Visio</code>绘制的有所区别，可以输出看看，然后再选</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ole_format = shape.OLEFormat</span><br><span class="line">ole_format.ProgID == <span class="string">&#x27;Visio.Drawing.15&#x27;</span>:  <span class="comment"># 特定版本的Visio Drawing</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
-<li><p>gist ID 就是你在上一步创建的时候，网址框最后那一串<img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125925463.png" alt="image-20230423125925463"></p>
+<li><p>激活并获取Visio绘图 — 此时会启动visio程序，然后在那个visio程序中会打开绘图，绘制对应的<code>Visio Drawing</code>对象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ole_format.Activate()</span><br><span class="line">visio_drawing = ole_format.Object</span><br></pre></td></tr></table></figure>
+
+
 </li>
-</ul>
+<li><p>保存Visio绘图为新的Visio文件 — 调用visio应用实例的保存方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">visio_drawing.SaveAs(file_name)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>关闭上面打开的绘图，这一步我遇到了很多问题，我不确定是否不同环境会有所区别，我尝试了各种打开方案！我可以确定<code>ole_format</code>是有<code>Close</code>方法的，因为我使用了<code>dir</code>进行查看。但是当执行时却有提示没有这个方法，emm。然后最后我也不知道动了哪里，使用这个方法又可以关闭视图了。</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">visio_drawing.Close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后一定一定要注意 打开的窗口保存以后必须关闭，否则电脑的内存会爆！</p>
+</li>
+<li><p>最后退出应用程序即可</p>
 </li>
 </ol>
-<h3 id="BookmarkHub如何解决第二个问题"><a href="#BookmarkHub如何解决第二个问题" class="headerlink" title="BookmarkHub如何解决第二个问题"></a>BookmarkHub如何解决第二个问题</h3><p>从上面功能描述来看，只可以解决第一个问题，第二个怎么办呢？</p>
-<p>hhhh，软件没办法，但是可以从书签入手。火狐提供了书签描述、Chrome的话就只可以在书签名字做手脚，在名字后面加功能描述或者书签就行。在搜索框搜索就可以检索出来。</p>
-<h2 id="xBrowserSync—同时解决两个问题"><a href="#xBrowserSync—同时解决两个问题" class="headerlink" title="xBrowserSync—同时解决两个问题"></a>xBrowserSync—同时解决两个问题</h2><p><a target="_blank" rel="noopener" href="https://www.xbrowsersync.org/">官方网站</a></p>
-<p>emmm，说在前面，使用和介绍全是纯英文的。</p>
+</li>
+</ol>
+<p>并不推荐使用这种方式，因为不确定因素太多了，实际上就是用Python模拟自动化。</p>
+<p>最后调试很久得到一个可行的方案以后，不巧的是，执行速度很慢，而且顺序错了。重命名怎么办？我最初的想法是按照顺序批量将名字导出来，简单拼接，然后再按照图片导出的顺序，批量重命名 — 可行！</p>
+<p>但是！顺序错了，over，不只是执行慢，而且不可用。为什么顺序会错？之前提过</p>
+<p><code>visio drawing</code>对象的存在位置主要有两种：</p>
 <ul>
-<li><p>支持浏览器书签同步(插件)、手机同样可以通过app进行同步</p>
-<img src="https://s2.loli.net/2023/04/23/N1me7OTgfBiYZ3d.png" alt="image-20230423130406192" style="zoom:50%;" />
-</li>
-<li><p>保护隐私安全—完全匿名、不用注册</p>
-</li>
-<li><p>不仅可以同步，还可以<strong>添加描述和标签来丰富你的本地浏览器书签</strong>，所有可以直接解决第二个问题</p>
-</li>
+<li><code>inline_shapes</code></li>
+<li><code>shapes</code></li>
 </ul>
-<p>相比于上一个，功能更强大了，但是安装和使用可能没那么简单，具体的装上用就是，上手即用。具体看其提供的Guide</p>
+<p>是的，两种存在形式是混在一起的，泪目了吗？</p>
+<p>下面是最后的程序，至少，可以提取出所有的visio图像</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_visio_drawings</span>(<span class="params">doc_path, output_folder</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 启动Word应用程序</span></span><br><span class="line">        word = win32.Dispatch(<span class="string">&quot;Word.Application&quot;</span>)</span><br><span class="line">        doc = word.Documents.Open(doc_path)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 确保输出文件夹存在</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(output_folder):</span><br><span class="line">            os.makedirs(output_folder)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 启动Visio应用程序</span></span><br><span class="line">        visio = win32.DispatchEx(<span class="string">&quot;Visio.Application&quot;</span>)  <span class="comment"># 尝试使用DispatchEx</span></span><br><span class="line">        visio.Visible = <span class="literal">False</span>  <span class="comment"># 不显示Visio窗口</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 遍历文档中的样式</span></span><br><span class="line">        <span class="keyword">for</span> shape_index, shape <span class="keyword">in</span> <span class="built_in">enumerate</span>(doc.Shapes):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(shape, <span class="string">&#x27;OLEFormat&#x27;</span>):</span><br><span class="line">                ole_format = shape.OLEFormat</span><br><span class="line">                <span class="built_in">print</span>(ole_format.ProgID)</span><br><span class="line"></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;Found Visio drawing <span class="subst">&#123;shape_index&#125;</span>...&quot;</span>)</span><br><span class="line"></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="comment"># 激活并获取Visio绘图</span></span><br><span class="line">                    ole_format.Activate()</span><br><span class="line">                    visio_drawing = ole_format.Object</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 保存Visio绘图为新的Visio文件</span></span><br><span class="line">                    file_name = os.path.join(output_folder, <span class="string">f&#x27;shape_<span class="subst">&#123;shape_index&#125;</span>.vsdx&#x27;</span>)</span><br><span class="line">                    visio_drawing.SaveAs(file_name)</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f&quot;Saved Visio drawing to <span class="subst">&#123;file_name&#125;</span>&quot;</span>)</span><br><span class="line">                <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f&#x27;Error processing Visio drawing <span class="subst">&#123;shape_index&#125;</span>: <span class="subst">&#123;e&#125;</span>&#x27;</span>)</span><br><span class="line">                    traceback.print_exc()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 遍历文档中的所有内联形状</span></span><br><span class="line">        <span class="keyword">for</span> shape_index, shape <span class="keyword">in</span> <span class="built_in">enumerate</span>(doc.InlineShapes):</span><br><span class="line">            <span class="comment"># 这里代码和上面一样，最好是函数封一下</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 关闭Visio应用程序</span></span><br><span class="line">        visio.Quit()</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;Error processing document: <span class="subst">&#123;e&#125;</span>&#x27;</span>)</span><br><span class="line">        traceback.print_exc()</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="comment"># 关闭文档和Word应用程序</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;doc&#x27;</span> <span class="keyword">in</span> <span class="built_in">locals</span>():</span><br><span class="line">            doc.Close(<span class="literal">False</span>)  <span class="comment"># 不保存更改</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;word&#x27;</span> <span class="keyword">in</span> <span class="built_in">locals</span>():</span><br><span class="line">            word.Quit()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">doc_path = <span class="string">r&#x27;C:\Users\XYT\Desktop\test.docx&#x27;</span></span><br><span class="line">output_folder = <span class="string">r&#x27;C:\Users\XYT\Desktop\s&#x27;</span></span><br><span class="line">save_visio_drawings(doc_path, output_folder)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="冻手啊！"><a href="#冻手啊！" class="headerlink" title="冻手啊！"></a>冻手啊！</h2><p>前文提过，既然是docx格式的word，那包能提取到东西的。</p>
+<blockquote>
+<p>&#96;docx文件是一个基于 Office Open XML (OOXML) 标准的文件格式，它由多个 XML 文件和其他资源（如图像、嵌入对象等）组成，这些都打包在一个 ZIP 容器中。</p>
+</blockquote>
+<p>将docx文件后缀改为zip，然后解压，找找我要的东西在哪！</p>
+<p><img src="https://s2.loli.net/2024/12/05/81cvKGfRoqshzxJ.png" alt="1f4a58f8de178815da57a98159e22cce.png"></p>
+<p><img src="https://s2.loli.net/2024/12/05/wzSN8bd7PD6ajf5.png" alt="32319e62c68f395af15ee68790fb425a.png"></p>
+<p><img src="https://s2.loli.net/2024/12/05/6DzW4oR7hTgbX59.png" alt="c35032b419534830c3affcf3013ae971.png"></p>
+<p><img src="https://s2.loli.net/2024/12/05/84WjdvMwcrADBYX.png" alt="1415aefd9ae887e520e8eb7b4084e821.png"></p>
+<p>如上图所示，其实在图三(<strong>word&#x2F;embeddings</strong>)中，已经有了我们要的东西<code>vsdx</code>文件！！！但是这只是运气比较好，图四才是大多数文件的常态。</p>
+<p><code>embeddings</code>文件夹中存在的文件都是word中嵌入的对象，<code>visio</code>嵌入的图像全在里面，要做的就是将这些图像转换成<code>visio</code>可以打开的格式，一般就2种</p>
+<ul>
+<li><code>vsd</code> — 旧版本</li>
+<li>&#96;vsdx— 新版本</li>
+</ul>
+<blockquote>
+<p>这里我大量的尝试修改后缀为visio支持的各种格式来猜测图像，如果可以打开，直接改后缀就行 — 结果有些可以有些不行</p>
+</blockquote>
+<p>所以直接改后缀的方式无疑要pass，毕竟我不知道哪些是我要的文件</p>
+<p>那就只能老实处理 <code>oleObject</code> 这个文件了</p>
+<h3 id="天无绝人之路-—-olefile"><a href="#天无绝人之路-—-olefile" class="headerlink" title="天无绝人之路 — olefile"></a>天无绝人之路 — olefile</h3><p>所幸，Python有三方库可以处理这种文件 — <code>olefile</code></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.decalage.info/olefile">olefile</a>是一个 Python 软件包，用于解析、读写 <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Compound_File_Binary_Format">微软 OLE2 文件</a> (也称为结构化存储、复合文件二进制格式或复合文档文件格式），如 Microsoft Office 97-2003 文档、MS Office 2007+ 文件中的 vbaProject.bin、Image Composer 和 FlashPix 文件、Outlook 信息、StickyNotes、几种 Microscopy 文件格式、McAfee 杀毒软件隔离文件等。</p>
+</blockquote>
+<p>后续思路大概就是这样的</p>
 <ol>
-<li><p>浏览器安装，然后设置密码</p>
-<p><img src="https://s2.loli.net/2023/04/23/JNu5C3sTmL6njIS.png" alt="image-20230423132118064"></p>
+<li><p>将docx作为zip压缩包解压 — 使用<code>zipfile</code>库</p>
 </li>
-<li><p>然后点sync，就ok啦，后面的就是日常使用了</p>
+<li><p>获取解压后的文件夹中<code>embeddings</code>文件夹下的<strong>文件列表</strong></p>
+<p>要注意顺序，因为最后需要按照顺序导出，按照顺序重命名，顺序规则本身就是约束</p>
 </li>
+<li><p>遍历<strong>文件列表</strong>，判断文件是不是<code>oleObject</code>文件，是的话则进行后续的处理</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> olefile.isOleFile(file_path):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p><code>isOleFile()</code> 是 <code>olefile</code> 模块中的一个函数，用于检测给定路径 (<code>file_path</code>) 的文件是否为 OLE（对象链接和嵌入）格式的文件。</p>
+</li>
+<li><p>读取 OLE 文件，然后在读取 OLE 文件内所有流 (stream) 和存储 (storage) 的名称 — 这就是 OLE 文件的数据了，需要通过这些数据判断<code>oleObject</code>是不是<code>visio drawing</code>对象对应的文件</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">   </span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>然后需要判断 OLE 文件是不是就是对应的Visio文件</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> olefile.isOleFile(file_path):</span><br><span class="line">    ole = olefile.OleFileIO(file_path)</span><br><span class="line">    streams = ole.listdir()</span><br><span class="line">    <span class="keyword">for</span> stream <span class="keyword">in</span> streams:</span><br><span class="line">        <span class="keyword">if</span> stream[-<span class="number">1</span>].lower().endswith((<span class="string">&#x27;.vsd&#x27;</span>, <span class="string">&#x27;.vsdx&#x27;</span>)):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">if</span> stream[-<span class="number">1</span>].lower() == <span class="string">&#x27;visiodocument&#x27;</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">if</span> stream[-<span class="number">1</span>].lower()==<span class="string">&#x27;package&#x27;</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(stream[-<span class="number">1</span>].lower())</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对不同分支进行不同的处理即可</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> olefile.isOleFile(file_path):</span><br><span class="line">    ole = olefile.OleFileIO(file_path)</span><br><span class="line">    streams = ole.listdir()</span><br><span class="line">    <span class="keyword">for</span> stream <span class="keyword">in</span> streams:</span><br><span class="line">        <span class="keyword">if</span> stream[-<span class="number">1</span>].lower().endswith((<span class="string">&#x27;.vsd&#x27;</span>, <span class="string">&#x27;.vsdx&#x27;</span>)):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">if</span> stream[-<span class="number">1</span>].lower() == <span class="string">&#x27;visiodocument&#x27;</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">if</span> stream[-<span class="number">1</span>].lower()==<span class="string">&#x27;package&#x27;</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(stream[-<span class="number">1</span>].lower())</span><br></pre></td></tr></table></figure>
+
+<p>从这段代码中，可以看到匹配<code>visio</code>的各种条件，这些都是逐步摸索出来的，比如上面截图中直接以<code>.vsdx</code>形式存在的文件，匹配第一个条件</p>
+<p>至于第二第三个条件则分别对应两种格式 — 在<code>embeddings</code>文件夹中的存在形式都一样，都是<code>oleObject.bin</code></p>
+<ul>
+<li><code>vsd</code></li>
+<li><code>vsdx</code></li>
+</ul>
+<p><img src="https://s2.loli.net/2024/12/05/8eaYbp9JTxSloH4.png" alt="image-20241205003033645.png"></p>
+<p>其中<code>vsd</code>对应的<code>oleObject.bin</code>文件直接修改后缀其实就可以用Visio打开，但是<code>vsdx</code>对应的<code>oleObject.bin</code>不行</p>
+<p><code>vsdx</code>其实和<code>docx</code>一样，tm也是zip，所以处理的方式就是先将其做为<code>zip</code>解压，然后将解压以后的文件作为<code>vsdx</code>文件</p>
+<p>大致思路就像上面说的一样，下面是最终的实现代码 — 不是很没美观，因为只想把活做完qwq</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"><span class="keyword">from</span> zipfile <span class="keyword">import</span> ZipFile</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> tempfile</span><br><span class="line"><span class="keyword">import</span> olefile</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置日志记录</span></span><br><span class="line">logging.basicConfig(level=logging.INFO, <span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s - %(levelname)s - %(message)s&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">extract_first_number</span>(<span class="params">filename</span>):</span><br><span class="line">    mat = re.search(<span class="string">r&#x27;\d+&#x27;</span>, filename)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(mat.group()) <span class="keyword">if</span> mat <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">extract_and_convert_ole_objects</span>(<span class="params">docx_path, output_folder, name_path</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(name_path, <span class="string">&#x27;r+&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">            names = fp.readlines()</span><br><span class="line">            names = [name.strip().replace(<span class="string">&#x27;/&#x27;</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">for</span> name <span class="keyword">in</span> names]</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            logging.error(<span class="string">f&quot;Failed to read <span class="subst">&#123;name_path&#125;</span>: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> tempfile.TemporaryDirectory() <span class="keyword">as</span> temp_dir:</span><br><span class="line">            <span class="keyword">with</span> ZipFile(docx_path, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> zip_ref:</span><br><span class="line">                zip_ref.extractall(temp_dir)</span><br><span class="line"></span><br><span class="line">            embeddings_path = os.path.join(temp_dir, <span class="string">&#x27;word/embeddings&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> os.path.exists(embeddings_path):</span><br><span class="line"></span><br><span class="line">                files = os.listdir(embeddings_path)</span><br><span class="line">                sort_files = <span class="built_in">sorted</span>(files, key=extract_first_number)</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> index, filename <span class="keyword">in</span> <span class="built_in">enumerate</span>(sort_files):</span><br><span class="line">                    file_path = os.path.join(embeddings_path, filename)</span><br><span class="line">                    <span class="keyword">if</span> filename.lower().endswith(<span class="string">&#x27;.bin&#x27;</span>):</span><br><span class="line">                        output_file_path = os.path.join(output_folder, <span class="string">f&quot;<span class="subst">&#123;names[index]&#125;</span>.vsd&quot;</span>)</span><br><span class="line">                        logging.info(<span class="string">f&quot;Extracted and converted <span class="subst">&#123;filename&#125;</span> to <span class="subst">&#123;output_file_path&#125;</span>&quot;</span>)</span><br><span class="line">                        <span class="keyword">if</span> olefile.isOleFile(file_path):</span><br><span class="line">                            ole = olefile.OleFileIO(file_path)</span><br><span class="line">                            streams = ole.listdir()</span><br><span class="line">                            <span class="keyword">for</span> stream <span class="keyword">in</span> streams:</span><br><span class="line">                                <span class="keyword">if</span> stream[-<span class="number">1</span>].lower().endswith((<span class="string">&#x27;.vsd&#x27;</span>, <span class="string">&#x27;.vsdx&#x27;</span>)):</span><br><span class="line">                                    data = ole.openstream(stream).read()</span><br><span class="line">                                    output_file_path = os.path.join(output_folder,</span><br><span class="line">                                                                    <span class="string">f&quot;<span class="subst">&#123;names[index]&#125;</span><span class="subst">&#123;os.path.splitext(stream[-<span class="number">1</span>])[<span class="number">1</span>]&#125;</span>&quot;</span>)</span><br><span class="line">                                    <span class="keyword">with</span> <span class="built_in">open</span>(output_file_path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                                        f.write(data)</span><br><span class="line">                                    logging.info(<span class="string">f&quot;Extracted and converted <span class="subst">&#123;filename&#125;</span> to <span class="subst">&#123;output_file_path&#125;</span>&quot;</span>)</span><br><span class="line">                                <span class="keyword">if</span> stream[-<span class="number">1</span>].lower() == <span class="string">&#x27;visiodocument&#x27;</span>:</span><br><span class="line">                                    data = ole.openstream(stream).read()</span><br><span class="line">                                    output_file_path = os.path.join(output_folder, <span class="string">f&quot;<span class="subst">&#123;names[index]&#125;</span>.vsd&quot;</span>)</span><br><span class="line">                                    <span class="keyword">with</span> <span class="built_in">open</span>(output_file_path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                                        f.write(data)</span><br><span class="line">                                    logging.info(<span class="string">f&quot;Extracted and converted <span class="subst">&#123;filename&#125;</span> to <span class="subst">&#123;output_file_path&#125;</span>&quot;</span>)</span><br><span class="line">                                <span class="keyword">if</span> stream[-<span class="number">1</span>].lower() == <span class="string">&#x27;package&#x27;</span>:</span><br><span class="line">                                    <span class="keyword">try</span>:</span><br><span class="line">                                        <span class="comment"># Read the &#x27;package&#x27; stream data</span></span><br><span class="line">                                        data = ole.openstream(stream).read()</span><br><span class="line"></span><br><span class="line">                                        <span class="comment"># Write the data to a temporary ZIP file</span></span><br><span class="line">                                        <span class="keyword">with</span> tempfile.NamedTemporaryFile(delete=<span class="literal">False</span>, suffix=<span class="string">&#x27;.zip&#x27;</span>) <span class="keyword">as</span> tmp_zip:</span><br><span class="line">                                            tmp_zip.write(data)</span><br><span class="line">                                            tmp_zip_path = tmp_zip.name</span><br><span class="line"></span><br><span class="line">                                        <span class="comment"># Extract the temporary ZIP file to a temporary directory</span></span><br><span class="line">                                        <span class="keyword">with</span> tempfile.TemporaryDirectory() <span class="keyword">as</span> extract_dir:</span><br><span class="line">                                            <span class="keyword">with</span> ZipFile(tmp_zip_path, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> zip_ref:</span><br><span class="line">                                                zip_ref.extractall(extract_dir)</span><br><span class="line"></span><br><span class="line">                                            <span class="comment"># Create a new ZIP archive from the extracted directory</span></span><br><span class="line">                                            <span class="comment"># output_file_path = os.path.join(output_folder, f&quot;&#123;names[index]&#125;.vsd&quot;)</span></span><br><span class="line">                                            vsdx_file_name = os.path.join(output_folder, <span class="string">f&quot;<span class="subst">&#123;names[index]&#125;</span>.vsdx&quot;</span>)</span><br><span class="line">                                            shutil.make_archive(vsdx_file_name.rstrip(<span class="string">&#x27;.vsdx&#x27;</span>), <span class="string">&#x27;zip&#x27;</span>, extract_dir)</span><br><span class="line">                                            shutil.copy(<span class="string">f&quot;<span class="subst">&#123;vsdx_file_name[:-<span class="number">5</span>]&#125;</span>.zip&quot;</span>, vsdx_file_name)</span><br><span class="line"></span><br><span class="line">                                        <span class="comment"># Log the success message</span></span><br><span class="line">                                        logging.info(<span class="string">f&quot;Extracted and converted <span class="subst">&#123;filename&#125;</span> to <span class="subst">&#123;vsdx_file_name&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">                                        <span class="comment"># Clean up the temporary ZIP file</span></span><br><span class="line">                                        os.remove(tmp_zip_path)</span><br><span class="line">                                    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                                        logging.error(<span class="string">f&quot;Failed to process &#x27;package&#x27; stream in <span class="subst">&#123;filename&#125;</span>: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">                            ole.close()</span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            logging.warning(<span class="string">f&quot;<span class="subst">&#123;filename&#125;</span> is not an OLE file.&quot;</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        logging.warning(<span class="string">f&quot;No embeddings found in <span class="subst">&#123;docx_path&#125;</span>.&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logging.error(<span class="string">f&quot;Failed to extract and convert objects from <span class="subst">&#123;docx_path&#125;</span>: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">doc_to_docx</span>(<span class="params">doc_path</span>):</span><br><span class="line">    word = win32.Dispatch(<span class="string">&quot;Word.Application&quot;</span>)</span><br><span class="line">    word.Visible = <span class="literal">False</span>  <span class="comment"># 不显示Word应用程序窗口</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        doc = word.Documents.Open(doc_path)</span><br><span class="line">        temp_fd, temp_path = tempfile.mkstemp(suffix=<span class="string">&#x27;.docx&#x27;</span>)</span><br><span class="line">        os.close(temp_fd)</span><br><span class="line">        doc.SaveAs2(temp_path, FileFormat=<span class="number">16</span>)  <span class="comment"># 16 表示 .docx 文件格式</span></span><br><span class="line">        doc.Close()</span><br><span class="line">        <span class="keyword">return</span> temp_path</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logging.error(<span class="string">f&quot;Failed to convert <span class="subst">&#123;doc_path&#125;</span>: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        word.Quit()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">process_files</span>(<span class="params">input_folder, output_folder</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(output_folder):</span><br><span class="line">        os.makedirs(output_folder)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(input_folder):</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">            base_name, ext = os.path.splitext(file)</span><br><span class="line">            <span class="keyword">if</span> ext.lower() <span class="keyword">in</span> (<span class="string">&#x27;.doc&#x27;</span>, <span class="string">&#x27;.docx&#x27;</span>):</span><br><span class="line">                input_file_path = os.path.join(root, file)</span><br><span class="line">                output_subfolder = os.path.join(output_folder, base_name)</span><br><span class="line"></span><br><span class="line">                new_names_path = os.path.join(root, base_name + <span class="string">&#x27;.txt&#x27;</span>)</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(output_subfolder):</span><br><span class="line">                    os.makedirs(output_subfolder)</span><br><span class="line"></span><br><span class="line">                logging.info(<span class="string">f&quot;Processing file: <span class="subst">&#123;file&#125;</span>&quot;</span>)</span><br><span class="line">                <span class="keyword">if</span> ext.lower() == <span class="string">&#x27;.doc&#x27;</span>:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        temp_docx_path = doc_to_docx(input_file_path)</span><br><span class="line">                        extract_and_convert_ole_objects(temp_docx_path, output_subfolder, new_names_path)</span><br><span class="line">                    <span class="keyword">finally</span>:</span><br><span class="line">                        <span class="keyword">if</span> os.path.exists(temp_docx_path):</span><br><span class="line">                            os.remove(temp_docx_path)</span><br><span class="line">                <span class="keyword">elif</span> ext.lower() == <span class="string">&#x27;.docx&#x27;</span>:</span><br><span class="line">                    extract_and_convert_ole_objects(input_file_path, output_subfolder, new_names_path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    input_folder = <span class="string">&#x27;input&#x27;</span></span><br><span class="line">    output_folder = <span class="string">&#x27;output&#x27;</span></span><br><span class="line"></span><br><span class="line">    process_files(input_folder, output_folder)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>程序嵌套有点多，处理OLE文件语句可以简单打包其实，懒~</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>大致就是这样了，最终导出的成果还算满意，基本所有visio都导出来了，而且顺序也ok</p>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/03/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>python中的deque.md</title>
+    <url>/2024/04/06/python%E4%B8%AD%E7%9A%84deque/</url>
+    <content><![CDATA[<h2 id="什么是deque"><a href="#什么是deque" class="headerlink" title="什么是deque"></a>什么是deque</h2><p><code>deque</code>即队列队列的一种 — 双端队列（double-ended queue的缩写），是一种数据结构，它允许你在队列的两端进行添加（append）和弹出（pop）操作。</p>
+<p>队列是操作受限的线性表，只允许在一端进行插入 (入队)，另一端进行删除 (出队)</p>
+<ul>
+<li>操作特性：先进先出 FIFO</li>
+<li>队头（Front）：允许删除的一端</li>
+<li>队尾（Rear）：允许插入的一端</li>
+<li>空队列：不含任何元素的空表</li>
+</ul>
+<p>而双端队列就是在队列的基础上，两边都可以作对头和队尾。</p>
+<p>Python中<code>deque</code>和列表有很多相似地方，基本使用非常类似。</p>
+<span id="more"></span>
+
+<h2 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个空队列</span></span><br><span class="line">new_deque = deque()</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([])</span></span><br><span class="line"><span class="comment"># &#x27;&#x27;&#x27;队列的形式是deque([***])&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br></pre></td></tr></table></figure>
+
+<p>在创建队列时，我们可以将其他可迭代对象，迭代元素作为队列的元素，怎么理解呢？</p>
+<p>队列的形式是<code>deque([])</code>，假如初始化时，里面是一个可迭代对象，那么队列会讲可迭代元素作为他的初始元素，这一点类似 解包然后打包，可以通过如下例子看一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_deque = deque(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([&#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27;])</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br><span class="line"></span><br><span class="line">new_deque = deque([<span class="string">&quot;hello&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([&#x27;hello&#x27;])</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="增删改查等操作"><a href="#增删改查等操作" class="headerlink" title="增删改查等操作"></a>增删改查等操作</h3><p>增删改查操作和列表基本一模一样，列表可以用的许多基本方法<code>deque</code>也可以使用(注意：队列没法切片)，这里举例说明.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 队列中增加元素 --- 入队操作</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">从下面的操作结果，我们可以看出，队列和列表一样，增加元素都是默认增加在右边的，而且append的操作完全一致</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque = deque()</span><br><span class="line">new_deque.append(<span class="string">&quot;first element&quot;</span>)</span><br><span class="line">new_deque.append(<span class="string">&quot;second element&quot;</span>)</span><br><span class="line">new_deque.append([<span class="string">&quot;first list&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([&#x27;first element&#x27;, &#x27;second element&#x27;, [&#x27;first list&#x27;]])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;队列有一种类型叫做双端队列，顾名思义，两端都可以执行入队出队操作，因此实际上我们也可以从左边执行入队操作&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br><span class="line">new_deque.appendleft(<span class="string">&quot;first element&quot;</span>)</span><br><span class="line">new_deque.appendleft(<span class="string">&quot;second element&quot;</span>)</span><br><span class="line">new_deque.appendleft([<span class="string">&quot;first list&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([[&#x27;first list&#x27;], &#x27;second element&#x27;, &#x27;first element&#x27;])</span></span><br><span class="line">new_deque.clear()</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;deque 和 list 一样，同样的也支持使用 extend 将「可迭代对象」的所有元素都依次添加进队列，和append类似，extend也可以从左边入队，即 extendleft&#x27;&#x27;&#x27;</span></span><br><span class="line">l1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">l2 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line">l3 = [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]</span><br><span class="line">new_deque = deque(l1)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4])</span></span><br><span class="line">new_deque.extend(l2)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4, 5, 6, 7, 8])</span></span><br><span class="line">new_deque.extendleft(l3)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 队列的删除操作 --- 出队</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;队列的出队操作使用的方法也是 pop()，当然和入队操作一样，出队可以双端执行，默认也是从右端出队，可以通过如下示例理解&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 初始化队列</span></span><br><span class="line">de = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>])</span><br><span class="line"><span class="comment"># 默认也是右端出队</span></span><br><span class="line"><span class="built_in">print</span>(de.pop())  <span class="comment"># 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 左端出队</span></span><br><span class="line"><span class="built_in">print</span>(de.popleft())  <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">此外，队列支持许多列表中的方法，如下所示</span></span><br><span class="line"><span class="string">* count(x)  计算元素x出现的次数</span></span><br><span class="line"><span class="string">* index(x) - 查找出现给定值x的第一个位置</span></span><br><span class="line"><span class="string">* remove(x) - 删除第一个x出现的值</span></span><br><span class="line"><span class="string">* reverse() - 就地反转 deque </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">同时，还有一个列表不支持的方法 --- rotate() 旋转，该方法如果理解循环队列就知道其作用了，就是让队列整个转一个元素</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">rotate_deque = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">rotate_deque.rotate()</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([4, 1, 2, 3])</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;rotate()默认参数 1 ，即顺时针旋转一个元素，我们可以修改参数来控制旋转的方向和旋转长度&#x27;&#x27;&#x27;</span></span><br><span class="line">rotate_deque.rotate(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([2, 3, 4, 1])</span></span><br><span class="line">rotate_deque.rotate(-<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4])</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="deque与list的区别"><a href="#deque与list的区别" class="headerlink" title="deque与list的区别"></a>deque与list的区别</h2><p>方法上的区别主要就是上面说的<code>left</code>以及旋转，这些都是针对队列特性做出的适应，队列的先进先出特性、双端队列、循环队列都可以实现。</p>
+<p>从上面来看，队列的操作基本和列表一致，但是如果仅是如此的话，列表实现上述功能也是可以的，列表可以使用「切片」操作啊，那么<strong>队列的优势在哪</strong>？</p>
+<ul>
+<li>在<code>deque</code>  中，可以从左侧有效地追加和弹出元素（而在列表中，随着列表的增长，追加和弹出元素的速度会变慢）</li>
+<li>在 <code>deque</code>中，可以通过参数 <code>maxlen</code> 控制<code>deque</code>  的最大尺寸 — 这一特性可以帮我们实现一些特殊操作</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  deque 参数 maxlen 将限制 deque 的最大长度 --- 这是队列非常重要的一个特性</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;当队列中的元素已经达到 maxlen 时，此时再向其中添加元素，则会把先进去的元素挤出去 --- 先进先出特性&#x27;&#x27;&#x27;</span></span><br><span class="line">deque_size = <span class="number">3</span></span><br><span class="line">deque_max = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], maxlen=deque_size)</span><br><span class="line"><span class="built_in">print</span>(deque_max)</span><br><span class="line"><span class="comment"># deque([1, 2, 3], maxlen=3)</span></span><br><span class="line">deque_max.append(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(deque_max)</span><br><span class="line"><span class="comment"># deque([2, 3, 4], maxlen=3)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;如上所示，元素 4 将元素 1 挤出了队列&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>这一特性，在实践中非常有用 — 滑动窗口 、缓冲区、历史记录  — 利用队列的「先进先出」特性</p>
+<p>在处理数据流或时间序列时，你可能需要考虑一个<strong>固定大小的滑动窗口</strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 滑动窗口</span></span><br><span class="line">‘‘‘</span><br><span class="line">计算最近 n 个数据点的平均值</span><br><span class="line">’’’</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">window_size = <span class="number">5</span></span><br><span class="line">window = deque(maxlen=window_size)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> data_point <span class="keyword">in</span> data_stream:</span><br><span class="line">    window.append(data_point)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Current rolling average: <span class="subst">&#123;<span class="built_in">sum</span>(window) / <span class="built_in">len</span>(window)&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>由于使用的是生成器表达式和一次只能容纳一个元素的 <code>deque</code> ，这意味着您尽可能地节省了空间，这种方法应用到<strong>大文件中处理数据</strong>时，在空间上的效率就会非常方便</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找句子中的最后一个元音</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">sentence = <span class="string">&quot;The quick brown fox jumps over the last dog!&quot;</span></span><br><span class="line"><span class="comment"># The last vowel is an &#x27;o&#x27; --------------------------^</span></span><br><span class="line"></span><br><span class="line">vowels = <span class="built_in">set</span>(<span class="string">&quot;aeiouAEIOU&quot;</span>)</span><br><span class="line"></span><br><span class="line">last_vowel = deque((char <span class="keyword">for</span> char <span class="keyword">in</span> sentence <span class="keyword">if</span> char <span class="keyword">in</span> vowels), maxlen=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(last_vowel.pop())  <span class="comment"># o</span></span><br><span class="line"><span class="keyword">except</span> IndexError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No vowels found.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在实现网络协议或处理I&#x2F;O操作时，<code>maxlen</code> 可以作为一个<strong>缓冲区大小的限制</strong>，历史记录也是同理，存放一定数目的记录，越先记录的越先被删除</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">buffer = deque(maxlen=<span class="number">1024</span>)  <span class="comment"># 假设我们的最大缓冲区大小为1024字节</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> receiving_data:</span><br><span class="line">    buffer.append(new_data)</span><br><span class="line">    <span class="comment"># 处理buffer中的数据...</span></span><br></pre></td></tr></table></figure>
+
+<p>更多的例子可以看<a target="_blank" rel="noopener" href="https://mathspp.com/blog/python-deque-tutorial"><code>deque</code> 教程</a>这篇文章的最后一节。</p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://mathspp.com/blog/python-deque-tutorial">deque 教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/collections.html#collections.deque">官方文档</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>工具</category>
-        <category>开源软件</category>
+        <category>Python-learn</category>
+        <category>Python 库</category>
       </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>开源软件</tag>
-        <tag>书签</tag>
-      </tags>
   </entry>
   <entry>
     <title>python使用Socket获取IP地址-顺便初学Socket</title>
@@ -1714,6 +1789,187 @@
       </tags>
   </entry>
   <entry>
+    <title>python程序中经常出现是干嘛的?</title>
+    <url>/2023/08/09/python%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%BB%8F%E5%B8%B8%E5%87%BA%E7%8E%B0%E7%9A%84%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84-md/</url>
+    <content><![CDATA[<p>简单来说，这句话的作用就是判断你执行的是不是当前文件？如果是，则执行if块里面的，如果不是就不会执行。</p>
+<p>是不是有些拗口，什么叫我执行的是不是当前文件？这就得从python的模块概念说起。</p>
+<span id="more"></span>
+
+<p>首先得先明白python是一个解释型语言，它与C不一样并不是先全部编译并链接好再进行执行的，而是从你运行的那个模块的最顶行开始，逐行解释执行。所以，最顶层（没有被缩进）的代码都会被执行，而<strong>我们<code>import module</code>的操作就是把<code>module</code>这个模块导入到当前模块里面，并且把它执行一遍。</strong>可以通过例子理解下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test1.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>)</span><br><span class="line"></span><br><span class="line">message = <span class="string">&quot;Welcome to my module&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># main_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test1</span><br><span class="line"></span><br><span class="line">test1.greet(<span class="string">&quot;Alice&quot;</span>)  <span class="comment"># 调用模块中的函数</span></span><br><span class="line"><span class="built_in">print</span>(test1.message)  <span class="comment"># 访问模块中的变量</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Welcome to my module</span></span><br><span class="line"><span class="string">Hello, Alice!</span></span><br><span class="line"><span class="string">Welcome to my module</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>从输出结果判断我们可以看出，确实是导入module再执行module，然后继续往下执行。</p>
+<p>[^tips]: 如此一来，我们也能理解在很多python项目中使用方法为什么一般都是from XXX import XXX，如果直接import，开销也就太大了。</p>
+<p>每次import都会把导入的模块执行一遍，但又不是所有的模块都只有函数，如果里面有输出或者其他操作，这些又不是我需要的，怎么处理呢。<strong>简而言之，如何避免某些代码在模块被导入后被执行？</strong> — 这恰恰是<code> if __name__ == &#39;__main__&#39;</code>的作用。</p>
+<p><code>__name__ </code>是python的一个内置属性，其用于标识当前模块的名称。当一个模块被直接执行时，其名称被设置为 <code>&quot;__main__&quot;</code>。而当一个模块被导入到其他模块中时，其名称则被设置为模块的实际名称。这里可以举例理解</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># main_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;这里是模块：&#x27;</span>, __name__)</span><br><span class="line"><span class="comment"># 这里是模块： __main__</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test1.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;这里是模块：&#x27;</span>, __name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># main_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test1</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;这里是模块：&#x27;</span>, __name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">这里是模块： test1</span></span><br><span class="line"><span class="string">这里是模块： __main__</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>了解了<code>__name__</code>是什么，那么<code>if __name__ == &#39;__main__&#39;</code>的作用就显而易见了。就是判断当前执行的模块是不是我，如果不是，我后面的程序就不执行，如果是就执行。</p>
+]]></content>
+      <categories>
+        <category>Python-learn</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「问题」官方文档中关于merge和join 一个note引起的疑问</title>
+    <url>/2024/06/29/%E3%80%8C%E9%97%AE%E9%A2%98%E3%80%8D%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%AD%E5%85%B3%E4%BA%8Emerge%E5%92%8Cjoin%20%E4%B8%80%E4%B8%AAnote%E5%BC%95%E8%B5%B7%E7%9A%84%E7%96%91%E9%97%AE/</url>
+    <content><![CDATA[<p>在官方文档 — <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/user_guide/merging.html">Merge, join, concatenate and compare</a>中，在介绍完join的常用方法后，在后续的note中有这样一段话。</p>
+<blockquote>
+<p>When <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code>DataFrame</code></a> are joined using only some of the levels of a <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.MultiIndex.html#pandas.MultiIndex" title="pandas.MultiIndex"><code>MultiIndex</code></a>, the extra levels will be dropped from the resulting join. To preserve those levels, use <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="pandas.DataFrame.reset_index"><code>DataFrame.reset_index()</code></a> on those level names to move those levels to columns prior to the join.</p>
+<p>当 <code>DataFrame</code> 仅使用 <code>MultiIndex</code> 中的部分级别进行连接时，额外的级别将从连接结果中删除。要保留这些层级，请在这些层级名称上使用 <code>DataFrame.reset_index()</code> 将这些层级移动到连接前的列中。</p>
+</blockquote>
+<p>也是我阅读的问题，没有注意到它的位置。现在再回头去看，这一节是在 「Merging on a combination of columns and index levels」这一栏下面的，因此其实这个注释是给merge的，但当时大标题是join因此我以为是针对join的。</p>
+<p>因此产生了一个疑问，join并不会抛弃 「extra level」 啊，在官方文档的上面还有一个例子，就是关于join处理 MultiIndex 时，右侧的表的index必须是左侧表index的子集。</p>
+<span id="more"></span>
+
+<p>然后在下面的例子中，连接的过程中，extra level 并没有删除。如下所示，可以很直观的看到 <code>num</code> 列被保存了下来。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">109</span>]: leftindex = pd.MultiIndex.from_product(</span><br><span class="line">   .....:     [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>), [<span class="number">1</span>, <span class="number">2</span>]], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>, <span class="string">&quot;num&quot;</span>]</span><br><span class="line">   .....: )</span><br><span class="line">   .....: </span><br><span class="line"></span><br><span class="line">In [<span class="number">110</span>]: left = pd.DataFrame(&#123;<span class="string">&quot;v1&quot;</span>: <span class="built_in">range</span>(<span class="number">12</span>)&#125;, index=leftindex)</span><br><span class="line"></span><br><span class="line">In [<span class="number">111</span>]: left</span><br><span class="line">Out[<span class="number">111</span>]: </span><br><span class="line">            v1</span><br><span class="line">abc xy num    </span><br><span class="line">a   x  <span class="number">1</span>     <span class="number">0</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">1</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">2</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">3</span></span><br><span class="line">b   x  <span class="number">1</span>     <span class="number">4</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">5</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">6</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">7</span></span><br><span class="line">c   x  <span class="number">1</span>     <span class="number">8</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">9</span></span><br><span class="line">    y  <span class="number">1</span>    <span class="number">10</span></span><br><span class="line">       <span class="number">2</span>    <span class="number">11</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">112</span>]: rightindex = pd.MultiIndex.from_product(</span><br><span class="line">   .....:     [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>)], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>]</span><br><span class="line">   .....: )</span><br><span class="line">   .....: </span><br><span class="line"></span><br><span class="line">In [<span class="number">113</span>]: right = pd.DataFrame(&#123;<span class="string">&quot;v2&quot;</span>: [<span class="number">100</span> * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">7</span>)]&#125;, index=rightindex)</span><br><span class="line"></span><br><span class="line">In [<span class="number">114</span>]: right</span><br><span class="line">Out[<span class="number">114</span>]: </span><br><span class="line">         v2</span><br><span class="line">abc xy     </span><br><span class="line">a   x   <span class="number">100</span></span><br><span class="line">    y   <span class="number">200</span></span><br><span class="line">b   x   <span class="number">300</span></span><br><span class="line">    y   <span class="number">400</span></span><br><span class="line">c   x   <span class="number">500</span></span><br><span class="line">    y   <span class="number">600</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">115</span>]: left.join(right, on=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>], how=<span class="string">&quot;inner&quot;</span>)</span><br><span class="line">Out[<span class="number">115</span>]: </span><br><span class="line">            v1   v2</span><br><span class="line">abc xy num         </span><br><span class="line">a   x  <span class="number">1</span>     <span class="number">0</span>  <span class="number">100</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">1</span>  <span class="number">100</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">2</span>  <span class="number">200</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">3</span>  <span class="number">200</span></span><br><span class="line">b   x  <span class="number">1</span>     <span class="number">4</span>  <span class="number">300</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">5</span>  <span class="number">300</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">6</span>  <span class="number">400</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">7</span>  <span class="number">400</span></span><br><span class="line">c   x  <span class="number">1</span>     <span class="number">8</span>  <span class="number">500</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">9</span>  <span class="number">500</span></span><br><span class="line">    y  <span class="number">1</span>    <span class="number">10</span>  <span class="number">600</span></span><br><span class="line">       <span class="number">2</span>    <span class="number">11</span>  <span class="number">600</span></span><br></pre></td></tr></table></figure>
+
+<p>因此我对这个注释产生了疑问，并在stackoverflow上发起了这个回答<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/78695113/how-is-this-description-understood-in-the-pandas-documentation">How is this description understood in the pandas documentation?</a></p>
+<p>得到的回复就是，drop extra level这个特性是merge的而不是join的，并在测试答者提供的代码后发现果然如此 — 我闹乌龙了。</p>
+<p>如下代码，只是简单的将join改为merge，结果截然不同，<code>num</code>列没了。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">left_index = pd.MultiIndex.from_product(  </span><br><span class="line">    [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>), [<span class="number">1</span>, <span class="number">2</span>]], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>, <span class="string">&quot;num&quot;</span>]  </span><br><span class="line">)  </span><br><span class="line">  </span><br><span class="line">left = pd.DataFrame(&#123;<span class="string">&quot;v1&quot;</span>: <span class="built_in">range</span>(<span class="number">12</span>)&#125;, index=left_index)  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">right_index = pd.MultiIndex.from_product(  </span><br><span class="line">    [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>)], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>]  </span><br><span class="line">)  </span><br><span class="line">  </span><br><span class="line">right = pd.DataFrame(&#123;<span class="string">&quot;v2&quot;</span>: [<span class="number">100</span> * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">7</span>)]&#125;, index=right_index)  </span><br><span class="line"> </span><br><span class="line">  </span><br><span class="line"><span class="built_in">print</span>(left.merge(right, on=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>], how=<span class="string">&quot;inner&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        v1   v2</span></span><br><span class="line"><span class="string">abc xy         </span></span><br><span class="line"><span class="string">a   x    0  100</span></span><br><span class="line"><span class="string">    x    1  100</span></span><br><span class="line"><span class="string">    y    2  200</span></span><br><span class="line"><span class="string">    y    3  200</span></span><br><span class="line"><span class="string">b   x    4  300</span></span><br><span class="line"><span class="string">    x    5  300</span></span><br><span class="line"><span class="string">    y    6  400</span></span><br><span class="line"><span class="string">    y    7  400</span></span><br><span class="line"><span class="string">c   x    8  500</span></span><br><span class="line"><span class="string">    x    9  500</span></span><br><span class="line"><span class="string">    y   10  600</span></span><br><span class="line"><span class="string">    y   11  600</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>随后，我也根据note中描述，使用reset_index处理右边的表，然后再merge。 yes，完全正确。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(left.reset_index().merge(right, on=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>], how=<span class="string">&quot;inner&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">   abc xy  num  v1   v2</span></span><br><span class="line"><span class="string">0    a  x    1   0  100</span></span><br><span class="line"><span class="string">1    a  x    2   1  100</span></span><br><span class="line"><span class="string">2    a  y    1   2  200</span></span><br><span class="line"><span class="string">3    a  y    2   3  200</span></span><br><span class="line"><span class="string">4    b  x    1   4  300</span></span><br><span class="line"><span class="string">5    b  x    2   5  300</span></span><br><span class="line"><span class="string">6    b  y    1   6  400</span></span><br><span class="line"><span class="string">7    b  y    2   7  400</span></span><br><span class="line"><span class="string">8    c  x    1   8  500</span></span><br><span class="line"><span class="string">9    c  x    2   9  500</span></span><br><span class="line"><span class="string">10   c  y    1  10  600</span></span><br><span class="line"><span class="string">11   c  y    2  11  600</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这段时间使用stackoverflow，emmm，不得不承认，环境差距真的很大，国内没有一个比较好的社区。V2ex可能还行，但是居然是被墙的，至于其他的。</p>
+<p>CSDN最近copy的事也是沸沸扬扬，难评！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>pandas</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows下给命令起个别名</title>
+    <url>/2023/08/09/windows%E4%B8%8B%E7%BB%99%E5%91%BD%E4%BB%A4%E8%B5%B7%E4%B8%AA%E5%88%AB%E5%90%8D/</url>
+    <content><![CDATA[<p>最近用bilix下载b站视频，如果想要登录我每次都得带上一个cookie，不然下载的画质最高是780P的，不够清晰。但每次带cookie又太麻烦了，所以就搜索了下有没有可以保持登陆的。<br><img src="https://s2.loli.net/2023/08/09/uYWUqtEak6CHriD.png" alt="image-20230809192453706"><br>作者在GitHub中只给出了MAC与Linux的解决方法，并没有Windows的，所以我就搜索了下有没有类似的解决方法，还真找到了。</p>
+<span id="more"></span>
+
+<h1 id="新建bat文件"><a href="#新建bat文件" class="headerlink" title="新建bat文件"></a>新建bat文件</h1><p>先建立个txt文件，在里面写好你要起别名的内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">doskey ls=dir /b $*  </span><br><span class="line">doskey bilixc=bilix --cookie &quot;your cookie&quot; $*</span><br></pre></td></tr></table></figure>
+
+<p><code>这里ls是用来做测试的</code></p>
+<ul>
+<li><p>等于号左边是其右边的别名</p>
+</li>
+<li><p><code>doskey</code>就相当于Linux中的<code>alias</code></p>
+</li>
+<li><p><code>$*</code>表示这个命令还可能有其他参数</p>
+</li>
+<li><p>把文件存到C盘里</p>
+</li>
+</ul>
+<h1 id="修改注册表"><a href="#修改注册表" class="headerlink" title="修改注册表"></a>修改注册表</h1><h2 id="找到cmd注册表项的位置"><a href="#找到cmd注册表项的位置" class="headerlink" title="找到cmd注册表项的位置"></a>找到cmd注册表项的位置</h2><p>打开cmd，运行<code>cmd /?</code>命令，然后找到这一项，或许你的有所不同，但肯定是大同小异。</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions</span><br><span class="line"></span><br><span class="line">    和/或</span><br><span class="line"></span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions</span><br></pre></td></tr></table></figure>
+
+<p>随后win+r，调出运行，输入<code>regedit</code>，然后根据上面路径找到对应目录<br><img src="https://s2.loli.net/2023/08/09/nUvJ35EoudbqpeS.png" alt="image-20230809192630207"></p>
+<h2 id="修改注册表-1"><a href="#修改注册表-1" class="headerlink" title="修改注册表"></a>修改注册表</h2><p>我这里是没有AutoRun这一项的，因此右键——新建——字符串值，输入“AutoRun”，然后选中——右键——修改，把路径输入进去</p>
+<p><img src="https://s2.loli.net/2023/08/09/dsobgRmverqu1kA.png" alt="image-20230809192640324"></p>
+<p>然后确认，退出就行</p>
+<h1 id="检测测试是否成功"><a href="#检测测试是否成功" class="headerlink" title="检测测试是否成功"></a>检测测试是否成功</h1><p>打开cmd，输入ls看看，ok成功了</p>
+<p><img src="https://s2.loli.net/2023/08/09/F6ROBDce92w3JW5.png" alt="image-20230809192715839"></p>
+<p>再看看bilix下载情况</p>
+<p><img src="https://s2.loli.net/2023/08/09/g3mt7aeSuzcNBYf.png" alt="image-20230809192731178"></p>
+<p>ok没问题，画质是登录以后的，nice try！</p>
+<p><img src="https://s2.loli.net/2023/08/09/c17eKFGRnPrU8sW.png" alt="image-20230809192741226"></p>
+<p>reference</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html">在cmd中为命令设置别名以及启动cmd时自动执行bat</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>-工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于书签与书签同步工具的分享</title>
+    <url>/2023/04/23/%E5%85%B3%E4%BA%8E%E4%B9%A6%E7%AD%BE%E4%B8%8E%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7%E7%9A%84%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[<p>Bookmark and sync</p>
+<p>纯share blog</p>
+<h1 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h1><h2 id="为什么需要书签"><a href="#为什么需要书签" class="headerlink" title="为什么需要书签"></a>为什么需要书签</h2><p>书签相信大家都不陌生，尤其是对于像我这样高强度冲浪的人来说，书签绝对是必不可少的，互联网花花世界这么大，碰到感兴趣的要是不收藏起来，之后想找无异于大海捞针。</p>
+<h2 id="为什么需要BookmarkHub"><a href="#为什么需要BookmarkHub" class="headerlink" title="为什么需要BookmarkHub"></a>为什么需要BookmarkHub</h2><p>Hub在计算机里是集线器的意思，这里BookmarkHub可理解为书签库，这也是接下来我介绍的插件名。</p>
+<p>我起初在网络上闲逛时经常用书签把自己感兴趣的东西加入书签栏，久而久之，书签的数量也就与日俱增，各种各样的书签迷人眼。有意思的视频网站、强大的工具网站、感兴趣的文章、常用的学校官网等等等。数量不断增加，种类也是，这时在书签中找记忆中似是而非的网站本身就成为了一个问题。</p>
+<span id="more"></span>
+
+<p>当然大多数浏览器或者软件都提供了在书签栏&#x2F;收藏夹中创建文件夹的功能。我们可以网页或者工具的作用或者内容给他分类。但是！这里有俩个情况：</p>
+<ul>
+<li>我浏览器不止一个Chrome常用于学习或者看CS相关的内容，Firefox则覆盖我生活中方法面面使用浏览器的情况，于此同时我手机用的浏览器也不止一个，夸克、Chrome。至于为什么不能<code>all in one</code>，我的回答是有时候单一的浏览器不能解决所有问题，不得不<code>all in all</code>。那么不同设备&#x2F;浏览器之间的书签便时不一致的，找东西的时候难不成还把所有设备过一遍？太low啦！！</li>
+<li>书签栏分类等同于给书签打上了标签，以后找相关的就在这里面找，但是问题来了，并不是所有网站都是单一的，他可能与图片相关因此我将它放在了Photo文件夹，但其实际是一个处理图片的工具。那么我也可以将其放在工具集文件夹中…，怎么办呢？不好找啊。<br><img src="https://s2.loli.net/2023/04/23/OgUR1VsxPYhIQeq.png" alt="image-20230423123944435"></li>
+</ul>
+<h1 id="怎么办—介绍几个正在用或者用过的工具"><a href="#怎么办—介绍几个正在用或者用过的工具" class="headerlink" title="怎么办—介绍几个正在用或者用过的工具"></a>怎么办—介绍几个正在用或者用过的工具</h1><p>为了解决上述问题，我也找了挺多软件和插件。找到两个非常优秀的开源项目，真的非常nice！！！</p>
+<h2 id="BookmarkHub"><a href="#BookmarkHub" class="headerlink" title="BookmarkHub"></a>BookmarkHub</h2><p><a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub">项目地址</a></p>
+<p>项目有中文介绍教程，<a target="_blank" rel="noopener" href="https://github.com/dudor/BookmarkHub/blob/main/README_cn.md">教程网址</a></p>
+<p>这是一个浏览器插件，目前支持Chrome、Firefox、edge等浏览器<img src="https://s2.loli.net/2023/04/23/GSIfvU8TtqxbWyw.png" alt="image-20230423125026448"></p>
+<ul>
+<li>简洁，操作及其方便</li>
+<li>主打一个各浏览器书签同步其他么得，功能单一但有效</li>
+<li>使用 GitHub 的 Gist 记录来存储浏览器的书签—有GitHub账户就行，教程会教你弄，保密性挺好很安全。</li>
+</ul>
+<p>使用方法（我直接照抄官方文档的，就加了点图）</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/login">登陆</a> GitHub，如果没有账号请点此<a target="_blank" rel="noopener" href="https://github.com/join">注册</a>。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">创建一个可以管理 gist 的 token</a>。</p>
+<p>这里Note填BookmarkHub就行，下面token重置时间看你自己了，然后去最下面点创建</p>
+<p><img src="https://s2.loli.net/2023/04/23/olWB8m1kUqhsMrZ.png" alt="image-20230423125247278"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://gist.github.com/">创建一个私有的 gist</a>。<strong>注意：如果是公开的 gist，你的书签是可以被他人搜索到的。</strong></p>
+<p><img src="https://s2.loli.net/2023/04/23/i8hNzVIGlRCZnr6.png" alt="image-20230423125444413"></p>
+</li>
+<li><p>在你用的浏览器的应用商店下载 BookmarkHub，点击插件的设置按钮，在弹出的设置窗口填入 token 和 gist ID，然后你就可以上传下载书签了。</p>
+<ul>
+<li><p>这个token点设置里面的get token去弄就行。</p>
+</li>
+<li><p>gist ID 就是你在上一步创建的时候，网址框最后那一串<img src="C:\knowledge\blog\BLOG\source_posts\assets\image-20230423125925463.png" alt="image-20230423125925463"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="BookmarkHub如何解决第二个问题"><a href="#BookmarkHub如何解决第二个问题" class="headerlink" title="BookmarkHub如何解决第二个问题"></a>BookmarkHub如何解决第二个问题</h3><p>从上面功能描述来看，只可以解决第一个问题，第二个怎么办呢？</p>
+<p>hhhh，软件没办法，但是可以从书签入手。火狐提供了书签描述、Chrome的话就只可以在书签名字做手脚，在名字后面加功能描述或者书签就行。在搜索框搜索就可以检索出来。</p>
+<h2 id="xBrowserSync—同时解决两个问题"><a href="#xBrowserSync—同时解决两个问题" class="headerlink" title="xBrowserSync—同时解决两个问题"></a>xBrowserSync—同时解决两个问题</h2><p><a target="_blank" rel="noopener" href="https://www.xbrowsersync.org/">官方网站</a></p>
+<p>emmm，说在前面，使用和介绍全是纯英文的。</p>
+<ul>
+<li><p>支持浏览器书签同步(插件)、手机同样可以通过app进行同步</p>
+<img src="https://s2.loli.net/2023/04/23/N1me7OTgfBiYZ3d.png" alt="image-20230423130406192" style="zoom:50%;" />
+</li>
+<li><p>保护隐私安全—完全匿名、不用注册</p>
+</li>
+<li><p>不仅可以同步，还可以<strong>添加描述和标签来丰富你的本地浏览器书签</strong>，所有可以直接解决第二个问题</p>
+</li>
+</ul>
+<p>相比于上一个，功能更强大了，但是安装和使用可能没那么简单，具体的装上用就是，上手即用。具体看其提供的Guide</p>
+<ol>
+<li><p>浏览器安装，然后设置密码</p>
+<p><img src="https://s2.loli.net/2023/04/23/JNu5C3sTmL6njIS.png" alt="image-20230423132118064"></p>
+</li>
+<li><p>然后点sync，就ok啦，后面的就是日常使用了</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>开源软件</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>开源软件</tag>
+        <tag>书签</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于开源软件与我的分享目的</title>
     <url>/2023/04/21/%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6%E4%B8%8E%E6%88%91%E7%9A%84%E5%88%86%E4%BA%AB%E7%9B%AE%E7%9A%84/</url>
     <content><![CDATA[<p>开源软件还有一个名字，叫自由软件，与之相对于有一类软件叫闭源软件，比如我们常用的QQ，微信等。接下来接简单介绍下两者的区别</p>
@@ -1742,36 +1998,127 @@
       </tags>
   </entry>
   <entry>
-    <title>满足至极的微信输入法.md</title>
-    <url>/2024/02/29/%E6%BB%A1%E8%B6%B3%E8%87%B3%E6%9E%81%E7%9A%84%E5%BE%AE%E4%BF%A1%E8%BE%93%E5%85%A5%E6%B3%95-md/</url>
-    <content><![CDATA[<h1 id="满足至极的微信输入法"><a href="#满足至极的微信输入法" class="headerlink" title="满足至极的微信输入法"></a>满足至极的微信输入法</h1><p>此前从少数派上一篇文章看到对于微信输入法的推荐，于是乎从手机尝试一一周，然后熟悉再探索，大概用了两周左右。目前全面更换为微信输入法。简单聊一下怎么个好用法。</p>
-<p>此前，在手机端基本是使用讯飞或者系统自己带的，桌面端则是使用微软自带以及Rime小狼毫(一开始想折腾下，但是也没折腾明白，使用文档感觉是在学Python文档)。手机端基本使用需求是满足的，联想功能方面还行。但是现在对比下来就存在许多缺点，单纯就输入功能来说</p>
+    <title>后备隐藏能源！！启动！！！！</title>
+    <url>/2024/04/20/%E5%90%8E%E5%A4%87%E9%9A%90%E8%97%8F%E8%83%BD%E6%BA%90%EF%BC%81%EF%BC%81%E5%90%AF%E5%8A%A8%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81/</url>
+    <content><![CDATA[<h2 id="正常作息了"><a href="#正常作息了" class="headerlink" title="正常作息了"></a>正常作息了</h2><p>经过半年的沟通，终于磨动了，目前放到白班去了，不需要倒班了，emmm，精神状态好，空余时间够的话，我应该可以狠狠的coding和记录阅读了</p>
+<p>浅浅的舒服一下，后续记录应该周更？</p>
+<p>尽力尽力！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>同步需求完美解决 FreeFileSync 自来水</title>
+    <url>/2024/04/17/%E5%90%8C%E6%AD%A5%E9%9C%80%E6%B1%82%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3-FreeFileSync-%E8%87%AA%E6%9D%A5%E6%B0%B4/</url>
+    <content><![CDATA[<p>FreeFileSync是一款自动同步软件，由于自己有资源备份&#x2F;同步的需求，因此接触到了这款软件，也可以说一步到位，省去了很多寻找折腾的地方。</p>
+<p>免费+功能明确强大，这款应用应该属于是比较出名的。</p>
+<p>先上<a target="_blank" rel="noopener" href="https://freefilesync.org/">官网地址</a>，直接下载即可 </p>
+<p>官网界面非常简单，没有任何广告，舒服的，主页也有官方自己的使用教程，主要是<a target="_blank" rel="noopener" href="https://freefilesync.org/tutorials.php">视频教程</a>，但个人觉得上手还是很简单的，尤其是我这种需求比较明确的情况。</p>
+<p>我的使用场景主要是备份，同步其实用的不多</p>
 <ul>
-<li>小狼毫没有配置对应文件的话，对于诗词以及一些谚语之类的，基本是没有自动联想相关方面词条的功能。对比下来微软感觉反而是遇到微信输入法之前的最优解。</li>
-<li>手机方面，除了明显舒服的优化输入以及自动补全外，微信输入法值得一提的就是删除时向上滑动可以清屏，向下滑可以恢复清理的内容。方便删大量文字，同时删过头了还可以反悔。</li>
+<li>备份个人笔记的数据 — 比如思源笔记的个人数据库、logseq的数据库等等</li>
+<li>备份某些非常关键的资源 — 我用于记录某些关键信息(某些token、密码等等)的文件</li>
 </ul>
 <span id="more"></span>
 
-<h2 id="外观—极为克制、即为简约的外观。"><a href="#外观—极为克制、即为简约的外观。" class="headerlink" title="外观—极为克制、即为简约的外观。"></a>外观—极为克制、即为简约的外观。</h2><p>微信输入法没有皮肤，就挺好，简约好用，输入法就是用来打字的。</p>
-<p><img src="https://s2.loli.net/2024/02/29/7n9LxGAuiTIsMmt.png" alt="image-20240229193513226"></p>
-<h2 id="功能-—-Nice"><a href="#功能-—-Nice" class="headerlink" title="功能 — Nice"></a>功能 — Nice</h2><h3 id="第一神技-—-剪切板同步"><a href="#第一神技-—-剪切板同步" class="headerlink" title="第一神技 — 剪切板同步"></a>第一神技 — 剪切板同步</h3><p>不同设备在下载好输入法以后，点击「关联设备」，随后在要同步的设备上点击「查看匹配码」，将对应设备匹配码输进去，就可以关联不同设备的剪切板了。简单好用！</p>
-<p><img src="https://s2.loli.net/2024/02/29/IpVhUAmYEGDJfjy.png" alt="image-20240229193537594"></p>
-<p>使用也简单，一台设备复制粘贴，其他设备的剪切板就会有，图片也行，如下：<br><img src="https://s2.loli.net/2024/02/29/3zeXDcWB5gkmJxw.png"></p>
-<h3 id="第二神技-—-常用语"><a href="#第二神技-—-常用语" class="headerlink" title="第二神技 — 常用语"></a>第二神技 — 常用语</h3><p>微信输入法是存在一些不足的，比如说，如果你是刚下载，这个符号「」你应该是没法直接打出来的。但是可以通过常用语，将它添加到你的输入中。</p>
-<p>如下所示，我每次输入kuo，在选项中都会有「」可以选择。</p>
-<p><img src="https://s2.loli.net/2024/02/29/rThqPIbeSmGH3NZ.png" alt="image-20240229193601835"></p>
-<p>这为我们自定义以及搭建自己的输入法提供了一条路径，使得普适的输入法可以更加个性化。</p>
-<p>检索优化，在桌面端按下Down或者Up，并不是一行一行出现相关词，而是如下图所示，提供更方便的检索方式，对于使用体验显然是一个优化。</p>
-<p><img src="https://s2.loli.net/2024/02/29/uOFYEfdSVLrohmG.png" alt="image-20240229193609290"></p>
-<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>见不到任何多余的东西，非常克制非常克制，整体用上来就是一个很清爽的输入法，没有其他</p>
-<p>综上自来水，微信输入法显然是微信出品的一款追求口碑的产品。</p>
+<p>至于使用同步功能的话 — 也支持在线存储</p>
+<ul>
+<li>Google云</li>
+<li>SFTP</li>
+<li>FTP</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/04/17/ga7WowUfCl8nNYR.png" alt="官网"></p>
+<h2 id="选择同步文件夹"><a href="#选择同步文件夹" class="headerlink" title="选择同步文件夹"></a>选择同步文件夹</h2><p>在下载并安装完成以后，就可以根据自己的需求进行设置了</p>
+<p>左边是你想要同步的源文件夹，右边是其对应的目标文件夹，每行的两队是彼此匹配的。</p>
+<p>点击「添加文件夹对」(绿色➕)，增加你想要</p>
+<p><img src="https://s2.loli.net/2024/04/20/SRcMCiQFeKkgxW6.png" alt="软件主页"></p>
+<p><img src="https://s2.loli.net/2024/04/20/EjlhS6xUaR7OM5W.png" alt="image-20240417151506483"></p>
+<p>然后在两侧分别添加对应文件夹即可，支持多种方式</p>
+<ul>
+<li>文件路径</li>
+<li>直接拖放</li>
+<li>点击浏览，然后定位到对应文件夹</li>
+</ul>
+<p>上述的备份同步是基于不同的存储设备的，他们传输是通过硬件进行的，因此读写速度总得来说比较快</p>
+<h2 id="备份的三种方式"><a href="#备份的三种方式" class="headerlink" title="备份的三种方式"></a>备份的三种方式</h2><p>Freefilesync 提供了三种备份方案</p>
+<ul>
+<li>双向同步</li>
+<li>镜像同步</li>
+<li>更新</li>
+</ul>
+<p>简单说一下三种概念，第一种就是说你的数据在两侧都可能会变化，而他同步的时候会对两侧文件的变化时间以及文件变化，决定同步是由哪侧对另外一侧进行更新，这种使用的场景就是针对你对在两个存储路径上的文件都可能有读写操作的情况。</p>
+<p><img src="https://s2.loli.net/2024/04/20/6sDQFH7cxz3BOtf.png" alt="image-20240417152303602"></p>
+<p>但是这种使用场景会产生冲突 — 比如说对于同一个文件，两侧的文件都改变了。当然，对于冲突会根据算法有处理策略，但是至于要不要使用还是看自己。</p>
+<p><img src="https://s2.loli.net/2024/04/20/6lrzSU8PfpmtMZs.png" alt="image-20240417152355790"></p>
+<p>第二种的话简单理解就是复制粘贴，就是把左边的文件夹覆写到右边文件，注意注意注意⚠️，这里的覆写包括删除，也就是说如果你对源文件夹中的某些文件进行了删除，那么同步完以后，右边的文件夹中原有文件也会被对应的改变。</p>
+<p>从下图可以看到，右边有一项需要删除，其他的都是增加&#x2F;修改</p>
+<p><img src="https://s2.loli.net/2024/04/20/IlSNP2xyhstRAV6.png" alt="image-20240417152526016"></p>
+<p>第三种情况，顾名思义就是更新，他以左边的文件为标准，像右边进行更新 — 也就是增加&#x2F;修改，对于某些已经删除的文件，并不会同步删除，<strong>仅有增加操作</strong></p>
+<p><img src="https://s2.loli.net/2024/04/20/CU1wTphvbxAdX2L.png" alt="image-20240417152633011"></p>
+<h2 id="云存储"><a href="#云存储" class="headerlink" title="云存储"></a>云存储</h2><p>Freefilesync 也提供在线存储的功能，但是目前只有Google Drive 如果使用其他的应该需要通过SFTP协议与FTP协议。</p>
+<p>由于个人对于这方面没有需求，因此就没有研究了，云存储方面直接使用的国内阿里云提供的存储了。</p>
+<p><img src="https://s2.loli.net/2024/04/20/izPUd2fJmKc6etT.png" alt="image-20240417152806892"></p>
+<p>大概就这样，非常优秀的一款软件，狠狠的点赞</p>
 ]]></content>
       <categories>
         <category>工具</category>
+        <category>资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>我想听歌！！！！</title>
+    <url>/2024/05/18/%E6%88%91%E6%83%B3%E5%90%AC%E6%AD%8C%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81/</url>
+    <content><![CDATA[<p>我的网易云黑胶会员断了快两年了，21和22的时候网易云使用频率还是很高的，现在用的越来越少了，可以说基本没用了，尤其是打开网易云首先会在网易云标志界面等一会，然后弹出冗长的广告以及超小的跳过按钮，还有点击跳过按钮时仍然会卡顿的那几秒或者误触进入其他软件。</p>
+<p>光写着我血压就上来了，还好有李跳跳可以略微减轻一下这种难受。</p>
+<p>今天看到QMD公众号发的一篇文章，随着QMD、歌词适配、洛雪的相继「阵亡」以及用户借洛雪尸还魂，有点想记录下我的听歌历程。</p>
+<p>我是一个闲的时候或者学习游戏的时候，耳朵不塞点东西不舒服的人，总想放点歌听听，所以也算半个小曲库？但现在使用各个主流音乐软件真的太难受了。</p>
+<p>所以就想要BB一下。</p>
+<span id="more"></span>
+
+<h2 id="为什么不用网易云了"><a href="#为什么不用网易云了" class="headerlink" title="为什么不用网易云了"></a>为什么不用网易云了</h2><p>黑胶贵了，虽然在我断续的这段时间里，一直提示有优惠。网易版权有限，由于版权问题，国内各大音乐平台抢的那是头破血流，一个歌手可能不同的歌的权限在不同的平台，也是抽象。</p>
+<p>国内版权大户应该是QQ，但是很早开始我就使用过的网易云，而且网易云的每日推荐此前用的确实不错，我甚至等级都快满级了。</p>
+<p><img src="https://s2.loli.net/2024/05/18/RpIs36Hj2dYmLrM.png" alt="网易云等级"></p>
+<p>但是真的很难受，有些歌你就是搜不到，如果你想啥都可以听那么就得跨多个平台，你还得给各个平台冲不同的会员。多少进了歌手口袋我也不知道。</p>
+<p>然后随着网易云版权问题和QQ音乐不断竞争，随之许嵩的歌变成VIP，薛之谦的歌也开始VIP，林俊杰的歌也加入VIP，当然，杰伦的歌早就没法听了。</p>
+<p>网易云真的不好用了，于我而言，他真的变成一个播放器了，而不是一个音乐软件。</p>
+<h3 id="QMD、歌词适配"><a href="#QMD、歌词适配" class="headerlink" title="QMD、歌词适配"></a>QMD、歌词适配</h3><p>由于不想开多个会员，然后又想听一下网易云没有的歌，当然还有就是网易云的界面我用了点插件，非常美观，界面有点小小的沉浸感。所以就下了些本地音乐，基本都是只有VIP才能看的「无损音质」的flac文件。</p>
+<p>然后使用网易云播放，这段时间应该是我听歌最爽的一段时间，想听啥搜啥，没有就下了然后上传到网易云云盘，然后加入自己的歌单，循环就完事！！！</p>
+<p>腻歪了就听听日推，反正啥也能听点。</p>
+<p><img src="https://s2.loli.net/2024/05/18/MCoBJVbRyxY1nkA.png" alt="网易云盘"></p>
+<h3 id="版权打到死，全嘎了"><a href="#版权打到死，全嘎了" class="headerlink" title="版权打到死，全嘎了"></a>版权打到死，全嘎了</h3><p>用了不久，各个平台对版权抓的也是越来越狠，然后一片相关软件基本全倒下了。</p>
+<p>现在手机里还存着歌词适配，打开就是它的告别信。算是一种纪念？也许吧。</p>
+<h3 id="总结下来就是不划算"><a href="#总结下来就是不划算" class="headerlink" title="总结下来就是不划算"></a>总结下来就是不划算</h3><p>本地音乐的路子也断了，VIP也到期了，不同平台续多个会员虽然不是续不起，但总感觉是冤大头，收益显然主要是平台的，但我真的不想送钱。</p>
+<p>要支持歌手还不如一张演唱会门票，或者买个专辑包。</p>
+<p>所以渐渐的，基本也是循环着之前的老歌，碰到想听的，就费劲扒拉的找找资源。慢慢的，网易云也就成了一个纯播放器了。</p>
+<h2 id="那我咋听歌"><a href="#那我咋听歌" class="headerlink" title="那我咋听歌"></a>那我咋听歌</h2><p>那我想听新歌啊，我靠！</p>
+<p>B站可以听，但是有权限限制，有些你必须一直开着屏幕，不可以后台播放。</p>
+<p>有没有手段下？有！但是绕弯弯，而且批量下肯定不存在的。</p>
+<h3 id="借尸还魂LX-music"><a href="#借尸还魂LX-music" class="headerlink" title="借尸还魂LX music"></a>借尸还魂LX music</h3><p>然后就接触到洛雪音乐了，也是同歌词适配这些一起被嘎的软件之一。</p>
+<p>但是有点点区别，歌词适配和QMD是内置了音源，那玩意等于是制作者给你提供的，制作者侵权了啊，他们再干下去就得被逮捕了。</p>
+<p>洛雪的音源就比较特殊，没被逮捕的时候，制作者有维护自己的音源的，直接搜就行，开抓以后，那就肯定不能再提供这玩意了。</p>
+<p>官方音源是没了，但是壳子还在啊，他还是一个播放器，只不过缺了获取歌曲的「源」。</p>
+<p>用户自己导入一个「源」不就完事了。</p>
+<p>这也就是借尸还魂的由来！</p>
+<h3 id="现在听歌方式"><a href="#现在听歌方式" class="headerlink" title="现在听歌方式"></a>现在听歌方式</h3><p>桌面端还好，也没有固定哪个软件，洛雪自己有自己的歌单功能，而且还支持导入其他音乐软件的歌单，包括网易云。</p>
+<p><img src="https://s2.loli.net/2024/05/18/4lFchasTxEwBU2V.png" alt="导入歌单"></p>
+<p>所以也没有固定用哪个软件听，哪个顺手点哪个。洛雪胜在啥歌都能找找，虽然也不是啥都有，但是那肯定比网易云全面。</p>
+<p>网易云就是界面比较舒服还有就是日推找找新歌。</p>
+<p>移动端就不太想用网易云了，加载和广告给我恶心坏了，基本都用的洛雪。</p>
+<p>大概就这样，碰到十分喜欢的歌才可能下载下来，不然一般就直接在线听了，歌多了也挺占存储空间的。</p>
+<p><img src="https://s2.loli.net/2024/05/18/oNvgdGCYUeStODf.png" alt="歌单"></p>
+<h2 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h2><p>版权当然是对歌手有利的，就像起点的新举措促使了大量网文写作者的出现，因为确确实实写网文可以养家糊口赚到钱，甚至一步登天！！！</p>
+<p>这对读者对行业都是有利的，虽然吐槽起点点币贵，但是碰到好书还是值得追，主打一个愿打一个愿挨。完结小说一般就不花money了，基本都在阅读找找，而且追更很痛苦的，虽然工作以后娱乐的时间真的有限了。</p>
+<p>希望音乐慢慢的也可以向互利互赢的方向发展吧，有没有可能达到用户、歌手、平台三方共赢呢？我不知道。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>生活杂记</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1809,6 +2156,61 @@
       <tags>
         <tag>图床</tag>
         <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>满足至极的微信输入法.md</title>
+    <url>/2024/02/29/%E6%BB%A1%E8%B6%B3%E8%87%B3%E6%9E%81%E7%9A%84%E5%BE%AE%E4%BF%A1%E8%BE%93%E5%85%A5%E6%B3%95-md/</url>
+    <content><![CDATA[<h1 id="满足至极的微信输入法"><a href="#满足至极的微信输入法" class="headerlink" title="满足至极的微信输入法"></a>满足至极的微信输入法</h1><p>此前从少数派上一篇文章看到对于微信输入法的推荐，于是乎从手机尝试一一周，然后熟悉再探索，大概用了两周左右。目前全面更换为微信输入法。简单聊一下怎么个好用法。</p>
+<p>此前，在手机端基本是使用讯飞或者系统自己带的，桌面端则是使用微软自带以及Rime小狼毫(一开始想折腾下，但是也没折腾明白，使用文档感觉是在学Python文档)。手机端基本使用需求是满足的，联想功能方面还行。但是现在对比下来就存在许多缺点，单纯就输入功能来说</p>
+<ul>
+<li>小狼毫没有配置对应文件的话，对于诗词以及一些谚语之类的，基本是没有自动联想相关方面词条的功能。对比下来微软感觉反而是遇到微信输入法之前的最优解。</li>
+<li>手机方面，除了明显舒服的优化输入以及自动补全外，微信输入法值得一提的就是删除时向上滑动可以清屏，向下滑可以恢复清理的内容。方便删大量文字，同时删过头了还可以反悔。</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="外观—极为克制、即为简约的外观。"><a href="#外观—极为克制、即为简约的外观。" class="headerlink" title="外观—极为克制、即为简约的外观。"></a>外观—极为克制、即为简约的外观。</h2><p>微信输入法没有皮肤，就挺好，简约好用，输入法就是用来打字的。</p>
+<p><img src="https://s2.loli.net/2024/02/29/7n9LxGAuiTIsMmt.png" alt="image-20240229193513226"></p>
+<h2 id="功能-—-Nice"><a href="#功能-—-Nice" class="headerlink" title="功能 — Nice"></a>功能 — Nice</h2><h3 id="第一神技-—-剪切板同步"><a href="#第一神技-—-剪切板同步" class="headerlink" title="第一神技 — 剪切板同步"></a>第一神技 — 剪切板同步</h3><p>不同设备在下载好输入法以后，点击「关联设备」，随后在要同步的设备上点击「查看匹配码」，将对应设备匹配码输进去，就可以关联不同设备的剪切板了。简单好用！</p>
+<p><img src="https://s2.loli.net/2024/02/29/IpVhUAmYEGDJfjy.png" alt="image-20240229193537594"></p>
+<p>使用也简单，一台设备复制粘贴，其他设备的剪切板就会有，图片也行，如下：<br><img src="https://s2.loli.net/2024/02/29/3zeXDcWB5gkmJxw.png"></p>
+<h3 id="第二神技-—-常用语"><a href="#第二神技-—-常用语" class="headerlink" title="第二神技 — 常用语"></a>第二神技 — 常用语</h3><p>微信输入法是存在一些不足的，比如说，如果你是刚下载，这个符号「」你应该是没法直接打出来的。但是可以通过常用语，将它添加到你的输入中。</p>
+<p>如下所示，我每次输入kuo，在选项中都会有「」可以选择。</p>
+<p><img src="https://s2.loli.net/2024/02/29/rThqPIbeSmGH3NZ.png" alt="image-20240229193601835"></p>
+<p>这为我们自定义以及搭建自己的输入法提供了一条路径，使得普适的输入法可以更加个性化。</p>
+<p>检索优化，在桌面端按下Down或者Up，并不是一行一行出现相关词，而是如下图所示，提供更方便的检索方式，对于使用体验显然是一个优化。</p>
+<p><img src="https://s2.loli.net/2024/02/29/uOFYEfdSVLrohmG.png" alt="image-20240229193609290"></p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>见不到任何多余的东西，非常克制非常克制，整体用上来就是一个很清爽的输入法，没有其他</p>
+<p>综上自来水，微信输入法显然是微信出品的一款追求口碑的产品。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>生活杂记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>看万里归途时我在想什么？</title>
+    <url>/2023/06/12/%E7%9C%8B%E4%B8%87%E9%87%8C%E5%BD%92%E9%80%94%E6%97%B6%E6%88%91%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88%EF%BC%9F/</url>
+    <content><![CDATA[<p>刚看完万里归途，趁着感触还在，写点东西。</p>
+<p>emmm，之前看过类似的战狼。但二者还是有很大不同的，相比于战狼的吴京个人花式秀，我其实更觉得张译这种“赌”，更加贴合实际也更让人满怀敬意，更像一个有血有肉有信念的人。</p>
+<span id="more"></span>
+
+<p>在战乱中，在枪械下，个人的力量显得如此不堪一击，也许一颗飞溅的子弹便会让人生戛然而止。但两次放弃撤侨，一次描写渺渺，一笔带过将位置让给了台湾同胞。第二次则前后脉络清晰，嘴硬的宗大伟看着最好的伙伴章宁死在眼前，有一次“没座位”回来找白婳。此前与边境官哈桑就华人出境的拉扯将张译身为一个外交官的能力与水平体现的淋漓尽致。</p>
+<p>此后寻白婳，并带领125号人前往迪拉特的情节才是电影的主线，也是宗大伟身为外交官死里求生的一次次豪赌。</p>
+<p>死里逃生找到白婳，结果需要带走的人远不是预想的七八个，而是从未预想的百来人。在交战区带出百来人，而且失去与大使馆联系，宗大伟选择了赌，与其坐以待毙等着轰炸机淹没不如死里求生赌，徒步前往迪拉特赌救援。</p>
+<p>中途自以为是且初出茅庐的成朗与自作聪明的刘明辉，再次将宗大伟拉上了赌桌。在ak枪口下，宗大伟与叛军首领再次豪赌，赌他不敢杀他这个外交官。赌来了一次俄罗斯转盘，最终以司机瓦迪尔的死亡结尾。从最终结局的戏剧性来看，宗大伟输给了勇气，但我以为这是再正常不过的人之常情，若救了，反倒显得有些圣母。</p>
+<p>最后一次豪赌，仍然是俄罗斯转盘，只不过这次赌注换成了章宁的女儿法提玛。所有三次颤抖的手扣动扳机，换来叛军首领的无地自容与不可置信。随后成朗与其对赌，赌其不敢在摄像头下开枪，更无可能杀了所有人。</p>
+<p>是的，就现实而言，在枪械下，普通人能做的，便是靠脑子和勇气去赌那一线生机，抓住了方可得活。若对方是个轴军官，一枪下去，一切皆休。所幸，蠢货也当不上叛军首领，也当不上边境官。</p>
+<p>问题来了，对方的赌注是宗大伟等人的生命，宗大伟的赌注呢？是国家给予的底气！就像第三次豪赌时，他掏出护照告诉叛军首领，血债血偿！</p>
+<p>最后重逢的画面真的很美，以年味，以市井气息，将人从战乱拉回了这个国泰民安的国家，这个撤离时高呼的“家”。</p>
+<p><img src="https://s2.loli.net/2023/06/12/gZAdXoV2fbm9uaC.png" alt="image-20230612141651615"></p>
+<p><img src="https://s2.loli.net/2023/06/12/VwplJhc4mkM3RI2.png" alt="image-20230612141659194"></p>
+]]></content>
+      <tags>
+        <tag>生活杂记</tag>
       </tags>
   </entry>
   <entry>
@@ -1877,28 +2279,6 @@
       <tags>
         <tag>翻译</tag>
         <tag>浏览器插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>看万里归途时我在想什么？</title>
-    <url>/2023/06/12/%E7%9C%8B%E4%B8%87%E9%87%8C%E5%BD%92%E9%80%94%E6%97%B6%E6%88%91%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88%EF%BC%9F/</url>
-    <content><![CDATA[<p>刚看完万里归途，趁着感触还在，写点东西。</p>
-<p>emmm，之前看过类似的战狼。但二者还是有很大不同的，相比于战狼的吴京个人花式秀，我其实更觉得张译这种“赌”，更加贴合实际也更让人满怀敬意，更像一个有血有肉有信念的人。</p>
-<span id="more"></span>
-
-<p>在战乱中，在枪械下，个人的力量显得如此不堪一击，也许一颗飞溅的子弹便会让人生戛然而止。但两次放弃撤侨，一次描写渺渺，一笔带过将位置让给了台湾同胞。第二次则前后脉络清晰，嘴硬的宗大伟看着最好的伙伴章宁死在眼前，有一次“没座位”回来找白婳。此前与边境官哈桑就华人出境的拉扯将张译身为一个外交官的能力与水平体现的淋漓尽致。</p>
-<p>此后寻白婳，并带领125号人前往迪拉特的情节才是电影的主线，也是宗大伟身为外交官死里求生的一次次豪赌。</p>
-<p>死里逃生找到白婳，结果需要带走的人远不是预想的七八个，而是从未预想的百来人。在交战区带出百来人，而且失去与大使馆联系，宗大伟选择了赌，与其坐以待毙等着轰炸机淹没不如死里求生赌，徒步前往迪拉特赌救援。</p>
-<p>中途自以为是且初出茅庐的成朗与自作聪明的刘明辉，再次将宗大伟拉上了赌桌。在ak枪口下，宗大伟与叛军首领再次豪赌，赌他不敢杀他这个外交官。赌来了一次俄罗斯转盘，最终以司机瓦迪尔的死亡结尾。从最终结局的戏剧性来看，宗大伟输给了勇气，但我以为这是再正常不过的人之常情，若救了，反倒显得有些圣母。</p>
-<p>最后一次豪赌，仍然是俄罗斯转盘，只不过这次赌注换成了章宁的女儿法提玛。所有三次颤抖的手扣动扳机，换来叛军首领的无地自容与不可置信。随后成朗与其对赌，赌其不敢在摄像头下开枪，更无可能杀了所有人。</p>
-<p>是的，就现实而言，在枪械下，普通人能做的，便是靠脑子和勇气去赌那一线生机，抓住了方可得活。若对方是个轴军官，一枪下去，一切皆休。所幸，蠢货也当不上叛军首领，也当不上边境官。</p>
-<p>问题来了，对方的赌注是宗大伟等人的生命，宗大伟的赌注呢？是国家给予的底气！就像第三次豪赌时，他掏出护照告诉叛军首领，血债血偿！</p>
-<p>最后重逢的画面真的很美，以年味，以市井气息，将人从战乱拉回了这个国泰民安的国家，这个撤离时高呼的“家”。</p>
-<p><img src="https://s2.loli.net/2023/06/12/gZAdXoV2fbm9uaC.png" alt="image-20230612141651615"></p>
-<p><img src="https://s2.loli.net/2023/06/12/VwplJhc4mkM3RI2.png" alt="image-20230612141659194"></p>
-]]></content>
-      <tags>
-        <tag>生活杂记</tag>
       </tags>
   </entry>
   <entry>
@@ -2226,218 +2606,6 @@
       </categories>
       <tags>
         <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python中的deque.md</title>
-    <url>/2024/04/06/python%E4%B8%AD%E7%9A%84deque/</url>
-    <content><![CDATA[<h2 id="什么是deque"><a href="#什么是deque" class="headerlink" title="什么是deque"></a>什么是deque</h2><p><code>deque</code>即队列队列的一种 — 双端队列（double-ended queue的缩写），是一种数据结构，它允许你在队列的两端进行添加（append）和弹出（pop）操作。</p>
-<p>队列是操作受限的线性表，只允许在一端进行插入 (入队)，另一端进行删除 (出队)</p>
-<ul>
-<li>操作特性：先进先出 FIFO</li>
-<li>队头（Front）：允许删除的一端</li>
-<li>队尾（Rear）：允许插入的一端</li>
-<li>空队列：不含任何元素的空表</li>
-</ul>
-<p>而双端队列就是在队列的基础上，两边都可以作对头和队尾。</p>
-<p>Python中<code>deque</code>和列表有很多相似地方，基本使用非常类似。</p>
-<span id="more"></span>
-
-<h2 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个空队列</span></span><br><span class="line">new_deque = deque()</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([])</span></span><br><span class="line"><span class="comment"># &#x27;&#x27;&#x27;队列的形式是deque([***])&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br></pre></td></tr></table></figure>
-
-<p>在创建队列时，我们可以将其他可迭代对象，迭代元素作为队列的元素，怎么理解呢？</p>
-<p>队列的形式是<code>deque([])</code>，假如初始化时，里面是一个可迭代对象，那么队列会讲可迭代元素作为他的初始元素，这一点类似 解包然后打包，可以通过如下例子看一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_deque = deque(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([&#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27;])</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br><span class="line"></span><br><span class="line">new_deque = deque([<span class="string">&quot;hello&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([&#x27;hello&#x27;])</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="增删改查等操作"><a href="#增删改查等操作" class="headerlink" title="增删改查等操作"></a>增删改查等操作</h3><p>增删改查操作和列表基本一模一样，列表可以用的许多基本方法<code>deque</code>也可以使用(注意：队列没法切片)，这里举例说明.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 队列中增加元素 --- 入队操作</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">从下面的操作结果，我们可以看出，队列和列表一样，增加元素都是默认增加在右边的，而且append的操作完全一致</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque = deque()</span><br><span class="line">new_deque.append(<span class="string">&quot;first element&quot;</span>)</span><br><span class="line">new_deque.append(<span class="string">&quot;second element&quot;</span>)</span><br><span class="line">new_deque.append([<span class="string">&quot;first list&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([&#x27;first element&#x27;, &#x27;second element&#x27;, [&#x27;first list&#x27;]])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;队列有一种类型叫做双端队列，顾名思义，两端都可以执行入队出队操作，因此实际上我们也可以从左边执行入队操作&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br><span class="line">new_deque.appendleft(<span class="string">&quot;first element&quot;</span>)</span><br><span class="line">new_deque.appendleft(<span class="string">&quot;second element&quot;</span>)</span><br><span class="line">new_deque.appendleft([<span class="string">&quot;first list&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([[&#x27;first list&#x27;], &#x27;second element&#x27;, &#x27;first element&#x27;])</span></span><br><span class="line">new_deque.clear()</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;deque 和 list 一样，同样的也支持使用 extend 将「可迭代对象」的所有元素都依次添加进队列，和append类似，extend也可以从左边入队，即 extendleft&#x27;&#x27;&#x27;</span></span><br><span class="line">l1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">l2 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line">l3 = [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]</span><br><span class="line">new_deque = deque(l1)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4])</span></span><br><span class="line">new_deque.extend(l2)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4, 5, 6, 7, 8])</span></span><br><span class="line">new_deque.extendleft(l3)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 队列的删除操作 --- 出队</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;队列的出队操作使用的方法也是 pop()，当然和入队操作一样，出队可以双端执行，默认也是从右端出队，可以通过如下示例理解&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 初始化队列</span></span><br><span class="line">de = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>])</span><br><span class="line"><span class="comment"># 默认也是右端出队</span></span><br><span class="line"><span class="built_in">print</span>(de.pop())  <span class="comment"># 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 左端出队</span></span><br><span class="line"><span class="built_in">print</span>(de.popleft())  <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">此外，队列支持许多列表中的方法，如下所示</span></span><br><span class="line"><span class="string">* count(x)  计算元素x出现的次数</span></span><br><span class="line"><span class="string">* index(x) - 查找出现给定值x的第一个位置</span></span><br><span class="line"><span class="string">* remove(x) - 删除第一个x出现的值</span></span><br><span class="line"><span class="string">* reverse() - 就地反转 deque </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">同时，还有一个列表不支持的方法 --- rotate() 旋转，该方法如果理解循环队列就知道其作用了，就是让队列整个转一个元素</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">rotate_deque = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">rotate_deque.rotate()</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([4, 1, 2, 3])</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;rotate()默认参数 1 ，即顺时针旋转一个元素，我们可以修改参数来控制旋转的方向和旋转长度&#x27;&#x27;&#x27;</span></span><br><span class="line">rotate_deque.rotate(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([2, 3, 4, 1])</span></span><br><span class="line">rotate_deque.rotate(-<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4])</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="deque与list的区别"><a href="#deque与list的区别" class="headerlink" title="deque与list的区别"></a>deque与list的区别</h2><p>方法上的区别主要就是上面说的<code>left</code>以及旋转，这些都是针对队列特性做出的适应，队列的先进先出特性、双端队列、循环队列都可以实现。</p>
-<p>从上面来看，队列的操作基本和列表一致，但是如果仅是如此的话，列表实现上述功能也是可以的，列表可以使用「切片」操作啊，那么<strong>队列的优势在哪</strong>？</p>
-<ul>
-<li>在<code>deque</code>  中，可以从左侧有效地追加和弹出元素（而在列表中，随着列表的增长，追加和弹出元素的速度会变慢）</li>
-<li>在 <code>deque</code>中，可以通过参数 <code>maxlen</code> 控制<code>deque</code>  的最大尺寸 — 这一特性可以帮我们实现一些特殊操作</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  deque 参数 maxlen 将限制 deque 的最大长度 --- 这是队列非常重要的一个特性</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;当队列中的元素已经达到 maxlen 时，此时再向其中添加元素，则会把先进去的元素挤出去 --- 先进先出特性&#x27;&#x27;&#x27;</span></span><br><span class="line">deque_size = <span class="number">3</span></span><br><span class="line">deque_max = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], maxlen=deque_size)</span><br><span class="line"><span class="built_in">print</span>(deque_max)</span><br><span class="line"><span class="comment"># deque([1, 2, 3], maxlen=3)</span></span><br><span class="line">deque_max.append(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(deque_max)</span><br><span class="line"><span class="comment"># deque([2, 3, 4], maxlen=3)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;如上所示，元素 4 将元素 1 挤出了队列&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>这一特性，在实践中非常有用 — 滑动窗口 、缓冲区、历史记录  — 利用队列的「先进先出」特性</p>
-<p>在处理数据流或时间序列时，你可能需要考虑一个<strong>固定大小的滑动窗口</strong></p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 滑动窗口</span></span><br><span class="line">‘‘‘</span><br><span class="line">计算最近 n 个数据点的平均值</span><br><span class="line">’’’</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">window_size = <span class="number">5</span></span><br><span class="line">window = deque(maxlen=window_size)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> data_point <span class="keyword">in</span> data_stream:</span><br><span class="line">    window.append(data_point)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Current rolling average: <span class="subst">&#123;<span class="built_in">sum</span>(window) / <span class="built_in">len</span>(window)&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>由于使用的是生成器表达式和一次只能容纳一个元素的 <code>deque</code> ，这意味着您尽可能地节省了空间，这种方法应用到<strong>大文件中处理数据</strong>时，在空间上的效率就会非常方便</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找句子中的最后一个元音</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">sentence = <span class="string">&quot;The quick brown fox jumps over the last dog!&quot;</span></span><br><span class="line"><span class="comment"># The last vowel is an &#x27;o&#x27; --------------------------^</span></span><br><span class="line"></span><br><span class="line">vowels = <span class="built_in">set</span>(<span class="string">&quot;aeiouAEIOU&quot;</span>)</span><br><span class="line"></span><br><span class="line">last_vowel = deque((char <span class="keyword">for</span> char <span class="keyword">in</span> sentence <span class="keyword">if</span> char <span class="keyword">in</span> vowels), maxlen=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(last_vowel.pop())  <span class="comment"># o</span></span><br><span class="line"><span class="keyword">except</span> IndexError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No vowels found.&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>在实现网络协议或处理I&#x2F;O操作时，<code>maxlen</code> 可以作为一个<strong>缓冲区大小的限制</strong>，历史记录也是同理，存放一定数目的记录，越先记录的越先被删除</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">buffer = deque(maxlen=<span class="number">1024</span>)  <span class="comment"># 假设我们的最大缓冲区大小为1024字节</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> receiving_data:</span><br><span class="line">    buffer.append(new_data)</span><br><span class="line">    <span class="comment"># 处理buffer中的数据...</span></span><br></pre></td></tr></table></figure>
-
-<p>更多的例子可以看<a target="_blank" rel="noopener" href="https://mathspp.com/blog/python-deque-tutorial"><code>deque</code> 教程</a>这篇文章的最后一节。</p>
-<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://mathspp.com/blog/python-deque-tutorial">deque 教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/collections.html#collections.deque">官方文档</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python-learn</category>
-        <category>Python 库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>同步需求完美解决 FreeFileSync 自来水</title>
-    <url>/2024/04/17/%E5%90%8C%E6%AD%A5%E9%9C%80%E6%B1%82%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3-FreeFileSync-%E8%87%AA%E6%9D%A5%E6%B0%B4/</url>
-    <content><![CDATA[<p>FreeFileSync是一款自动同步软件，由于自己有资源备份&#x2F;同步的需求，因此接触到了这款软件，也可以说一步到位，省去了很多寻找折腾的地方。</p>
-<p>免费+功能明确强大，这款应用应该属于是比较出名的。</p>
-<p>先上<a target="_blank" rel="noopener" href="https://freefilesync.org/">官网地址</a>，直接下载即可 </p>
-<p>官网界面非常简单，没有任何广告，舒服的，主页也有官方自己的使用教程，主要是<a target="_blank" rel="noopener" href="https://freefilesync.org/tutorials.php">视频教程</a>，但个人觉得上手还是很简单的，尤其是我这种需求比较明确的情况。</p>
-<p>我的使用场景主要是备份，同步其实用的不多</p>
-<ul>
-<li>备份个人笔记的数据 — 比如思源笔记的个人数据库、logseq的数据库等等</li>
-<li>备份某些非常关键的资源 — 我用于记录某些关键信息(某些token、密码等等)的文件</li>
-</ul>
-<span id="more"></span>
-
-<p>至于使用同步功能的话 — 也支持在线存储</p>
-<ul>
-<li>Google云</li>
-<li>SFTP</li>
-<li>FTP</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/04/17/ga7WowUfCl8nNYR.png" alt="官网"></p>
-<h2 id="选择同步文件夹"><a href="#选择同步文件夹" class="headerlink" title="选择同步文件夹"></a>选择同步文件夹</h2><p>在下载并安装完成以后，就可以根据自己的需求进行设置了</p>
-<p>左边是你想要同步的源文件夹，右边是其对应的目标文件夹，每行的两队是彼此匹配的。</p>
-<p>点击「添加文件夹对」(绿色➕)，增加你想要</p>
-<p><img src="https://s2.loli.net/2024/04/20/SRcMCiQFeKkgxW6.png" alt="软件主页"></p>
-<p><img src="https://s2.loli.net/2024/04/20/EjlhS6xUaR7OM5W.png" alt="image-20240417151506483"></p>
-<p>然后在两侧分别添加对应文件夹即可，支持多种方式</p>
-<ul>
-<li>文件路径</li>
-<li>直接拖放</li>
-<li>点击浏览，然后定位到对应文件夹</li>
-</ul>
-<p>上述的备份同步是基于不同的存储设备的，他们传输是通过硬件进行的，因此读写速度总得来说比较快</p>
-<h2 id="备份的三种方式"><a href="#备份的三种方式" class="headerlink" title="备份的三种方式"></a>备份的三种方式</h2><p>Freefilesync 提供了三种备份方案</p>
-<ul>
-<li>双向同步</li>
-<li>镜像同步</li>
-<li>更新</li>
-</ul>
-<p>简单说一下三种概念，第一种就是说你的数据在两侧都可能会变化，而他同步的时候会对两侧文件的变化时间以及文件变化，决定同步是由哪侧对另外一侧进行更新，这种使用的场景就是针对你对在两个存储路径上的文件都可能有读写操作的情况。</p>
-<p><img src="https://s2.loli.net/2024/04/20/6sDQFH7cxz3BOtf.png" alt="image-20240417152303602"></p>
-<p>但是这种使用场景会产生冲突 — 比如说对于同一个文件，两侧的文件都改变了。当然，对于冲突会根据算法有处理策略，但是至于要不要使用还是看自己。</p>
-<p><img src="https://s2.loli.net/2024/04/20/6lrzSU8PfpmtMZs.png" alt="image-20240417152355790"></p>
-<p>第二种的话简单理解就是复制粘贴，就是把左边的文件夹覆写到右边文件，注意注意注意⚠️，这里的覆写包括删除，也就是说如果你对源文件夹中的某些文件进行了删除，那么同步完以后，右边的文件夹中原有文件也会被对应的改变。</p>
-<p>从下图可以看到，右边有一项需要删除，其他的都是增加&#x2F;修改</p>
-<p><img src="https://s2.loli.net/2024/04/20/IlSNP2xyhstRAV6.png" alt="image-20240417152526016"></p>
-<p>第三种情况，顾名思义就是更新，他以左边的文件为标准，像右边进行更新 — 也就是增加&#x2F;修改，对于某些已经删除的文件，并不会同步删除，<strong>仅有增加操作</strong></p>
-<p><img src="https://s2.loli.net/2024/04/20/CU1wTphvbxAdX2L.png" alt="image-20240417152633011"></p>
-<h2 id="云存储"><a href="#云存储" class="headerlink" title="云存储"></a>云存储</h2><p>Freefilesync 也提供在线存储的功能，但是目前只有Google Drive 如果使用其他的应该需要通过SFTP协议与FTP协议。</p>
-<p>由于个人对于这方面没有需求，因此就没有研究了，云存储方面直接使用的国内阿里云提供的存储了。</p>
-<p><img src="https://s2.loli.net/2024/04/20/izPUd2fJmKc6etT.png" alt="image-20240417152806892"></p>
-<p>大概就这样，非常优秀的一款软件，狠狠的点赞</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>资源</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>后备隐藏能源！！启动！！！！</title>
-    <url>/2024/04/20/%E5%90%8E%E5%A4%87%E9%9A%90%E8%97%8F%E8%83%BD%E6%BA%90%EF%BC%81%EF%BC%81%E5%90%AF%E5%8A%A8%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81/</url>
-    <content><![CDATA[<h2 id="正常作息了"><a href="#正常作息了" class="headerlink" title="正常作息了"></a>正常作息了</h2><p>经过半年的沟通，终于磨动了，目前放到白班去了，不需要倒班了，emmm，精神状态好，空余时间够的话，我应该可以狠狠的coding和记录阅读了</p>
-<p>浅浅的舒服一下，后续记录应该周更？</p>
-<p>尽力尽力！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我想听歌！！！！</title>
-    <url>/2024/05/18/%E6%88%91%E6%83%B3%E5%90%AC%E6%AD%8C%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81/</url>
-    <content><![CDATA[<p>我的网易云黑胶会员断了快两年了，21和22的时候网易云使用频率还是很高的，现在用的越来越少了，可以说基本没用了，尤其是打开网易云首先会在网易云标志界面等一会，然后弹出冗长的广告以及超小的跳过按钮，还有点击跳过按钮时仍然会卡顿的那几秒或者误触进入其他软件。</p>
-<p>光写着我血压就上来了，还好有李跳跳可以略微减轻一下这种难受。</p>
-<p>今天看到QMD公众号发的一篇文章，随着QMD、歌词适配、洛雪的相继「阵亡」以及用户借洛雪尸还魂，有点想记录下我的听歌历程。</p>
-<p>我是一个闲的时候或者学习游戏的时候，耳朵不塞点东西不舒服的人，总想放点歌听听，所以也算半个小曲库？但现在使用各个主流音乐软件真的太难受了。</p>
-<p>所以就想要BB一下。</p>
-<span id="more"></span>
-
-<h2 id="为什么不用网易云了"><a href="#为什么不用网易云了" class="headerlink" title="为什么不用网易云了"></a>为什么不用网易云了</h2><p>黑胶贵了，虽然在我断续的这段时间里，一直提示有优惠。网易版权有限，由于版权问题，国内各大音乐平台抢的那是头破血流，一个歌手可能不同的歌的权限在不同的平台，也是抽象。</p>
-<p>国内版权大户应该是QQ，但是很早开始我就使用过的网易云，而且网易云的每日推荐此前用的确实不错，我甚至等级都快满级了。</p>
-<p><img src="https://s2.loli.net/2024/05/18/RpIs36Hj2dYmLrM.png" alt="网易云等级"></p>
-<p>但是真的很难受，有些歌你就是搜不到，如果你想啥都可以听那么就得跨多个平台，你还得给各个平台冲不同的会员。多少进了歌手口袋我也不知道。</p>
-<p>然后随着网易云版权问题和QQ音乐不断竞争，随之许嵩的歌变成VIP，薛之谦的歌也开始VIP，林俊杰的歌也加入VIP，当然，杰伦的歌早就没法听了。</p>
-<p>网易云真的不好用了，于我而言，他真的变成一个播放器了，而不是一个音乐软件。</p>
-<h3 id="QMD、歌词适配"><a href="#QMD、歌词适配" class="headerlink" title="QMD、歌词适配"></a>QMD、歌词适配</h3><p>由于不想开多个会员，然后又想听一下网易云没有的歌，当然还有就是网易云的界面我用了点插件，非常美观，界面有点小小的沉浸感。所以就下了些本地音乐，基本都是只有VIP才能看的「无损音质」的flac文件。</p>
-<p>然后使用网易云播放，这段时间应该是我听歌最爽的一段时间，想听啥搜啥，没有就下了然后上传到网易云云盘，然后加入自己的歌单，循环就完事！！！</p>
-<p>腻歪了就听听日推，反正啥也能听点。</p>
-<p><img src="https://s2.loli.net/2024/05/18/MCoBJVbRyxY1nkA.png" alt="网易云盘"></p>
-<h3 id="版权打到死，全嘎了"><a href="#版权打到死，全嘎了" class="headerlink" title="版权打到死，全嘎了"></a>版权打到死，全嘎了</h3><p>用了不久，各个平台对版权抓的也是越来越狠，然后一片相关软件基本全倒下了。</p>
-<p>现在手机里还存着歌词适配，打开就是它的告别信。算是一种纪念？也许吧。</p>
-<h3 id="总结下来就是不划算"><a href="#总结下来就是不划算" class="headerlink" title="总结下来就是不划算"></a>总结下来就是不划算</h3><p>本地音乐的路子也断了，VIP也到期了，不同平台续多个会员虽然不是续不起，但总感觉是冤大头，收益显然主要是平台的，但我真的不想送钱。</p>
-<p>要支持歌手还不如一张演唱会门票，或者买个专辑包。</p>
-<p>所以渐渐的，基本也是循环着之前的老歌，碰到想听的，就费劲扒拉的找找资源。慢慢的，网易云也就成了一个纯播放器了。</p>
-<h2 id="那我咋听歌"><a href="#那我咋听歌" class="headerlink" title="那我咋听歌"></a>那我咋听歌</h2><p>那我想听新歌啊，我靠！</p>
-<p>B站可以听，但是有权限限制，有些你必须一直开着屏幕，不可以后台播放。</p>
-<p>有没有手段下？有！但是绕弯弯，而且批量下肯定不存在的。</p>
-<h3 id="借尸还魂LX-music"><a href="#借尸还魂LX-music" class="headerlink" title="借尸还魂LX music"></a>借尸还魂LX music</h3><p>然后就接触到洛雪音乐了，也是同歌词适配这些一起被嘎的软件之一。</p>
-<p>但是有点点区别，歌词适配和QMD是内置了音源，那玩意等于是制作者给你提供的，制作者侵权了啊，他们再干下去就得被逮捕了。</p>
-<p>洛雪的音源就比较特殊，没被逮捕的时候，制作者有维护自己的音源的，直接搜就行，开抓以后，那就肯定不能再提供这玩意了。</p>
-<p>官方音源是没了，但是壳子还在啊，他还是一个播放器，只不过缺了获取歌曲的「源」。</p>
-<p>用户自己导入一个「源」不就完事了。</p>
-<p>这也就是借尸还魂的由来！</p>
-<h3 id="现在听歌方式"><a href="#现在听歌方式" class="headerlink" title="现在听歌方式"></a>现在听歌方式</h3><p>桌面端还好，也没有固定哪个软件，洛雪自己有自己的歌单功能，而且还支持导入其他音乐软件的歌单，包括网易云。</p>
-<p><img src="https://s2.loli.net/2024/05/18/4lFchasTxEwBU2V.png" alt="导入歌单"></p>
-<p>所以也没有固定用哪个软件听，哪个顺手点哪个。洛雪胜在啥歌都能找找，虽然也不是啥都有，但是那肯定比网易云全面。</p>
-<p>网易云就是界面比较舒服还有就是日推找找新歌。</p>
-<p>移动端就不太想用网易云了，加载和广告给我恶心坏了，基本都用的洛雪。</p>
-<p>大概就这样，碰到十分喜欢的歌才可能下载下来，不然一般就直接在线听了，歌多了也挺占存储空间的。</p>
-<p><img src="https://s2.loli.net/2024/05/18/oNvgdGCYUeStODf.png" alt="歌单"></p>
-<h2 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h2><p>版权当然是对歌手有利的，就像起点的新举措促使了大量网文写作者的出现，因为确确实实写网文可以养家糊口赚到钱，甚至一步登天！！！</p>
-<p>这对读者对行业都是有利的，虽然吐槽起点点币贵，但是碰到好书还是值得追，主打一个愿打一个愿挨。完结小说一般就不花money了，基本都在阅读找找，而且追更很痛苦的，虽然工作以后娱乐的时间真的有限了。</p>
-<p>希望音乐慢慢的也可以向互利互赢的方向发展吧，有没有可能达到用户、歌手、平台三方共赢呢？我不知道。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「问题」官方文档中关于merge和join 一个note引起的疑问</title>
-    <url>/2024/06/29/%E3%80%8C%E9%97%AE%E9%A2%98%E3%80%8D%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%AD%E5%85%B3%E4%BA%8Emerge%E5%92%8Cjoin%20%E4%B8%80%E4%B8%AAnote%E5%BC%95%E8%B5%B7%E7%9A%84%E7%96%91%E9%97%AE/</url>
-    <content><![CDATA[<p>在官方文档 — <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/user_guide/merging.html">Merge, join, concatenate and compare</a>中，在介绍完join的常用方法后，在后续的note中有这样一段话。</p>
-<blockquote>
-<p>When <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code>DataFrame</code></a> are joined using only some of the levels of a <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.MultiIndex.html#pandas.MultiIndex" title="pandas.MultiIndex"><code>MultiIndex</code></a>, the extra levels will be dropped from the resulting join. To preserve those levels, use <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="pandas.DataFrame.reset_index"><code>DataFrame.reset_index()</code></a> on those level names to move those levels to columns prior to the join.</p>
-<p>当 <code>DataFrame</code> 仅使用 <code>MultiIndex</code> 中的部分级别进行连接时，额外的级别将从连接结果中删除。要保留这些层级，请在这些层级名称上使用 <code>DataFrame.reset_index()</code> 将这些层级移动到连接前的列中。</p>
-</blockquote>
-<p>也是我阅读的问题，没有注意到它的位置。现在再回头去看，这一节是在 「Merging on a combination of columns and index levels」这一栏下面的，因此其实这个注释是给merge的，但当时大标题是join因此我以为是针对join的。</p>
-<p>因此产生了一个疑问，join并不会抛弃 「extra level」 啊，在官方文档的上面还有一个例子，就是关于join处理 MultiIndex 时，右侧的表的index必须是左侧表index的子集。</p>
-<span id="more"></span>
-
-<p>然后在下面的例子中，连接的过程中，extra level 并没有删除。如下所示，可以很直观的看到 <code>num</code> 列被保存了下来。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">109</span>]: leftindex = pd.MultiIndex.from_product(</span><br><span class="line">   .....:     [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>), [<span class="number">1</span>, <span class="number">2</span>]], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>, <span class="string">&quot;num&quot;</span>]</span><br><span class="line">   .....: )</span><br><span class="line">   .....: </span><br><span class="line"></span><br><span class="line">In [<span class="number">110</span>]: left = pd.DataFrame(&#123;<span class="string">&quot;v1&quot;</span>: <span class="built_in">range</span>(<span class="number">12</span>)&#125;, index=leftindex)</span><br><span class="line"></span><br><span class="line">In [<span class="number">111</span>]: left</span><br><span class="line">Out[<span class="number">111</span>]: </span><br><span class="line">            v1</span><br><span class="line">abc xy num    </span><br><span class="line">a   x  <span class="number">1</span>     <span class="number">0</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">1</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">2</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">3</span></span><br><span class="line">b   x  <span class="number">1</span>     <span class="number">4</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">5</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">6</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">7</span></span><br><span class="line">c   x  <span class="number">1</span>     <span class="number">8</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">9</span></span><br><span class="line">    y  <span class="number">1</span>    <span class="number">10</span></span><br><span class="line">       <span class="number">2</span>    <span class="number">11</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">112</span>]: rightindex = pd.MultiIndex.from_product(</span><br><span class="line">   .....:     [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>)], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>]</span><br><span class="line">   .....: )</span><br><span class="line">   .....: </span><br><span class="line"></span><br><span class="line">In [<span class="number">113</span>]: right = pd.DataFrame(&#123;<span class="string">&quot;v2&quot;</span>: [<span class="number">100</span> * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">7</span>)]&#125;, index=rightindex)</span><br><span class="line"></span><br><span class="line">In [<span class="number">114</span>]: right</span><br><span class="line">Out[<span class="number">114</span>]: </span><br><span class="line">         v2</span><br><span class="line">abc xy     </span><br><span class="line">a   x   <span class="number">100</span></span><br><span class="line">    y   <span class="number">200</span></span><br><span class="line">b   x   <span class="number">300</span></span><br><span class="line">    y   <span class="number">400</span></span><br><span class="line">c   x   <span class="number">500</span></span><br><span class="line">    y   <span class="number">600</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">115</span>]: left.join(right, on=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>], how=<span class="string">&quot;inner&quot;</span>)</span><br><span class="line">Out[<span class="number">115</span>]: </span><br><span class="line">            v1   v2</span><br><span class="line">abc xy num         </span><br><span class="line">a   x  <span class="number">1</span>     <span class="number">0</span>  <span class="number">100</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">1</span>  <span class="number">100</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">2</span>  <span class="number">200</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">3</span>  <span class="number">200</span></span><br><span class="line">b   x  <span class="number">1</span>     <span class="number">4</span>  <span class="number">300</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">5</span>  <span class="number">300</span></span><br><span class="line">    y  <span class="number">1</span>     <span class="number">6</span>  <span class="number">400</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">7</span>  <span class="number">400</span></span><br><span class="line">c   x  <span class="number">1</span>     <span class="number">8</span>  <span class="number">500</span></span><br><span class="line">       <span class="number">2</span>     <span class="number">9</span>  <span class="number">500</span></span><br><span class="line">    y  <span class="number">1</span>    <span class="number">10</span>  <span class="number">600</span></span><br><span class="line">       <span class="number">2</span>    <span class="number">11</span>  <span class="number">600</span></span><br></pre></td></tr></table></figure>
-
-<p>因此我对这个注释产生了疑问，并在stackoverflow上发起了这个回答<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/78695113/how-is-this-description-understood-in-the-pandas-documentation">How is this description understood in the pandas documentation?</a></p>
-<p>得到的回复就是，drop extra level这个特性是merge的而不是join的，并在测试答者提供的代码后发现果然如此 — 我闹乌龙了。</p>
-<p>如下代码，只是简单的将join改为merge，结果截然不同，<code>num</code>列没了。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">left_index = pd.MultiIndex.from_product(  </span><br><span class="line">    [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>), [<span class="number">1</span>, <span class="number">2</span>]], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>, <span class="string">&quot;num&quot;</span>]  </span><br><span class="line">)  </span><br><span class="line">  </span><br><span class="line">left = pd.DataFrame(&#123;<span class="string">&quot;v1&quot;</span>: <span class="built_in">range</span>(<span class="number">12</span>)&#125;, index=left_index)  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">right_index = pd.MultiIndex.from_product(  </span><br><span class="line">    [<span class="built_in">list</span>(<span class="string">&quot;abc&quot;</span>), <span class="built_in">list</span>(<span class="string">&quot;xy&quot;</span>)], names=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>]  </span><br><span class="line">)  </span><br><span class="line">  </span><br><span class="line">right = pd.DataFrame(&#123;<span class="string">&quot;v2&quot;</span>: [<span class="number">100</span> * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">7</span>)]&#125;, index=right_index)  </span><br><span class="line"> </span><br><span class="line">  </span><br><span class="line"><span class="built_in">print</span>(left.merge(right, on=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>], how=<span class="string">&quot;inner&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        v1   v2</span></span><br><span class="line"><span class="string">abc xy         </span></span><br><span class="line"><span class="string">a   x    0  100</span></span><br><span class="line"><span class="string">    x    1  100</span></span><br><span class="line"><span class="string">    y    2  200</span></span><br><span class="line"><span class="string">    y    3  200</span></span><br><span class="line"><span class="string">b   x    4  300</span></span><br><span class="line"><span class="string">    x    5  300</span></span><br><span class="line"><span class="string">    y    6  400</span></span><br><span class="line"><span class="string">    y    7  400</span></span><br><span class="line"><span class="string">c   x    8  500</span></span><br><span class="line"><span class="string">    x    9  500</span></span><br><span class="line"><span class="string">    y   10  600</span></span><br><span class="line"><span class="string">    y   11  600</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>随后，我也根据note中描述，使用reset_index处理右边的表，然后再merge。 yes，完全正确。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(left.reset_index().merge(right, on=[<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;xy&quot;</span>], how=<span class="string">&quot;inner&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">   abc xy  num  v1   v2</span></span><br><span class="line"><span class="string">0    a  x    1   0  100</span></span><br><span class="line"><span class="string">1    a  x    2   1  100</span></span><br><span class="line"><span class="string">2    a  y    1   2  200</span></span><br><span class="line"><span class="string">3    a  y    2   3  200</span></span><br><span class="line"><span class="string">4    b  x    1   4  300</span></span><br><span class="line"><span class="string">5    b  x    2   5  300</span></span><br><span class="line"><span class="string">6    b  y    1   6  400</span></span><br><span class="line"><span class="string">7    b  y    2   7  400</span></span><br><span class="line"><span class="string">8    c  x    1   8  500</span></span><br><span class="line"><span class="string">9    c  x    2   9  500</span></span><br><span class="line"><span class="string">10   c  y    1  10  600</span></span><br><span class="line"><span class="string">11   c  y    2  11  600</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这段时间使用stackoverflow，emmm，不得不承认，环境差距真的很大，国内没有一个比较好的社区。V2ex可能还行，但是居然是被墙的，至于其他的。</p>
-<p>CSDN最近copy的事也是沸沸扬扬，难评！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>pandas</tag>
-        <tag>python</tag>
       </tags>
   </entry>
 </search>
