@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Tilt Warp:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="什么是dequedeque即队列队列的一种 — 双端队列（double-ended queue的缩写），是一种数据结构，它允许你在队列的两端进行添加（append）和弹出（pop）操作。 队列是操作受限的线性表，只允许在一端进行插入 (入队)，另一端进行删除 (出队)  操作特性：先进先出 FIFO 队头（Front）：允许删除的一端 队尾（Rear）：允许插入的一端 空队列：不含任何元素的空表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python中的deque.md">
+<meta property="og:url" content="http://example.com/2024/04/06/python%E4%B8%AD%E7%9A%84deque/index.html">
+<meta property="og:site_name" content="苏格拉底不会写诗">
+<meta property="og:description" content="什么是dequedeque即队列队列的一种 — 双端队列（double-ended queue的缩写），是一种数据结构，它允许你在队列的两端进行添加（append）和弹出（pop）操作。 队列是操作受限的线性表，只允许在一端进行插入 (入队)，另一端进行删除 (出队)  操作特性：先进先出 FIFO 队头（Front）：允许删除的一端 队尾（Rear）：允许插入的一端 空队列：不含任何元素的空表">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-06T07:15:18.000Z">
+<meta property="article:modified_time" content="2024-04-12T17:12:21.733Z">
+<meta property="article:author" content="YT">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/04/06/python%E4%B8%AD%E7%9A%84deque/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+  <title>python中的deque.md | 苏格拉底不会写诗</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">苏格拉底不会写诗</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">27</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/06/python%E4%B8%AD%E7%9A%84deque/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="YT">
+      <meta itemprop="description" content="众里寻他千百度，慕然回首，那人却在灯火阑珊处">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏格拉底不会写诗">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python中的deque.md
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-04-06 15:15:18" itemprop="dateCreated datePublished" datetime="2024-04-06T15:15:18+08:00">2024-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-13 01:12:21" itemprop="dateModified" datetime="2024-04-13T01:12:21+08:00">2024-04-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-learn/" itemprop="url" rel="index"><span itemprop="name">Python-learn</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-learn/Python-%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">Python 库</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="什么是deque"><a href="#什么是deque" class="headerlink" title="什么是deque"></a>什么是deque</h2><p><code>deque</code>即队列队列的一种 — 双端队列（double-ended queue的缩写），是一种数据结构，它允许你在队列的两端进行添加（append）和弹出（pop）操作。</p>
+<p>队列是操作受限的线性表，只允许在一端进行插入 (入队)，另一端进行删除 (出队)</p>
+<ul>
+<li>操作特性：先进先出 FIFO</li>
+<li>队头（Front）：允许删除的一端</li>
+<li>队尾（Rear）：允许插入的一端</li>
+<li>空队列：不含任何元素的空表</li>
+</ul>
+<p>而双端队列就是在队列的基础上，两边都可以作对头和队尾。</p>
+<p>Python中<code>deque</code>和列表有很多相似地方，基本使用非常类似。</p>
+<span id="more"></span>
+
+<h2 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个空队列</span></span><br><span class="line">new_deque = deque()</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([])</span></span><br><span class="line"><span class="comment"># &#x27;&#x27;&#x27;队列的形式是deque([***])&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br></pre></td></tr></table></figure>
+
+<p>在创建队列时，我们可以将其他可迭代对象，迭代元素作为队列的元素，怎么理解呢？</p>
+<p>队列的形式是<code>deque([])</code>，假如初始化时，里面是一个可迭代对象，那么队列会讲可迭代元素作为他的初始元素，这一点类似 解包然后打包，可以通过如下例子看一下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">new_deque = deque(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([&#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27;])</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br><span class="line"></span><br><span class="line">new_deque = deque([<span class="string">&quot;hello&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)  <span class="comment"># deque([&#x27;hello&#x27;])</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="增删改查等操作"><a href="#增删改查等操作" class="headerlink" title="增删改查等操作"></a>增删改查等操作</h3><p>增删改查操作和列表基本一模一样，列表可以用的许多基本方法<code>deque</code>也可以使用(注意：队列没法切片)，这里举例说明.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 队列中增加元素 --- 入队操作</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">从下面的操作结果，我们可以看出，队列和列表一样，增加元素都是默认增加在右边的，而且append的操作完全一致</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque = deque()</span><br><span class="line">new_deque.append(<span class="string">&quot;first element&quot;</span>)</span><br><span class="line">new_deque.append(<span class="string">&quot;second element&quot;</span>)</span><br><span class="line">new_deque.append([<span class="string">&quot;first list&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([&#x27;first element&#x27;, &#x27;second element&#x27;, [&#x27;first list&#x27;]])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;队列有一种类型叫做双端队列，顾名思义，两端都可以执行入队出队操作，因此实际上我们也可以从左边执行入队操作&#x27;&#x27;&#x27;</span></span><br><span class="line">new_deque.clear()  <span class="comment"># 清空队列</span></span><br><span class="line">new_deque.appendleft(<span class="string">&quot;first element&quot;</span>)</span><br><span class="line">new_deque.appendleft(<span class="string">&quot;second element&quot;</span>)</span><br><span class="line">new_deque.appendleft([<span class="string">&quot;first list&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([[&#x27;first list&#x27;], &#x27;second element&#x27;, &#x27;first element&#x27;])</span></span><br><span class="line">new_deque.clear()</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;deque 和 list 一样，同样的也支持使用 extend 将「可迭代对象」的所有元素都依次添加进队列，和append类似，extend也可以从左边入队，即 extendleft&#x27;&#x27;&#x27;</span></span><br><span class="line">l1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">l2 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line">l3 = [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]</span><br><span class="line">new_deque = deque(l1)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4])</span></span><br><span class="line">new_deque.extend(l2)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4, 5, 6, 7, 8])</span></span><br><span class="line">new_deque.extendleft(l3)</span><br><span class="line"><span class="built_in">print</span>(new_deque)</span><br><span class="line"><span class="comment"># deque([-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 队列的删除操作 --- 出队</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;队列的出队操作使用的方法也是 pop()，当然和入队操作一样，出队可以双端执行，默认也是从右端出队，可以通过如下示例理解&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 初始化队列</span></span><br><span class="line">de = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>])</span><br><span class="line"><span class="comment"># 默认也是右端出队</span></span><br><span class="line"><span class="built_in">print</span>(de.pop())  <span class="comment"># 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 左端出队</span></span><br><span class="line"><span class="built_in">print</span>(de.popleft())  <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">此外，队列支持许多列表中的方法，如下所示</span></span><br><span class="line"><span class="string">* count(x)  计算元素x出现的次数</span></span><br><span class="line"><span class="string">* index(x) - 查找出现给定值x的第一个位置</span></span><br><span class="line"><span class="string">* remove(x) - 删除第一个x出现的值</span></span><br><span class="line"><span class="string">* reverse() - 就地反转 deque </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">同时，还有一个列表不支持的方法 --- rotate() 旋转，该方法如果理解循环队列就知道其作用了，就是让队列整个转一个元素</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">rotate_deque = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">rotate_deque.rotate()</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([4, 1, 2, 3])</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;rotate()默认参数 1 ，即顺时针旋转一个元素，我们可以修改参数来控制旋转的方向和旋转长度&#x27;&#x27;&#x27;</span></span><br><span class="line">rotate_deque.rotate(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([2, 3, 4, 1])</span></span><br><span class="line">rotate_deque.rotate(-<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(rotate_deque)</span><br><span class="line"><span class="comment"># deque([1, 2, 3, 4])</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="deque与list的区别"><a href="#deque与list的区别" class="headerlink" title="deque与list的区别"></a>deque与list的区别</h2><p>方法上的区别主要就是上面说的<code>left</code>以及旋转，这些都是针对队列特性做出的适应，队列的先进先出特性、双端队列、循环队列都可以实现。</p>
+<p>从上面来看，队列的操作基本和列表一致，但是如果仅是如此的话，列表实现上述功能也是可以的，列表可以使用「切片」操作啊，那么<strong>队列的优势在哪</strong>？</p>
+<ul>
+<li>在<code>deque</code>  中，可以从左侧有效地追加和弹出元素（而在列表中，随着列表的增长，追加和弹出元素的速度会变慢）</li>
+<li>在 <code>deque</code>中，可以通过参数 <code>maxlen</code> 控制<code>deque</code>  的最大尺寸 — 这一特性可以帮我们实现一些特殊操作</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  deque 参数 maxlen 将限制 deque 的最大长度 --- 这是队列非常重要的一个特性</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;当队列中的元素已经达到 maxlen 时，此时再向其中添加元素，则会把先进去的元素挤出去 --- 先进先出特性&#x27;&#x27;&#x27;</span></span><br><span class="line">deque_size = <span class="number">3</span></span><br><span class="line">deque_max = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], maxlen=deque_size)</span><br><span class="line"><span class="built_in">print</span>(deque_max)</span><br><span class="line"><span class="comment"># deque([1, 2, 3], maxlen=3)</span></span><br><span class="line">deque_max.append(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(deque_max)</span><br><span class="line"><span class="comment"># deque([2, 3, 4], maxlen=3)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;如上所示，元素 4 将元素 1 挤出了队列&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>这一特性，在实践中非常有用 — 滑动窗口 、缓冲区、历史记录  — 利用队列的「先进先出」特性</p>
+<p>在处理数据流或时间序列时，你可能需要考虑一个<strong>固定大小的滑动窗口</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 滑动窗口</span></span><br><span class="line">‘‘‘</span><br><span class="line">计算最近 n 个数据点的平均值</span><br><span class="line">’’’</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">window_size = <span class="number">5</span></span><br><span class="line">window = deque(maxlen=window_size)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> data_point <span class="keyword">in</span> data_stream:</span><br><span class="line">    window.append(data_point)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Current rolling average: <span class="subst">&#123;<span class="built_in">sum</span>(window) / <span class="built_in">len</span>(window)&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>由于使用的是生成器表达式和一次只能容纳一个元素的 <code>deque</code> ，这意味着您尽可能地节省了空间，这种方法应用到<strong>大文件中处理数据</strong>时，在空间上的效率就会非常方便</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找句子中的最后一个元音</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">sentence = <span class="string">&quot;The quick brown fox jumps over the last dog!&quot;</span></span><br><span class="line"><span class="comment"># The last vowel is an &#x27;o&#x27; --------------------------^</span></span><br><span class="line"></span><br><span class="line">vowels = <span class="built_in">set</span>(<span class="string">&quot;aeiouAEIOU&quot;</span>)</span><br><span class="line"></span><br><span class="line">last_vowel = deque((char <span class="keyword">for</span> char <span class="keyword">in</span> sentence <span class="keyword">if</span> char <span class="keyword">in</span> vowels), maxlen=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(last_vowel.pop())  <span class="comment"># o</span></span><br><span class="line"><span class="keyword">except</span> IndexError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No vowels found.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在实现网络协议或处理I&#x2F;O操作时，<code>maxlen</code> 可以作为一个<strong>缓冲区大小的限制</strong>，历史记录也是同理，存放一定数目的记录，越先记录的越先被删除</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">buffer = deque(maxlen=<span class="number">1024</span>)  <span class="comment"># 假设我们的最大缓冲区大小为1024字节</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> receiving_data:</span><br><span class="line">    buffer.append(new_data)</span><br><span class="line">    <span class="comment"># 处理buffer中的数据...</span></span><br></pre></td></tr></table></figure>
+
+<p>更多的例子可以看<a target="_blank" rel="noopener" href="https://mathspp.com/blog/python-deque-tutorial"><code>deque</code> 教程</a>这篇文章的最后一节。</p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://mathspp.com/blog/python-deque-tutorial">deque 教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/collections.html#collections.deque">官方文档</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------已经到底啦！<i class="fa fa-paw"></i>-------------</div>
+    
+</div>
+
+      
+    </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>YT
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2024/04/06/python%E4%B8%AD%E7%9A%84deque/" title="python中的deque.md">http://example.com/2024/04/06/python中的deque/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/+2yKIXaOtkYo3YmFl">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/29/%E6%BB%A1%E8%B6%B3%E8%87%B3%E6%9E%81%E7%9A%84%E5%BE%AE%E4%BF%A1%E8%BE%93%E5%85%A5%E6%B3%95-md/" rel="prev" title="满足至极的微信输入法.md">
+      <i class="fa fa-chevron-left"></i> 满足至极的微信输入法.md
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/04/17/%E5%90%8C%E6%AD%A5%E9%9C%80%E6%B1%82%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3-FreeFileSync-%E8%87%AA%E6%9D%A5%E6%B0%B4/" rel="next" title="同步需求完美解决 FreeFileSync 自来水">
+      同步需求完美解决 FreeFileSync 自来水 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdeque"><span class="nav-text">什么是deque</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0"><span class="nav-text">如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E7%AD%89%E6%93%8D%E4%BD%9C"><span class="nav-text">增删改查等操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque%E4%B8%8Elist%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">deque与list的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+      </div>
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=167691&auto=1&height=66"></iframe>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YT"
+      src="/images/head.png">
+  <p class="site-author-name" itemprop="name">YT</p>
+  <div class="site-description" itemprop="description">众里寻他千百度，慕然回首，那人却在灯火阑珊处</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yt-x" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yt-x" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/xytcsust2019@163.com" title="E-Mail → xytcsust2019@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+	  
+	 
+	 
+	  
+	  
+	  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <!-- modify icon to fire by szw -->
+      <i class="fa fa-history fa-" aria-hidden="true"></i>
+      近期文章
+    </div>
+    <ul class="links-of-blogroll-list">
+      
+      
+        <li class="recent_posts_li">
+          <a href="/" title="" target="_blank"></a>
+        </li>
+      
+        <li class="recent_posts_li">
+          <a href="/" title="" target="_blank"></a>
+        </li>
+      
+        <li class="recent_posts_li">
+          <a href="/" title="" target="_blank"></a>
+        </li>
+      
+        <li class="recent_posts_li">
+          <a href="/" title="" target="_blank"></a>
+        </li>
+      
+        <li class="recent_posts_li">
+          <a href="/" title="" target="_blank"></a>
+        </li>
+      
+		</ul>
+	  </div>
+	
+	
+	
+	
+
+    </div>
+  </aside>
+
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-03 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YT</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">51k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:07</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <script data-pjax async src="/js/busuanzi.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-<你喜欢的模型名字>"},"display":{"position":"right"},"mobile":{"show":true}});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
