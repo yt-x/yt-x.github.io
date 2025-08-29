@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Personal blog with project showcase",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": ["blog", "portfolio", "projects"],
+  "author": "SGLDBHXS",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

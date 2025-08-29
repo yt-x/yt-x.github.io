@@ -1,0 +1,44 @@
+:where([class^="ri-"])::before {
+    content: "\f3c2";
+}
+
+.dark {
+    color-scheme: dark;
+}
+
+.theme-transition {
+    transition: all 0.3s ease;
+}
+
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+}
+
+.toast {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.toast.show {
+    top: 24px;
+}
+
+#themeToggle {
+    transition: transform 0.3s ease;
+}
+
+#themeToggle:active {
+    transform: scale(0.95);
+}
