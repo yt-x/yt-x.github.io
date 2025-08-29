@@ -18,6 +18,11 @@ jobs:
       id-token: write
 
     steps:
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+
       - name: Checkout
         uses: actions/checkout@v4
 
