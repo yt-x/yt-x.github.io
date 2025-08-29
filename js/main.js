@@ -1,7 +1,9 @@
 // 动态加载组件
 async function loadComponent(containerId, componentPath) {
     try {
-        const response = await fetch(componentPath);
+        // 添加时间戳参数避免缓存
+        const timestamp = new Date().getTime();
+        const response = await fetch(`${componentPath}?v=${timestamp}`);
         if (!response.ok) {
             throw new Error(`Failed to load component: ${componentPath}`);
         }
