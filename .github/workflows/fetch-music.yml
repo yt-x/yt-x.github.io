@@ -1,0 +1,37 @@
+name: Fetch Netease Music
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-music:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Netease music data
+        env:
+          NETEASE_UID: ${{ secrets.NETEASE_UID }}
+          NETEASE_API_BASE: ${{ secrets.NETEASE_API_BASE }}
+          NETEASE_COOKIE: ${{ secrets.NETEASE_COOKIE }}
+        run: node scripts/fetch-netease-music.js
+
+      - name: Commit music data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/now-playing.json
+          git diff --cached --quiet || git commit -m "chore: 更新网易云音乐数据"
+          git push
