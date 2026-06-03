@@ -1,0 +1,66 @@
+<article class="music-card card-hover" aria-live="polite">
+    <div class="music-card__glow"></div>
+
+    <div class="music-card__header">
+        <span class="music-card__eyebrow">
+            <i class="ri-music-2-line"></i>
+            音乐播放器
+        </span>
+        <span id="music-status" class="music-card__status">加载中</span>
+    </div>
+
+    <div id="music-loading" class="music-card__state music-card__loading">
+        <div class="music-card__cover music-card__cover--skeleton"></div>
+        <div class="music-card__meta">
+            <span class="music-card__skeleton music-card__skeleton--title"></span>
+            <span class="music-card__skeleton music-card__skeleton--artist"></span>
+            <span class="music-card__hint">正在加载曲库…</span>
+        </div>
+    </div>
+
+    <div id="music-empty" class="music-card__state music-card__empty hidden">
+        <div class="music-card__cover music-card__cover--placeholder">
+            <i class="ri-album-line"></i>
+        </div>
+        <div class="music-card__meta">
+            <h2>暂无可播放歌曲</h2>
+            <p>请在 <code>data/playlist.json</code> 中配置带 <code>audioUrl</code> 的歌曲。</p>
+        </div>
+    </div>
+
+    <div id="music-player" class="music-card__state music-card__player hidden">
+        <div class="music-card__cover music-card__cover--player">
+            <img id="music-cover" src="" alt="歌曲封面">
+            <span class="music-card__disc"></span>
+        </div>
+
+        <div class="music-card__meta music-card__meta--player">
+            <span id="music-title" class="music-card__title">未知歌曲</span>
+            <span id="music-artist" class="music-card__artist">未知歌手</span>
+
+            <div class="music-card__controls" aria-label="音乐播放控制">
+                <button id="music-prev" class="music-card__control" type="button" aria-label="上一首">
+                    <i class="ri-skip-back-line"></i>
+                </button>
+                <button id="music-play" class="music-card__play" type="button" aria-label="播放">
+                    <i class="ri-play-fill"></i>
+                </button>
+                <button id="music-next" class="music-card__control" type="button" aria-label="下一首">
+                    <i class="ri-skip-forward-line"></i>
+                </button>
+            </div>
+
+            <div class="music-card__timeline">
+                <span id="music-current-time">0:00</span>
+                <input id="music-progress" class="music-card__progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="播放进度">
+                <span id="music-duration">0:00</span>
+            </div>
+
+            <a id="music-source-link" class="music-card__link-hint hidden" href="#" target="_blank" rel="noopener noreferrer">
+                查看来源 <i class="ri-arrow-right-up-line"></i>
+            </a>
+        </div>
+    </div>
+
+    <audio id="music-audio" preload="metadata"></audio>
+</article>

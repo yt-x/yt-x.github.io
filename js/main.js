@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 加载个人资料组件
     loadComponent('profile-container', 'components/profile.html');
+    loadComponent('music-container', 'components/music.html').then(() => {
+        initMusicCard();
+    });
     
     // 加载技能组件
     loadComponent('skills-container', 'components/skills.html');
