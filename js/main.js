@@ -1,9 +1,10 @@
+// 身份标识词轮播 —— 在此修改词语列表
+var IDENTITY_WORDS = ['开源爱好者', '技术分享者', '终身学习者'];
+
 // 动态加载组件
 async function loadComponent(containerId, componentPath) {
     try {
-        // 添加时间戳参数避免缓存
-        const timestamp = new Date().getTime();
-        const response = await fetch(`${componentPath}?v=${timestamp}`);
+        const response = await fetch(componentPath);
         if (!response.ok) {
             throw new Error(`Failed to load component: ${componentPath}`);
         }
@@ -11,48 +12,38 @@ async function loadComponent(containerId, componentPath) {
         document.getElementById(containerId).innerHTML = html;
     } catch (error) {
         console.error('Error loading component:', error);
-        document.getElementById(containerId).innerHTML = 
+        document.getElementById(containerId).innerHTML =
             '<div class="text-center text-gray-500 py-8">组件加载失败</div>';
     }
 }
 
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
-    // 初始化主题
-    initTheme();
-    
-    // 加载个人资料组件
-    loadComponent('profile-container', 'components/profile.html');
+    // 加载音乐播放器组件
     loadComponent('music-container', 'components/music.html').then(() => {
         initMusicCard();
+        // Trigger entrance reveal after the card is in DOM
+        requestAnimationFrame(() => {
+            const card = document.querySelector('.music-card');
+            if (card) {
+                card.classList.remove('pre-reveal');
+                card.classList.add('reveal');
+            }
+        });
     });
-    
-    // 加载技能组件
-    loadComponent('skills-container', 'components/skills.html');
-    
-    // 加载项目卡片组件
-    loadComponent('projects-container', 'components/projects.html');
-    
-    // 加载博客组件，完成后拉取最新文章
-    loadComponent('blog-container', 'components/blog.html').then(() => {
-        loadLatestBlog();
-    });
-    
+
+    // 拉取最新博客文章
+    loadLatestBlog();
+
     // 添加主题切换监听
     setupThemeToggle();
-});
 
-// 初始化主题
-function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
-}
+    // 身份标识词轮播
+    startIdentityRotator();
+
+    // 阅读进度条
+    initProgressBar();
+});
 
 // 设置主题切换按钮
 function setupThemeToggle() {
@@ -61,7 +52,13 @@ function setupThemeToggle() {
         themeToggle.addEventListener('click', function() {
             const isDark = document.documentElement.classList.toggle('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            
+
+            // Rotation feedback
+            themeToggle.classList.add('theme-spin');
+            setTimeout(function () {
+                themeToggle.classList.remove('theme-spin');
+            }, 500);
+
             // 显示主题切换提示
             showToast(isDark ? '已切换到深色模式' : '已切换到浅色模式');
         });
@@ -137,17 +134,19 @@ async function loadLatestBlog() {
 
     const formattedDate = formatDate(post.date);
 
-    // 无独立卡片，内容直接流在琥珀色容器内
     content.innerHTML = `
-        <a href="${post.link}" target="_blank"
-           class="block -mx-3 px-3 py-2 rounded-lg hover:bg-amber-100/40 dark:hover:bg-gray-700/30 transition-colors">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+        <a href="${post.link}" target="_blank" rel="noopener noreferrer"
+           class="reveal blog-item block -mx-3 px-3 py-2 transition-colors">
+            <span class="museum-label mb-1 block">BLG. 01 / ${formattedDate || 'Recent'}</span>
+            <h3 class="text-lg font-serif font-semibold text-ink dark:text-rice">
                 ${post.title}
             </h3>
-            ${formattedDate ? `<p class="text-sm text-gray-500 dark:text-gray-400 mt-1"><i class="ri-calendar-line mr-1"></i>${formattedDate}</p>` : ''}
-            ${post.summary ? `<p class="mt-2 text-gray-600 dark:text-gray-300 line-clamp-2 text-sm leading-relaxed">${post.summary}</p>` : ''}
-            <span class="inline-flex items-center gap-1 mt-3 text-sm text-amber-600 dark:text-amber-400 font-medium">
-                阅读全文 <i class="ri-arrow-right-line text-xs"></i>
+            ${post.summary ? `<p class="mt-2 text-ink-muted line-clamp-2 text-sm leading-relaxed">${post.summary}</p>` : ''}
+            <span class="arrow-link inline-flex items-center gap-1 mt-3 text-xs text-ink-muted dark:text-rice/70 font-medium tracking-wide hover:text-ink dark:hover:text-rice transition-colors">
+                阅读全文
+                <svg class="icon text-xs" aria-hidden="true">
+                    <use href="images/icons.svg#ri-arrow-right-line"></use>
+                </svg>
             </span>
         </a>
     `;
@@ -159,9 +158,62 @@ function showToast(message) {
     if (toast) {
         toast.textContent = message;
         toast.classList.add('show');
-        
+
         setTimeout(() => {
             toast.classList.remove('show');
         }, 2000);
     }
+}
+
+// 身份标识词轮播 —— 每 ~4s 交叉淡入淡出，上飘 4px
+function startIdentityRotator() {
+    const el = document.getElementById('identity-rotator');
+    if (!el) return;
+
+    // reduced-motion: 静态显示第一个词，不轮播
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let index = 0;
+    let rotating = false;
+
+    function rotate() {
+        if (rotating) return;
+        rotating = true;
+
+        // 淡出 + 上飘
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(-4px)';
+
+        setTimeout(() => {
+            index = (index + 1) % IDENTITY_WORDS.length;
+            el.textContent = IDENTITY_WORDS[index];
+            // 淡入
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            rotating = false;
+        }, 480);
+    }
+
+    setInterval(rotate, 4000);
+}
+
+// 阅读进度条 —— rAF 节流滚动更新
+let _progressRAF = null;
+
+function updateProgressBar() {
+    if (_progressRAF) return;
+    _progressRAF = requestAnimationFrame(() => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 1;
+        const bar = document.getElementById('progress-bar');
+        if (bar) bar.style.transform = 'scaleX(' + progress + ')';
+        _progressRAF = null;
+    });
+}
+
+function initProgressBar() {
+    window.addEventListener('scroll', updateProgressBar, { passive: true });
+    window.addEventListener('resize', updateProgressBar);
+    updateProgressBar(); // 初始值
 }

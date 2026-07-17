@@ -5,55 +5,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGLDBHXS</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components.css">
 </head>
 
-<body class="theme-transition min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<body class="theme-transition ink-page min-h-screen font-body text-ink dark:bg-ink-dark dark:text-rice">
+    <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
     <div id="toast" class="toast"></div>
-    <div class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-5 dark:opacity-10 pointer-events-none"
-        style="background-image: url('images/background.jpg');">
-    </div>
     <div class="relative min-h-screen z-10 flex items-center justify-center">
         <div class="w-full">
             <div class="absolute right-8 top-8">
                 <button id="themeToggle"
-                    class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shadow-lg !rounded-button">
-                    <i class="ri-sun-line dark:hidden text-gray-600"></i>
-                    <i class="ri-moon-line hidden dark:block text-gray-300"></i>
+                    class="w-10 h-10 border border-stone dark:border-ink-line bg-rice dark:bg-ink-card flex items-center justify-center transition-colors hover:bg-stone/50 dark:hover:bg-ink-line"
+                    aria-label="切换主题">
+                    <svg class="icon text-xl dark:hidden" aria-hidden="true">
+                        <use href="images/icons.svg#ri-sun-line"></use>
+                    </svg>
+                    <svg class="icon text-xl hidden dark:block" aria-hidden="true">
+                        <use href="images/icons.svg#ri-moon-line"></use>
+                    </svg>
                 </button>
             </div>
 
-            <!-- 个人主页 -->
             <div class="container mx-auto px-4 py-20">
                 <div class="max-w-6xl mx-auto">
                     <!-- 个人卡片 -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-stretch">
-                        <div id="profile-container" class="h-full"></div>
-                        <div id="music-container" class="h-full"></div>
+                    <div class="grid grid-cols-1 gap-6 mb-12">
+                        <div id="profile-container" class="reveal">
+                            <div class="bg-rice dark:bg-ink-card border border-stone dark:border-ink-line p-12 card-hover h-full">
+                                <div class="text-center">
+                                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
+                                        <img src="images/avatar.jpg" alt="头像" class="w-full h-full object-cover">
+                                    </div>
+                                    <h1 class="text-4xl font-serif font-light mb-4 text-ink dark:text-rice tracking-widest">SGLDBHXS</h1>
+                                    <p id="identity-rotator" class="text-ink-muted mb-8 text-sm tracking-wide">开源爱好者</p>
+                                    <p class="museum-label mb-8">SGLDBHXS · Digital Space</p>
+                                    <div class="flex justify-center gap-4">
+                                        <a href="https://github.com/yt-x" target="_blank" rel="noopener noreferrer"
+                                            class="social-btn w-12 h-12 border border-stone dark:border-ink-line bg-transparent flex items-center justify-center transition-colors hover:bg-stone/40 dark:hover:bg-ink-line"
+                                            title="GitHub" aria-label="GitHub">
+                                            <svg class="icon text-xl text-gray-700 dark:text-gray-300" aria-hidden="true">
+                                                <use href="images/icons.svg#ri-github-fill"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="https://t.me/Sgldbhxs" target="_blank" rel="noopener noreferrer"
+                                            class="social-btn w-12 h-12 border border-stone dark:border-ink-line bg-transparent flex items-center justify-center transition-colors hover:bg-stone/40 dark:hover:bg-ink-line"
+                                            title="Telegram" aria-label="Telegram">
+                                            <svg class="icon text-xl text-gray-700 dark:text-gray-300" aria-hidden="true">
+                                                <use href="images/icons.svg#ri-telegram-fill"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="https://space.bilibili.com/474791264" target="_blank" rel="noopener noreferrer"
+                                            class="social-btn w-12 h-12 border border-stone dark:border-ink-line bg-transparent flex items-center justify-center transition-colors hover:bg-stone/40 dark:hover:bg-ink-line"
+                                            title="Bilibili" aria-label="Bilibili">
+                                            <svg class="icon text-xl text-gray-700 dark:text-gray-300" aria-hidden="true">
+                                                <use href="images/icons.svg#ri-bilibili-fill"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="mailto:xytcsust2019@163.com"
+                                            class="social-btn w-12 h-12 border border-stone dark:border-ink-line bg-transparent flex items-center justify-center transition-colors hover:bg-stone/40 dark:hover:bg-ink-line"
+                                            title="Email" aria-label="Email">
+                                            <svg class="icon text-xl text-gray-700 dark:text-gray-300" aria-hidden="true">
+                                                <use href="images/icons.svg#ri-mail-fill"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="music-container"></div>
                     </div>
-                    
+
                     <!-- 技能卡片 -->
-                    <div id="skills-container"></div>
-                    
+                    <div id="skills-container" class="reveal reveal-delay-1">
+                        <div class="bg-rice dark:bg-ink-card border border-stone dark:border-ink-line px-6 py-5 card-hover mb-12">
+                            <span class="museum-label mb-2 block">EXHIBIT 01</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <svg class="icon text-xl text-ink-muted" aria-hidden="true">
+                                    <use href="images/icons.svg#ri-stack-line"></use>
+                                </svg>
+                                <h2 class="section-marker text-2xl font-serif font-light text-ink dark:text-rice tracking-widest">技术栈</h2>
+                            </div>
+
+                            <div class="flex flex-wrap gap-x-6 gap-y-2 text-ink dark:text-rice">
+                                <span class="museum-label interactive inline-flex items-center gap-1.5">
+                                    <svg class="icon text-sm" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-vuejs-line"></use>
+                                    </svg> Vue.js
+                                </span>
+                                <span class="museum-label interactive inline-flex items-center gap-1.5">Python</span>
+                                <span class="museum-label interactive inline-flex items-center gap-1.5">
+                                    <svg class="icon text-sm" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-database-2-line"></use>
+                                    </svg> MySQL
+                                </span>
+                                <span class="museum-label interactive inline-flex items-center gap-1.5">
+                                    <svg class="icon text-sm" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-git-branch-line"></use>
+                                    </svg> Git
+                                </span>
+                                <span class="museum-label interactive inline-flex items-center gap-1.5">
+                                    <svg class="icon text-sm" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-terminal-line"></use>
+                                    </svg> CLI
+                                </span>
+                                <span class="museum-label interactive inline-flex items-center gap-1.5">
+                                    <svg class="icon text-sm" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-code-s-slash-line"></use>
+                                    </svg> VS Code
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 博客卡片 -->
-                    <div id="blog-container"></div>
-                    
+                    <div id="blog-container" class="reveal reveal-delay-2">
+                        <div class="bg-rice dark:bg-ink-card border border-stone dark:border-ink-line p-8 card-hover mb-12">
+                            <span class="museum-label mb-2 block">EXHIBIT 02</span>
+                            <div class="flex items-center gap-3">
+                                <svg class="icon text-xl text-ink-muted" aria-hidden="true">
+                                    <use href="images/icons.svg#ri-quill-pen-line"></use>
+                                </svg>
+                                <h2 class="section-marker text-2xl font-serif font-light text-ink dark:text-rice tracking-widest">最新博客</h2>
+                                <a href="https://sgldbhxs.top/hugoblog/" target="_blank" rel="noopener noreferrer"
+                                    class="arrow-link ml-auto text-xs text-ink-muted hover:text-ink dark:hover:text-rice transition-colors font-medium tracking-wide">
+                                    查看更多
+                                    <svg class="icon text-xs" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-arrow-right-line"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div id="blog-content" class="mt-5 pt-5 border-t border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center justify-center py-6 text-gray-400">
+                                    <svg class="icon animate-spin mr-2" aria-hidden="true">
+                                        <use href="images/icons.svg#ri-loader-4-line"></use>
+                                    </svg>
+                                    <span>加载中...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 项目卡片 -->
-                    <div id="projects-container"></div>
+                    <div id="projects-container" class="reveal reveal-delay-3">
+                        <span class="museum-label mb-2 block">EXHIBIT 03</span>
+                        <h2 class="section-marker text-2xl font-serif font-light text-ink dark:text-rice tracking-widest mb-6">项目展示</h2>
+                        <div class="projects-grid">
+                            <div class="project-card reveal reveal-delay-4">
+                                <div class="project-image">
+                                    <img src="images/cat.jpg" alt="Project 1" loading="lazy">
+                                </div>
+                                <div class="project-content">
+                                    <span class="museum-label mb-2 block">PRJ. 01 / Web Application</span>
+                                    <h3 class="project-title">测试卡片 1</h3>
+                                    <p class="project-description">这是一个项目描述，展示项目的核心功能和特点。</p>
+                                    <div class="project-tags">
+                                        <span class="tag">React</span>
+                                        <span class="tag">Node.js</span>
+                                        <span class="tag">MongoDB</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">查看项目</a>
+                                        <a href="#" class="project-link">源代码</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card reveal reveal-delay-5">
+                                <div class="project-image">
+                                    <img src="images/cat2.png" alt="Project 2" loading="lazy">
+                                </div>
+                                <div class="project-content">
+                                    <span class="museum-label mb-2 block">PRJ. 02 / Web Application</span>
+                                    <h3 class="project-title">测试卡片 2</h3>
+                                    <p class="project-description">这是另一个项目的描述，展示不同的技术栈和功能特点。</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Vue.js</span>
+                                        <span class="tag">Express</span>
+                                        <span class="tag">PostgreSQL</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">查看项目</a>
+                                        <a href="#" class="project-link">源代码</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Colophon -->
+                    <div class="reveal reveal-delay-6 mt-20 pt-10 border-t border-stone dark:border-ink-line text-center pb-16">
+                        <span class="museum-label mb-3 block">COLOPHON</span>
+                        <p class="text-ink-muted text-sm">Designed &amp; Built by SGLDBHXS &middot; &copy; 2026</p>
+                        <p class="text-ink-muted text-xs mt-1 opacity-60">Set in Noto Serif SC &amp; Inter</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/theme.js"></script>
     <script src="js/music-card.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/rain.js"></script>
 </body>
 
 </html>
