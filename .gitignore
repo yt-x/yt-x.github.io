@@ -44,3 +44,7 @@ coverage/
 
 # ESLint
 .eslintcache
+
+# AI tooling
+/.serena/
+/.omo/

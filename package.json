@@ -4,13 +4,23 @@
   "description": "Personal blog with project showcase",
   "main": "index.html",
   "scripts": {
-    "dev": "python -m http.server 8000",
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --minify",
+    "build:icons": "node scripts/build-icons.mjs",
+    "build": "npm run build:icons && npm run build:css",
+    "dev": "npm run build && tailwindcss -i ./css/input.css -o ./css/tailwind.css --watch",
     "serve": "python -m http.server 8000",
     "start": "python -m http.server 8000"
   },
-  "keywords": ["blog", "portfolio", "projects"],
+  "keywords": [
+    "blog",
+    "portfolio",
+    "projects"
+  ],
   "author": "SGLDBHXS",
   "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "remixicon": "^4.9.1",
+    "tailwindcss": "^3.4.16"
+  }
 }
