@@ -8,6 +8,9 @@ const musicPlayerState = {
     currentIndex: 0,
     isSeeking: false,
     pendingAudioUrl: '',
+    playMode: 'loop', // 'loop' | 'shuffle' | 'single'
+    volume: 0.8,
+    preMuteVolume: 0.8,
 };
 
 function initMusicCard() {
@@ -35,7 +38,9 @@ async function loadMusicPlayer() {
         }
 
         musicPlayerState.currentIndex = findInitialSongIndex(musicPlayerState.playlist, neteaseSong);
+        renderPlaylist();
         renderCurrentSong();
+        applyVolume();
     } catch (error) {
         console.error('音乐播放器加载失败:', error);
         renderMusicEmpty('加载失败');
@@ -43,7 +48,7 @@ async function loadMusicPlayer() {
 }
 
 async function fetchPlaylist() {
-    const response = await fetch(`${MUSIC_CONFIG.playlistUrl}?v=${Date.now()}`);
+    const response = await fetch(MUSIC_CONFIG.playlistUrl);
     if (!response.ok) return [];
 
     const data = await response.json();
@@ -54,7 +59,7 @@ async function fetchPlaylist() {
 
 async function fetchNeteaseStaticSong() {
     try {
-        const response = await fetch(`${MUSIC_CONFIG.neteaseDataUrl}?v=${Date.now()}`);
+        const response = await fetch(MUSIC_CONFIG.neteaseDataUrl);
         if (!response.ok) return null;
 
         const song = await response.json();
@@ -108,19 +113,32 @@ function setupMusicEvents() {
     const prevButton = getMusicElement('music-prev');
     const nextButton = getMusicElement('music-next');
     const progress = getMusicElement('music-progress');
+    const modeButton = getMusicElement('music-mode');
+    const volumeButton = getMusicElement('music-volume-icon');
+    const playlistToggle = getMusicElement('music-playlist-toggle');
 
     if (!audio || !playButton || !prevButton || !nextButton || !progress) return;
 
     playButton.addEventListener('click', toggleMusicPlayback);
     prevButton.addEventListener('click', playPreviousSong);
     nextButton.addEventListener('click', playNextSong);
+    modeButton?.addEventListener('click', togglePlayMode);
+    playlistToggle?.addEventListener('click', togglePlaylist);
+
+    // 音量图标：点击切换静音
+    volumeButton?.addEventListener('click', toggleMute);
 
     audio.addEventListener('loadedmetadata', updateMusicDuration);
     audio.addEventListener('timeupdate', updateMusicProgress);
     audio.addEventListener('play', () => setMusicPlaying(true));
     audio.addEventListener('pause', () => setMusicPlaying(false));
-    audio.addEventListener('ended', playNextSong);
-    audio.addEventListener('error', () => renderMusicEmpty('音频不可用'));
+    audio.addEventListener('ended', handleSongEnded);
+    audio.addEventListener('error', handleAudioError);
+
+    audio.addEventListener('volumechange', () => {
+        musicPlayerState.volume = audio.volume;
+        updateVolumeIcon();
+    });
 
     progress.addEventListener('input', () => {
         musicPlayerState.isSeeking = true;
@@ -131,6 +149,120 @@ function setupMusicEvents() {
         seekMusic(Number(progress.value));
         musicPlayerState.isSeeking = false;
     });
+}
+
+function handleAudioError() {
+    const audio = getMusicElement('music-audio');
+    console.error('音频加载失败:', audio?.error);
+    // 自动跳到下一首，避免卡死
+    playNextSong();
+}
+
+function handleSongEnded() {
+    const { playMode } = musicPlayerState;
+    if (playMode === 'single') {
+        const audio = getMusicElement('music-audio');
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play().catch(() => renderMusicEmpty('播放失败'));
+        }
+    } else if (playMode === 'shuffle') {
+        playRandomSong();
+    } else {
+        playNextSong();
+    }
+}
+
+function playRandomSong() {
+    const { playlist, currentIndex } = musicPlayerState;
+    if (playlist.length <= 1) {
+        playNextSong();
+        return;
+    }
+    let nextIndex;
+    do {
+        nextIndex = Math.floor(Math.random() * playlist.length);
+    } while (nextIndex === currentIndex);
+    musicPlayerState.currentIndex = nextIndex;
+    renderCurrentSong();
+}
+
+function togglePlayMode() {
+    const modes = ['loop', 'shuffle', 'single'];
+    const current = musicPlayerState.playMode;
+    const next = modes[(modes.indexOf(current) + 1) % modes.length];
+    musicPlayerState.playMode = next;
+    renderPlayMode();
+}
+
+function renderPlayMode() {
+    const button = getMusicElement('music-mode');
+    const icon = button?.querySelector('use');
+    if (!button || !icon) return;
+
+    const map = {
+        loop: { icon: 'ri-repeat-line', label: '列表循环' },
+        shuffle: { icon: 'ri-shuffle-line', label: '随机播放' },
+        single: { icon: 'ri-repeat-line', label: '单曲循环' },
+    };
+
+    // 单曲循环图标用 repeat-line + 数字标记不够直观，仍用 repeat-line
+    const config = map[musicPlayerState.playMode];
+    icon.setAttribute('href', `images/icons.svg#${config.icon}`);
+    button.setAttribute('aria-label', config.label);
+    button.setAttribute('title', config.label);
+}
+
+function togglePlaylist() {
+    const panel = getMusicElement('music-playlist');
+    const icon = getMusicElement('music-playlist-toggle')?.querySelector('use');
+    if (!panel) return;
+
+    const isOpen = panel.classList.toggle('hidden');
+    if (icon) {
+        icon.setAttribute('href', isOpen ? 'images/icons.svg#ri-playlist-line' : 'images/icons.svg#ri-arrow-down-s-line');
+    }
+}
+
+function setVolume(value) {
+    const audio = getMusicElement('music-audio');
+    if (!audio) return;
+    const clamped = Math.max(0, Math.min(1, value));
+    audio.volume = clamped;
+    musicPlayerState.volume = clamped;
+    updateVolumeIcon();
+}
+
+function applyVolume() {
+    const audio = getMusicElement('music-audio');
+    if (audio) audio.volume = musicPlayerState.volume;
+    updateVolumeIcon();
+}
+
+// 点击音量图标：切换静音 / 恢复
+function toggleMute() {
+    const audio = getMusicElement('music-audio');
+    if (!audio) return;
+
+    if (audio.volume > 0) {
+        musicPlayerState.preMuteVolume = audio.volume;
+        audio.volume = 0;
+    } else {
+        audio.volume = musicPlayerState.preMuteVolume || 0.8;
+    }
+    musicPlayerState.volume = audio.volume;
+    updateVolumeIcon();
+}
+
+function updateVolumeIcon() {
+    const icon = getMusicElement('music-volume-icon')?.querySelector('use');
+    if (!icon) return;
+
+    const value = musicPlayerState.volume;
+    let name = 'ri-volume-up-line';
+    if (value === 0) name = 'ri-volume-mute-line';
+    else if (value < 0.4) name = 'ri-volume-down-line';
+    icon.setAttribute('href', `images/icons.svg#${name}`);
 }
 
 function renderCurrentSong() {
@@ -144,10 +276,13 @@ function renderCurrentSong() {
     switchMusicState('music-player');
     setMusicStatus('准备播放');
 
-    setText('music-title', song.title);
-    setText('music-artist', song.artist);
-    setImage('music-cover', song.cover, `${song.title} 的歌曲封面`);
+    const titleEl = getMusicElement('music-title');
+    if (titleEl) {
+        titleEl.textContent = song.title;
+        titleEl.setAttribute('title', song.title + ' - ' + song.artist);
+    }
     setSourceLink(song.url);
+    highlightPlaylistItem();
 
     audio.pause();
     audio.removeAttribute('src');
@@ -234,13 +369,13 @@ function resetMusicProgress() {
 function setMusicPlaying(isPlaying) {
     const player = getMusicElement('music-player');
     const playButton = getMusicElement('music-play');
-    const icon = playButton?.querySelector('i');
+    const icon = playButton?.querySelector('use');
 
     player?.classList.toggle('is-playing', isPlaying);
     setMusicStatus(isPlaying ? '正在播放' : '准备播放');
 
     if (playButton) playButton.setAttribute('aria-label', isPlaying ? '暂停' : '播放');
-    if (icon) icon.className = isPlaying ? 'ri-pause-fill' : 'ri-play-fill';
+    if (icon) icon.setAttribute('href', isPlaying ? 'images/icons.svg#ri-pause-fill' : 'images/icons.svg#ri-play-fill');
 }
 
 function setSourceLink(url) {
@@ -276,6 +411,57 @@ function switchMusicState(activeId) {
         if (!element) return;
         element.classList.toggle('hidden', id !== activeId);
     });
+}
+
+function renderPlaylist() {
+    const panel = getMusicElement('music-playlist');
+    if (!panel) return;
+
+    const list = panel.querySelector('ol');
+    if (!list) return;
+
+    list.innerHTML = musicPlayerState.playlist.map((song, index) => `
+        <li data-index="${index}" class="music-playlist__item">
+            <span class="music-playlist__number">${String(index + 1).padStart(2, '0')}</span>
+            <span class="music-playlist__info">
+                <span class="music-playlist__title">${escapeHtml(song.title)}</span>
+                <span class="music-playlist__artist">${escapeHtml(song.artist)}</span>
+            </span>
+        </li>
+    `).join('');
+
+    list.querySelectorAll('.music-playlist__item').forEach((item) => {
+        item.addEventListener('click', () => {
+            const index = Number(item.dataset.index);
+            if (Number.isNaN(index)) return;
+            musicPlayerState.currentIndex = index;
+            renderCurrentSong();
+            if (musicPlayerState.playMode === 'shuffle') {
+                musicPlayerState.playMode = 'loop';
+                renderPlayMode();
+            }
+        });
+    });
+
+    highlightPlaylistItem();
+}
+
+function highlightPlaylistItem() {
+    const panel = getMusicElement('music-playlist');
+    if (!panel) return;
+
+    panel.querySelectorAll('.music-playlist__item').forEach((item, index) => {
+        item.classList.toggle('is-active', index === musicPlayerState.currentIndex);
+    });
+}
+
+function escapeHtml(text) {
+    return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 }
 
 function setText(id, text) {

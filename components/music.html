@@ -1,65 +1,81 @@
-<article class="music-card card-hover" aria-live="polite">
-    <div class="music-card__glow"></div>
-
-    <div class="music-card__header">
-        <span class="music-card__eyebrow">
-            <i class="ri-music-2-line"></i>
-            音乐播放器
-        </span>
-        <span id="music-status" class="music-card__status">加载中</span>
+<article class="music-card card-hover pre-reveal" aria-live="polite">
+    <!-- 加载状态 -->
+    <div id="music-loading" class="music-bar__row">
+        <span class="music-bar__status">正在加载曲库…</span>
     </div>
 
-    <div id="music-loading" class="music-card__state music-card__loading">
-        <div class="music-card__cover music-card__cover--skeleton"></div>
-        <div class="music-card__meta">
-            <span class="music-card__skeleton music-card__skeleton--title"></span>
-            <span class="music-card__skeleton music-card__skeleton--artist"></span>
-            <span class="music-card__hint">正在加载曲库…</span>
-        </div>
+    <!-- 空状态 -->
+    <div id="music-empty" class="music-bar__row hidden">
+        <span class="music-bar__status">暂无可播放歌曲，请在 data/playlist.json 中配置</span>
     </div>
 
-    <div id="music-empty" class="music-card__state music-card__empty hidden">
-        <div class="music-card__cover music-card__cover--placeholder">
-            <i class="ri-album-line"></i>
-        </div>
-        <div class="music-card__meta">
-            <h2>暂无可播放歌曲</h2>
-            <p>请在 <code>data/playlist.json</code> 中配置带 <code>audioUrl</code> 的歌曲。</p>
-        </div>
-    </div>
-
-    <div id="music-player" class="music-card__state music-card__player hidden">
-        <div class="music-card__cover music-card__cover--player">
-            <img id="music-cover" src="" alt="歌曲封面">
-            <span class="music-card__disc"></span>
-        </div>
-
-        <div class="music-card__meta music-card__meta--player">
-            <span id="music-title" class="music-card__title">未知歌曲</span>
-            <span id="music-artist" class="music-card__artist">未知歌手</span>
-
-            <div class="music-card__controls" aria-label="音乐播放控制">
-                <button id="music-prev" class="music-card__control" type="button" aria-label="上一首">
-                    <i class="ri-skip-back-line"></i>
-                </button>
-                <button id="music-play" class="music-card__play" type="button" aria-label="播放">
-                    <i class="ri-play-fill"></i>
-                </button>
-                <button id="music-next" class="music-card__control" type="button" aria-label="下一首">
-                    <i class="ri-skip-forward-line"></i>
-                </button>
+    <!-- 播放器状态 -->
+    <div id="music-player" class="music-bar__row music-bar__row--player hidden">
+        <!-- 左：图标 + 歌名 + 状态 + 均衡器 -->
+        <div class="music-bar__left">
+            <svg class="icon music-bar__icon" aria-hidden="true">
+                <use href="images/icons.svg#ri-music-2-line"></use>
+            </svg>
+            <span id="music-title" class="music-bar__title" title="">未知歌曲</span>
+            <span id="music-status" class="music-bar__status">准备播放</span>
+            <div class="music-eq" aria-hidden="true">
+                <span class="music-eq__bar"></span>
+                <span class="music-eq__bar"></span>
+                <span class="music-eq__bar"></span>
+                <span class="music-eq__bar"></span>
             </div>
+        </div>
 
-            <div class="music-card__timeline">
-                <span id="music-current-time">0:00</span>
-                <input id="music-progress" class="music-card__progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="播放进度">
-                <span id="music-duration">0:00</span>
-            </div>
+        <!-- 中：进度条 -->
+        <div class="music-bar__progress">
+            <span id="music-current-time">0:00</span>
+            <input id="music-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="播放进度">
+            <span id="music-duration">0:00</span>
+        </div>
 
-            <a id="music-source-link" class="music-card__link-hint hidden" href="#" target="_blank" rel="noopener noreferrer">
-                查看来源 <i class="ri-arrow-right-up-line"></i>
+        <!-- 右：控制图标按钮 -->
+        <div class="music-bar__controls" aria-label="音乐播放控制">
+            <button id="music-mode" class="music-bar__btn" type="button" aria-label="列表循环" title="列表循环">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-repeat-line"></use>
+                </svg>
+            </button>
+            <button id="music-prev" class="music-bar__btn" type="button" aria-label="上一首">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-skip-back-line"></use>
+                </svg>
+            </button>
+            <button id="music-play" class="music-bar__btn music-bar__btn--play" type="button" aria-label="播放">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-play-fill"></use>
+                </svg>
+            </button>
+            <button id="music-next" class="music-bar__btn" type="button" aria-label="下一首">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-skip-forward-line"></use>
+                </svg>
+            </button>
+            <button id="music-volume-icon" class="music-bar__btn" type="button" aria-label="音量">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-volume-up-line"></use>
+                </svg>
+            </button>
+            <button id="music-playlist-toggle" class="music-bar__btn" type="button" aria-label="播放列表" title="播放列表">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-play-list-line"></use>
+                </svg>
+            </button>
+            <a id="music-source-link" class="music-bar__btn music-bar__btn--link hidden" href="#" target="_blank" rel="noopener noreferrer" aria-label="查看来源" title="查看来源">
+                <svg class="icon" aria-hidden="true">
+                    <use href="images/icons.svg#ri-arrow-right-up-line"></use>
+                </svg>
             </a>
         </div>
+    </div>
+
+    <!-- 播放列表（展开在下方） -->
+    <div id="music-playlist" class="music-playlist hidden">
+        <ol class="music-playlist__list"></ol>
     </div>
 
     <audio id="music-audio" preload="metadata"></audio>
