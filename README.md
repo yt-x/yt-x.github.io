@@ -121,6 +121,8 @@ git diff --check
 
 ## 待开发 TODO
 
+> 待办事项已迁移至 `TODO.md`（跨会话交接的唯一事实源），以下列表保留仅作历史参考。协作约定见 `AGENTS.md`，已知坑见 `CONSTRAINTS.md`。
+
 - **接入网易云真实音频直链**：在已有 `NETEASE_API_BASE` 和 `NETEASE_COOKIE` 预留基础上，调用 NeteaseCloudMusicApi 的音频 URL 接口，自动为 `now-playing.json` 或曲库补充 `audioUrl`。
 - **网易云最近播放升级**：优先使用 `/record/recent/song?limit=1` 获取真正最近播放；Cookie 不可用时回退到公开一周播放记录。
 - **曲库自动匹配增强**：从网易云记录提取歌曲 ID、歌名、歌手，优先按 `neteaseId` 匹配，失败时再做歌名/歌手模糊匹配。
