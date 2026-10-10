@@ -12,8 +12,9 @@
 | 博客卡（JSON 优先、RSS 兜底） | 完成 | `js/main.js` |
 | 雨滴涟漪背景 | 完成 | `js/rain.js` |
 | 浅色/暗色主题切换 | 完成 | `js/main.js` |
-| 站点图标（favicon + apple-touch-icon） | 完成 | `favicon.ico` |
+| 站点图标（太阳：SVG + ico + 桌面图标） | 完成 | `images/favicon.svg` |
 | 网易云最近播放同步 | 进行中 | `data/now-playing.json` |
+| 分享卡片元信息 | 未开始 | |
 | 歌词展示 | 未开始 | |
 | 播放错误提示与坏链跳过 | 未开始 | |
 | 音频体积治理 | 未开始 | |
@@ -23,7 +24,8 @@
 - 结构：名片卡 → 音乐横条（66px）→ EXHIBIT 01 技术栈 → 02 博客 → 03 项目 → Colophon。
 - 入场 reveal、悬停微交互、均衡器、雨滴背景、身份词轮播齐备；暗色与 reduced-motion 均有守卫。
 - 博客卡读 `https://sgldbhxs.top/hugoblog/posts/index.json`，失败回退 `.../posts/index.xml`。
-- 站点图标为白文印 S（洋红底纸白字），由 `scripts/make-favicon.py` 生成，可重跑复现。
+- 站点图标为太阳（金色圆盘 + 深色射线）：`images/favicon.svg` 是母版，位图由 `scripts/make-favicon.py` 生成，重跑可复现。
+- 页面没有任何分享元信息：`og:` / `twitter:` / `description` / `canonical` 均为 0 处，转发链接没有卡片。
 - `data/now-playing.json` 的内容是 `null`，网易云匹配拿不到真实输入。
 
 ## 下一步
@@ -34,6 +36,7 @@
 4. 歌词展示——有 `lyrics` 的歌曲可展开查看，无 `lyrics` 不显示入口
 5. 播放错误提示与坏链跳过——坏链歌曲不卡死，状态栏给出可读提示
 6. 音频体积治理——`music/` 转码后仓库跟踪体积明显下降且全部歌曲可播放
+7. 分享卡片元信息——补 `og:image` / `og:title` / `og:description` 与 `canonical` 后，转发链接能出卡片
 
 ## 阻塞
 

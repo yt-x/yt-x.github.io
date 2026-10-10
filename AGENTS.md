@@ -28,8 +28,8 @@ js/main.js          # 组件加载、主题切换、博客渲染、身份词轮�
 js/music-card.js    # 音乐播放器全部逻辑（约 490 行，顶层函数，无模块封装）
 js/rain.js          # 雨滴涟漪 Canvas 背景（IIFE，z-0，内容层 z-10）
 js/theme.js         # 0 字节死文件（无任何引用）
-images/             # 头像、项目截图、apple-touch-icon.png
-favicon.ico         # 站点图标：白文印 S，由 scripts/make-favicon.py 生成（禁手改）
+images/             # 头像、项目截图、favicon.svg（图标母版）、apple-touch-icon.png
+favicon.ico         # 站点图标（太阳）的位图回退，由 scripts/make-favicon.py 生成（禁手改）
 docx/               # 文档附件（MUSIC_CARD.md 等）
 decisions/          # 取舍因果：rejected/ 存评估后未采纳的方案
 data/               # playlist.json（曲库）、now-playing.json（Actions 定时生成的网易云记录）

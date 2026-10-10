@@ -65,9 +65,13 @@
 - `js/theme.js`、`components/header.html` 为空文件，无引用价值；勿在它们基础上开发。
 
 ### C13. Console 报错基线
-- 当前基线：**预期无报错**。站点图标已补齐（`favicon.ico` 与 `images/apple-touch-icon.png`）。
+- 当前基线：**预期无报错**。站点图标已补齐（`favicon.ico`、`images/favicon.svg` 与 `images/apple-touch-icon.png`）。
 - 验证标准：改动后 Console 不得出现任何新报错。
 - 博客卡若出现 `/hugoblog/posts/index.json` 404，问题不在主页：那是 hugoblog 仓库的 section JSON 模板缺失，排查入口见 `../hugoblog/AGENTS.md` 与 `../hugoblog/decisions/`。
 
 ### C14. 本机环境限制
 - HTTPS 直连失败、`git submodule update --init` 不可用、无头浏览器不可用这三条，现象与绕法统一记在上层 `../AGENTS.md` 的「环境坑」，此处不重复。
+
+### C15. 色板例外：站点图标用金色 #E9C46A
+- 太阳图标的圆盘用金色 `#E9C46A`，不在 `--ink/--rice/--accent/--stone` 之内，是经确认的例外（取舍见 `decisions/`）。
+- 例外范围仅限图标：页面 CSS 仍只用既有 token，不得因为图标是金色就在样式里引入金色。

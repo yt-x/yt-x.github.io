@@ -30,8 +30,11 @@
 │   └── rain.js                 # 雨滴涟漪 Canvas 背景
 ├── music/                      # 本地音频文件目录
 ├── scripts/
-│   └── fetch-netease-music.js  # 网易云记录抓取脚本
+│   ├── build-icons.mjs         # remixicon → images/icons.svg
+│   ├── fetch-netease-music.js  # 网易云记录抓取脚本
+│   └── make-favicon.py         # 生成 favicon.ico 与 apple-touch-icon.png
 ├── decisions/                  # 取舍因果记录（rejected/ 存未采纳方案）
+├── favicon.ico                 # 站点图标（太阳），生成物
 ├── index.html
 ├── docx/MUSIC_CARD.md          # 音乐播放器详细配置
 └── package.json

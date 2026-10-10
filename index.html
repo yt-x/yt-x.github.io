@@ -20,8 +20,10 @@
     <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components.css">
-    <!-- 站点图标：favicon.ico 放在仓库根，浏览器默认也会直接请求 /favicon.ico -->
-    <link rel="icon" href="favicon.ico" sizes="any">
+    <!-- 站点图标：SVG 母版给现代浏览器，favicon.ico 兜底
+         （浏览器即使没有 link 也会直接请求仓库根的 /favicon.ico，所以两份都要留） -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 
