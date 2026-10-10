@@ -1,6 +1,6 @@
 # HomePage
 
-个人主页静态站点，面向 GitHub Pages 部署。页面包含个人资料、音乐播放器、技能展示、博客入口和项目展示，使用原生 HTML/CSS/JavaScript 组织组件，不依赖前端构建工具。
+个人主页静态站点，面向 GitHub Pages 部署。页面包含个人资料、音乐播放器、技能展示、博客入口和项目展示，使用原生 HTML/CSS/JavaScript 组织组件；唯一的构建步骤是用 Tailwind CLI 把 `css/input.css` 编成 `css/tailwind.css`，不引入前端框架。
 
 ## 功能概览
 
@@ -27,18 +27,19 @@
 ├── js/
 │   ├── main.js                 # 组件加载、主题、博客渲染
 │   ├── music-card.js           # 音乐播放器逻辑
-│   └── theme.js                # 主题相关脚本
+│   └── rain.js                 # 雨滴涟漪 Canvas 背景
 ├── music/                      # 本地音频文件目录
 ├── scripts/
 │   └── fetch-netease-music.js  # 网易云记录抓取脚本
+├── decisions/                  # 取舍因果记录（rejected/ 存未采纳方案）
 ├── index.html
-├── MUSIC_CARD.md               # 音乐播放器详细配置
+├── docx/MUSIC_CARD.md          # 音乐播放器详细配置
 └── package.json
 ```
 
 ## 本地运行
 
-项目无需安装依赖，直接启动静态服务器：
+页面本身没有运行时依赖，起一个静态服务器即可预览：
 
 ```powershell
 python -m http.server 8000
@@ -50,9 +51,10 @@ python -m http.server 8000
 http://localhost:8000
 ```
 
-也可以使用 `package.json` 中的脚本：
+只有改样式或图标时才需要开发依赖（Tailwind CLI、remixicon）：
 
 ```powershell
+npm ci
 npm run dev
 ```
 

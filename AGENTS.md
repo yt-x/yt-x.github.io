@@ -1,7 +1,8 @@
 # AGENTS.md — HomePage 项目指南
 
-> AI 协作者入口。任务开始前按顺序读：本文件 → `TODO.md`（当前任务）→ `CONSTRAINTS.md`（坑与约束）。
-> 完成任务后：更新 `TODO.md`；踩到新坑：追加 `CONSTRAINTS.md`。
+> AI 协作者入口。任务开始前按顺序读：本文件（机制）→ `TODO.md`（状态）→ `CONSTRAINTS.md`（坑）→ `decisions/`（取舍因果）。
+> 完成任务后：更新 `TODO.md`；踩到新坑：追加 `CONSTRAINTS.md`；非平凡取舍：补 `decisions/`。
+> 跨仓库约定与本机环境坑（HTTPS 直连失败、子模块初始化、无头浏览器不可用）见上层 `../AGENTS.md`。
 
 ## 概览
 
@@ -26,7 +27,9 @@ css/tailwind.css    # 构建产物，禁止手改
 js/main.js          # 组件加载、主题切换、博客渲染、身份词轮播、阅读进度条
 js/music-card.js    # 音乐播放器全部逻辑（约 490 行，顶层函数，无模块封装）
 js/rain.js          # 雨滴涟漪 Canvas 背景（IIFE，z-0，内容层 z-10）
-js/theme.js         # 0 字节死文件
+js/theme.js         # 0 字节死文件（无任何引用）
+docx/               # 文档附件（MUSIC_CARD.md 等）
+decisions/          # 取舍因果：rejected/ 存评估后未采纳的方案
 data/               # playlist.json（曲库）、now-playing.json（Actions 定时生成的网易云记录）
 scripts/            # build-icons.mjs、fetch-netease-music.js
 .github/workflows/  # deploy.yml（Pages）、fetch-music.yml（每 6h 更新 now-playing.json）
@@ -58,9 +61,17 @@ node --check js/<file>.js   # JS 语法检查（改 JS 后必跑）
 - 新功能默认双验证：暗色模式 + reduced-motion。
 - Git 只读操作除非用户明确要求提交。
 
+## 规格工作流登记
+
+- 当前规格入口：`AGENTS.md`
+- 当前变更入口：无
+- 历史变更入口：`decisions/`
+- 验证证据入口：`README.md`
+- 未检测到 OpenSpec / SpecKit / Superpowers 等规格工具，按文档 + `decisions/` 手工维护。
+
 ## 协作工作流
 
-1. 读 `TODO.md` 确认当前待办与验收标准。
+1. 读 `TODO.md` 的「下一步」确认当前事项，验收方式写在该条目的「——」之后。
 2. 改动后按 `CONSTRAINTS.md` 自查是否踩已知坑（尤其浏览器缓存与本地服务器两条）。
-3. 验证：`node --check` + `npm run build` + 浏览器实测（页面无新增 Console 报错；既有报错只有 favicon 404 与博客 feed 404）。
-4. 收尾：更新 `TODO.md`（移入已完成+日期+落点文件）；新坑入 `CONSTRAINTS.md`。
+3. 验证：`node --check` + `npm run build` + 浏览器实测（既有 Console 报错只剩 favicon 404，见 C13）。
+4. 收尾：更新 `TODO.md` 的功能进度与下一步；新坑入 `CONSTRAINTS.md`；非平凡取舍入 `decisions/`；跑一次文档门禁 `python ~/.agents/tools/verify_docs.py .`。

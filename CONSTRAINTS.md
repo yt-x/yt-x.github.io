@@ -65,6 +65,9 @@
 - `js/theme.js`、`components/header.html` 为空文件，无引用价值；勿在它们基础上开发。
 
 ### C13. 既有 Console 报错（非缺陷，勿误判为回归）
-- `favicon.ico` 404：站点无 favicon（待办见 TODO.md P3）。
-- `https://sgldbhxs.top/hugoblog/posts/index.json` 404：外部博客 feed 端点当前不可用（待办见 TODO.md P1）。
-- 验证标准：改动后 Console 不得出现**除上述两条外**的新报错。
+- `favicon.ico` 404：站点没有 favicon（待办见 `TODO.md` 的「下一步」）。
+- 验证标准：改动后 Console 不得出现除 favicon 404 之外的新报错。
+- 博客卡若出现 `/hugoblog/posts/index.json` 404，问题不在主页：那是 hugoblog 仓库的 section JSON 模板缺失，排查入口见 `../hugoblog/AGENTS.md` 与 `../hugoblog/decisions/`。
+
+### C14. 本机环境限制
+- HTTPS 直连失败、`git submodule update --init` 不可用、无头浏览器不可用这三条，现象与绕法统一记在上层 `../AGENTS.md` 的「环境坑」，此处不重复。
