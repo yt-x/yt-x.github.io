@@ -12,10 +12,10 @@
 | 博客卡（JSON 优先、RSS 兜底） | 完成 | `js/main.js` |
 | 雨滴涟漪背景 | 完成 | `js/rain.js` |
 | 浅色/暗色主题切换 | 完成 | `js/main.js` |
+| 站点图标（favicon + apple-touch-icon） | 完成 | `favicon.ico` |
 | 网易云最近播放同步 | 进行中 | `data/now-playing.json` |
 | 歌词展示 | 未开始 | |
 | 播放错误提示与坏链跳过 | 未开始 | |
-| 站点 favicon | 未开始 | |
 | 音频体积治理 | 未开始 | |
 
 ## 当前状态
@@ -23,18 +23,17 @@
 - 结构：名片卡 → 音乐横条（66px）→ EXHIBIT 01 技术栈 → 02 博客 → 03 项目 → Colophon。
 - 入场 reveal、悬停微交互、均衡器、雨滴背景、身份词轮播齐备；暗色与 reduced-motion 均有守卫。
 - 博客卡读 `https://sgldbhxs.top/hugoblog/posts/index.json`，失败回退 `.../posts/index.xml`。
+- 站点图标为白文印 S（洋红底纸白字），由 `scripts/make-favicon.py` 生成，可重跑复现。
 - `data/now-playing.json` 的内容是 `null`，网易云匹配拿不到真实输入。
-- 线上 `favicon.ico` 返回 404，站点没有图标。
 
 ## 下一步
 
-1. 网易云最近播放同步产出有效数据——`data/now-playing.json` 内容非 null，且播放器据此选中默认曲
+1. 网易云最近播放同步产出有效数据——`data/now-playing.json` 内容非 null，且播放器能据此选中默认曲
 2. 网易云音频直链接入——至少一首歌在没有本地音频文件的情况下可播放
 3. 曲库匹配增强——neteaseId 不一致但歌名相同的用例能选中，全不匹配时回退第一首
-4. 补 favicon——线上 `/favicon.ico` 返回 200，Console 不再出现该 404
-5. 歌词展示——有 `lyrics` 的歌曲可展开查看，无 `lyrics` 不显示入口
-6. 播放错误提示与坏链跳过——坏链歌曲不卡死，状态栏给出可读提示
-7. 音频体积治理——`music/` 转码后仓库跟踪体积明显下降且全部歌曲可播放
+4. 歌词展示——有 `lyrics` 的歌曲可展开查看，无 `lyrics` 不显示入口
+5. 播放错误提示与坏链跳过——坏链歌曲不卡死，状态栏给出可读提示
+6. 音频体积治理——`music/` 转码后仓库跟踪体积明显下降且全部歌曲可播放
 
 ## 阻塞
 

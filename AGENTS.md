@@ -28,10 +28,12 @@ js/main.js          # 组件加载、主题切换、博客渲染、身份词轮�
 js/music-card.js    # 音乐播放器全部逻辑（约 490 行，顶层函数，无模块封装）
 js/rain.js          # 雨滴涟漪 Canvas 背景（IIFE，z-0，内容层 z-10）
 js/theme.js         # 0 字节死文件（无任何引用）
+images/             # 头像、项目截图、apple-touch-icon.png
+favicon.ico         # 站点图标：白文印 S，由 scripts/make-favicon.py 生成（禁手改）
 docx/               # 文档附件（MUSIC_CARD.md 等）
 decisions/          # 取舍因果：rejected/ 存评估后未采纳的方案
 data/               # playlist.json（曲库）、now-playing.json（Actions 定时生成的网易云记录）
-scripts/            # build-icons.mjs、fetch-netease-music.js
+scripts/            # build-icons.mjs、fetch-netease-music.js、make-favicon.py
 .github/workflows/  # deploy.yml（Pages）、fetch-music.yml（每 6h 更新 now-playing.json）
 ```
 
@@ -73,5 +75,5 @@ node --check js/<file>.js   # JS 语法检查（改 JS 后必跑）
 
 1. 读 `TODO.md` 的「下一步」确认当前事项，验收方式写在该条目的「——」之后。
 2. 改动后按 `CONSTRAINTS.md` 自查是否踩已知坑（尤其浏览器缓存与本地服务器两条）。
-3. 验证：`node --check` + `npm run build` + 浏览器实测（既有 Console 报错只剩 favicon 404，见 C13）。
+3. 验证：`node --check` + `npm run build` + 浏览器实测（Console 应无报错，见 C13）。
 4. 收尾：更新 `TODO.md` 的功能进度与下一步；新坑入 `CONSTRAINTS.md`；非平凡取舍入 `decisions/`；跑一次文档门禁 `python ~/.agents/tools/verify_docs.py .`。
